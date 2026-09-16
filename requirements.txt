@@ -1,0 +1,7 @@
+google-genai
+websockets
+httpx
+audioop-lts; python_version >= "3.13"
+python-dotenv
+pytest
+pytest-asyncio

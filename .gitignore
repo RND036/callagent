@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.pem
+data/bookings.json
+data/messages.json
+tests/fixtures/response.wav
