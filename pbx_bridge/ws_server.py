@@ -1,7 +1,9 @@
-"""WebSocket server SmartPBX connects to. One connection == one phone call;
-each gets its own CallSession running for the connection's lifetime.
+"""WebSocket server FreeSWITCH's mod_audio_stream connects to. One connection
+== one phone call; each gets its own CallSession running for the
+connection's lifetime.
 
-SmartPBX dials us as a WS client per call -- we run the server side.
+FreeSWITCH dials us as a WS client per call (via the dialplan's
+uuid_audio_stream action) -- we run the server side.
 """
 from __future__ import annotations
 

@@ -1,22 +1,13 @@
 """In-band DTMF detection via the Goertzel algorithm, reading the caller's
 raw audio directly.
 
-Needed because SmartPBX has been observed to silently drop `dtmf` control
-events entirely -- no frame at all even though the caller pressed a key and
-media kept flowing. This is *not* a substitute for the PBX's own dtmf event
-(in-band detection is inherently heuristic); callers should run both sources
-and dedupe on the digit within a short window -- see DtmfDedupe in
-call_session.py.
+mod_audio_stream doesn't forward DTMF as WS control messages at all, so this
+is the sole DTMF source for the FreeSWITCH bridge.
 """
 from __future__ import annotations
 
 import math
 import struct
-
-try:
-    import audioop
-except ImportError:  # Python 3.13+
-    import audioop_lts as audioop  # type: ignore[import-not-found]
 
 _SAMPLE_RATE_HZ = 8000
 _BLOCK_SIZE = 205  # ~25.6ms at 8kHz, standard Goertzel window for DTMF
@@ -57,9 +48,6 @@ class InbandDtmfDetector:
         self._pending: str | None = None
         self._pending_count = 0
         self._active = False
-
-    def feed_ulaw(self, ulaw_chunk: bytes) -> str | None:
-        return self.feed_pcm16(audioop.ulaw2lin(ulaw_chunk, 2))
 
     def feed_pcm16(self, pcm16_chunk: bytes) -> str | None:
         n_samples = len(pcm16_chunk) // 2

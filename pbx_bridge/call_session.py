@@ -1,13 +1,13 @@
-"""Owns one phone call end-to-end: bridges the SmartPBX Dialog WebSocket
-(JSON start/media/dtmf/hangup events) to a Gemini Live session, running both
-directions concurrently until the call ends or either side drops.
+"""Owns one phone call end-to-end: bridges FreeSWITCH's mod_audio_stream
+WebSocket (one metadata text frame, then binary PCM16 audio frames) to a
+Gemini Live session, running both directions concurrently until the call
+ends or either side drops.
 """
 from __future__ import annotations
 
 import asyncio
 import json
 import logging
-import time
 import uuid
 
 from google import genai
@@ -15,12 +15,10 @@ from google import genai
 from audio.codec import InboundTranscoder, OutboundTranscoder
 from data.store import BookingStore
 from gemini_session.session import GeminiLiveSession
-from pbx_bridge.control_protocol import (
+from pbx_bridge.audio_stream_protocol import (
     ControlProtocolError,
-    DtmfEvent,
+    FsAudioStreamAdapter,
     HangupEvent,
-    MediaEvent,
-    PBXControlAdapter,
     StartEvent,
     UnknownEvent,
 )
@@ -32,56 +30,39 @@ import config
 
 logger = logging.getLogger(__name__)
 
-_OUTBOUND_FRAME_BYTES = 160  # 20ms of 8kHz mu-law
 _OUTBOUND_FRAME_SECONDS = 0.02
-
-
-class DtmfDedupe:
-    """SmartPBX's dtmf event and our in-band tone detector can both report
-    the same keypress; only the first one within the window counts."""
-
-    def __init__(self, window_seconds: float) -> None:
-        self._window = window_seconds
-        self._last_digit: str | None = None
-        self._last_seen: float = 0.0
-
-    def accept(self, digit: str) -> bool:
-        now = time.monotonic()
-        if self._last_digit == digit and (now - self._last_seen) < self._window:
-            self._last_seen = now
-            return False
-        self._last_digit = digit
-        self._last_seen = now
-        return True
+_SAMPLE_WIDTH_BYTES = 2  # 16-bit PCM
 
 
 class PacedMediaSender:
-    """Sends outbound audio to the PBX as 20ms media frames, paced against a
-    monotonic deadline (not sleep-after-send, which lets drift compound).
-    There is no flush/clear event in the protocol -- barge_in() can only stop
-    *further* queued chunks from going out; audio already sent will still
-    play out on the PBX side."""
+    """Sends outbound audio to FreeSWITCH as 20ms PCM16 media frames, paced
+    against a monotonic deadline (not sleep-after-send, which lets drift
+    compound). There is no flush/clear event in the protocol -- barge_in()
+    can only stop *further* queued chunks from going out; audio already sent
+    will still play out on the FreeSWITCH side."""
 
-    def __init__(self, ws, control: PBXControlAdapter, stream_sid: str) -> None:
+    def __init__(self, ws, control: FsAudioStreamAdapter, sample_rate: int, call_uuid: str | None = None) -> None:
         self._ws = ws
         self._control = control
-        self._stream_sid = stream_sid
+        self._sample_rate = sample_rate
+        self._call_uuid = call_uuid
+        self._frame_bytes = int(sample_rate * _OUTBOUND_FRAME_SECONDS) * _SAMPLE_WIDTH_BYTES
         self._queue: asyncio.Queue[bytes] = asyncio.Queue()
         self._remainder = bytearray()
         self._task = asyncio.create_task(self._run())
 
-    def enqueue(self, ulaw_bytes: bytes) -> None:
-        self._remainder.extend(ulaw_bytes)
-        while len(self._remainder) >= _OUTBOUND_FRAME_BYTES:
-            frame = bytes(self._remainder[:_OUTBOUND_FRAME_BYTES])
-            del self._remainder[:_OUTBOUND_FRAME_BYTES]
+    def enqueue(self, pcm_bytes: bytes) -> None:
+        self._remainder.extend(pcm_bytes)
+        while len(self._remainder) >= self._frame_bytes:
+            frame = bytes(self._remainder[: self._frame_bytes])
+            del self._remainder[: self._frame_bytes]
             self._queue.put_nowait(frame)
 
     def flush(self) -> None:
-        """Pad any remaining partial frame with mu-law silence (0xFF) and send it."""
+        """Pad any remaining partial frame with PCM16 silence (zero bytes) and send it."""
         if self._remainder:
-            padding_needed = _OUTBOUND_FRAME_BYTES - len(self._remainder)
-            frame = bytes(self._remainder) + (b"\xff" * padding_needed)
+            padding_needed = self._frame_bytes - len(self._remainder)
+            frame = bytes(self._remainder) + bytes(padding_needed)
             self._remainder.clear()
             self._queue.put_nowait(frame)
 
@@ -109,7 +90,9 @@ class PacedMediaSender:
             next_deadline = max(next_deadline + _OUTBOUND_FRAME_SECONDS, now)
             await asyncio.sleep(next_deadline - now)
             try:
-                await self._ws.send(json.dumps(self._control.build_media_frame(self._stream_sid, frame)))
+                await self._ws.send(
+                    json.dumps(self._control.build_stream_audio_frame(frame, self._sample_rate))
+                )
             except Exception:  # noqa: BLE001 - socket may already be closed; let the reader loop notice
                 return
 
@@ -128,12 +111,12 @@ class CallSession:
         self._model = model
         self._store = store
         self._mcp_client = mcp_client
-        self._control = PBXControlAdapter()
+        self._control = FsAudioStreamAdapter()
 
     async def run(self) -> None:
         start = await self._wait_for_start()
         if start is None:
-            return  # PBX socket closed before we ever got a usable start event
+            return  # FreeSWITCH socket closed before we ever got a usable start event
         ctx = CallContext(
             store=self._store,
             mcp=self._mcp_client,
@@ -142,16 +125,15 @@ class CallSession:
             account_id=start.account_id,
             caller_number=start.caller_id_number,
         )
-        sender = PacedMediaSender(self._pbx_ws, self._control, start.stream_sid)
+        sender = PacedMediaSender(self._pbx_ws, self._control, config.FS_STREAM_SAMPLE_RATE_HZ, start.call_sid)
         try:
             async with GeminiLiveSession(self._gemini_client, self._model, ctx) as session:
                 inbound = InboundTranscoder()
                 outbound = OutboundTranscoder()
                 inband_dtmf = InbandDtmfDetector()
-                dedupe = DtmfDedupe(config.DTMF_DEDUPE_WINDOW_SECONDS)
 
                 pbx_to_gemini = asyncio.create_task(
-                    self._pump_pbx_to_gemini(session, ctx, inbound, inband_dtmf, dedupe, sender),
+                    self._pump_pbx_to_gemini(session, ctx, inbound, inband_dtmf, sender),
                     name="pbx-to-gemini",
                 )
                 gemini_to_pbx = asyncio.create_task(
@@ -180,7 +162,7 @@ class CallSession:
                         pass
 
                 if ctx.ws_transfer_target:
-                    await self._send_transfer(start.stream_sid, ctx.ws_transfer_target)
+                    await self._send_transfer(ctx.ws_transfer_target)
         except Exception:  # noqa: BLE001 - log and end the call, don't crash the server
             logger.exception("Call %s ended with an error", start.call_sid)
         finally:
@@ -190,23 +172,23 @@ class CallSession:
         try:
             message = await asyncio.wait_for(self._pbx_ws.recv(), timeout=config.START_TIMEOUT_SECONDS)
         except asyncio.TimeoutError:
-            logger.warning("No start event within %ss; proceeding with defaults", config.START_TIMEOUT_SECONDS)
+            logger.warning("No start metadata within %ss; proceeding with defaults", config.START_TIMEOUT_SECONDS)
             return self._default_start()
         except Exception:  # noqa: BLE001 - socket closed before anything arrived
-            logger.info("PBX socket closed before a start event arrived")
+            logger.info("FreeSWITCH socket closed before stream metadata arrived")
             return None
 
+        if isinstance(message, bytes):
+            logger.warning("Expected metadata text frame first, got binary audio; proceeding with defaults")
+            return self._default_start()
+
         try:
-            event = self._control.parse(json.loads(message))
-        except (json.JSONDecodeError, ControlProtocolError):
-            logger.warning("Malformed first frame, expected start event: %r", message)
+            event = self._control.parse_stream_metadata(message, expected_sample_rate=config.FS_STREAM_SAMPLE_RATE_HZ)
+        except ControlProtocolError:
+            logger.warning("Malformed stream metadata: %r", message)
             return self._default_start()
 
-        if not isinstance(event, StartEvent):
-            logger.warning("Expected start event first, got %s; proceeding with defaults", type(event).__name__)
-            return self._default_start()
-
-        logger.info("Call started: %s (stream %s, from %s)", event.call_sid, event.stream_sid, event.caller_id_number)
+        logger.info("Call started: %s (from %s)", event.call_sid, event.caller_id_number)
         return event
 
     def _default_start(self) -> StartEvent:
@@ -216,6 +198,7 @@ class CallSession:
             other_leg_call_id=None,
             account_id=None,
             caller_id_number=None,
+            sample_rate=config.FS_STREAM_SAMPLE_RATE_HZ,
         )
 
     async def _pump_pbx_to_gemini(
@@ -224,35 +207,32 @@ class CallSession:
         ctx: CallContext,
         inbound: InboundTranscoder,
         inband_dtmf: InbandDtmfDetector,
-        dedupe: DtmfDedupe,
         sender: PacedMediaSender,
     ) -> None:
         frame_count = 0
         async for message in self._pbx_ws:
-            try:
-                event = self._control.parse(json.loads(message))
-            except (json.JSONDecodeError, ControlProtocolError):
-                logger.warning("Ignoring malformed frame: %r", message)
-                continue
-
-            if isinstance(event, MediaEvent):
+            if isinstance(message, bytes):
                 frame_count += 1
                 if frame_count % 150 == 0:
-                    logger.debug("Received %d audio frames from PBX for call %s", frame_count, ctx.call_sid)
+                    logger.debug("Received %d audio frames from FreeSWITCH for call %s", frame_count, ctx.call_sid)
+                event = self._control.wrap_audio_frame(message)
                 pcm16k = inbound.transcode(event.payload)
                 session.send_audio_chunk_nowait(pcm16k)
 
-                digit = inband_dtmf.feed_ulaw(event.payload)
-                if digit is not None and dedupe.accept(digit):
+                digit = inband_dtmf.feed_pcm16(event.payload)
+                if digit is not None:
                     await self._handle_dtmf(digit, session, sender)
-            elif isinstance(event, DtmfEvent):
-                if dedupe.accept(event.digit):
-                    await self._handle_dtmf(event.digit, session, sender)
-            elif isinstance(event, HangupEvent):
-                logger.info("Call ended by PBX (reason: %s)", event.reason)
-                return
-            elif isinstance(event, UnknownEvent):
-                logger.info("Unhandled PBX event: %r", event.raw)
+            else:
+                try:
+                    event = self._control.parse_text_message(message)
+                except ControlProtocolError:
+                    logger.warning("Ignoring malformed control frame: %r", message)
+                    continue
+                if isinstance(event, HangupEvent):
+                    logger.info("Call ended by FreeSWITCH (reason: %s)", event.reason)
+                    return
+                elif isinstance(event, UnknownEvent):
+                    logger.info("Unhandled FreeSWITCH control message: %r", event.raw)
 
             if ctx.hangup_requested:
                 logger.info("Ending call: end_call tool invoked")
@@ -262,7 +242,7 @@ class CallSession:
         logger.info("DTMF digit: %s", digit)
         # Barge-in: the protocol has no flush/clear event, so the only lever
         # is to stop sending further queued chunks -- there's an unavoidable
-        # tail from the PBX's own playout buffer.
+        # tail from FreeSWITCH's own playout buffer.
         sender.barge_in()
         await session.send_text(f"[caller pressed keypad digit: {digit}]")
 
@@ -278,8 +258,9 @@ class CallSession:
             if event.turn_complete:
                 sender.flush()
 
-    async def _send_transfer(self, stream_sid: str, target: str) -> None:
-        try:
-            await self._pbx_ws.send(json.dumps(self._control.build_transfer_frame(stream_sid, target)))
-        except Exception:  # noqa: BLE001 - socket may already be closed
-            logger.debug("Could not send WS-level transfer frame; socket likely closed")
+    async def _send_transfer(self, target: str) -> None:
+        # mod_audio_stream has no WS-level transfer mechanism (uuid_transfer
+        # is a FreeSWITCH API call, not something a WS client can trigger);
+        # transfer/hangup goes solely through MCP (see mcp_client.py). This
+        # is a log-only fallback for when MCP transfer wasn't available.
+        logger.warning("No FreeSWITCH-side WS transfer path; relying on MCP for transfer (target=%s)", target)

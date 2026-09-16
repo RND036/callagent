@@ -31,7 +31,7 @@ async def main() -> None:
         mcp_client = McpClient(config.MCP_SERVER_URL, config.MCP_API_KEY)
         logger.info("MCP transfer/hangup enabled: %s", config.MCP_SERVER_URL)
     else:
-        logger.warning("MCP_SERVER_URL not set; transfer_call/end_call will use WS-level fallback only")
+        logger.warning("MCP_SERVER_URL not set; transfer_call/end_call tool calls will log and no-op")
 
     server = await serve(config.WS_HOST, config.WS_PORT, gemini_client, config.GEMINI_MODEL, store, mcp_client)
     logger.info("nailagent listening on ws://%s:%d", config.WS_HOST, config.WS_PORT)
