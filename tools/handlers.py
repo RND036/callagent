@@ -15,10 +15,18 @@ logger = logging.getLogger(__name__)
 async def list_services(args: dict, ctx: CallContext) -> dict:
     services = await ctx.store.list_services()
     return {
+        "currency": "LKR",
+        "currency_name": "Sri Lankan Rupees (රුපියල්)",
         "services": [
-            {"name": s.name, "price_usd": s.price_usd, "duration_minutes": s.duration_minutes}
+            {
+                "name": s.name,
+                "price_lkr": s.price_usd,
+                "price_usd": s.price_usd,
+                "currency": "LKR",
+                "duration_minutes": s.duration_minutes,
+            }
             for s in services
-        ]
+        ],
     }
 
 
@@ -29,7 +37,10 @@ async def quote_price(args: dict, ctx: CallContext) -> dict:
         return {"error": f"No service named '{service_name}' found."}
     return {
         "name": service.name,
+        "price_lkr": service.price_usd,
         "price_usd": service.price_usd,
+        "currency": "LKR",
+        "currency_name": "Sri Lankan Rupees (රුපියල්)",
         "duration_minutes": service.duration_minutes,
     }
 
@@ -58,7 +69,18 @@ async def create_booking(args: dict, ctx: CallContext) -> dict:
             customer_phone=args["customer_phone"],
         )
     except SlotUnavailableError as exc:
+        if ctx.call_manager and ctx.call_sid:
+            await ctx.call_manager.record_action(ctx.call_sid, f"Slot unavailable for {service_name}: {exc}")
         return {"error": str(exc)}
+
+    if ctx.call_manager and ctx.call_sid:
+        await ctx.call_manager.record_action(
+            ctx.call_sid,
+            f"Booked {booking.service_name} for {booking.customer_name} on {booking.date} at {booking.time}",
+            booking.__dict__,
+        )
+        await ctx.call_manager.broadcast("booking_created", booking.__dict__)
+
     return {
         "booking_id": booking.booking_id,
         "service_name": booking.service_name,
@@ -77,6 +99,15 @@ async def modify_booking(args: dict, ctx: CallContext) -> dict:
         )
     except BookingNotFoundError as exc:
         return {"error": str(exc)}
+
+    if ctx.call_manager and ctx.call_sid:
+        await ctx.call_manager.record_action(
+            ctx.call_sid,
+            f"Modified booking {booking.booking_id} to {booking.date} at {booking.time}",
+            booking.__dict__,
+        )
+        await ctx.call_manager.broadcast("booking_modified", booking.__dict__)
+
     return {
         "booking_id": booking.booking_id,
         "service_name": booking.service_name,
@@ -91,6 +122,15 @@ async def cancel_booking(args: dict, ctx: CallContext) -> dict:
         await ctx.store.cancel_booking(args["booking_id"])
     except BookingNotFoundError as exc:
         return {"error": str(exc)}
+
+    if ctx.call_manager and ctx.call_sid:
+        await ctx.call_manager.record_action(
+            ctx.call_sid,
+            f"Cancelled booking {args['booking_id']}",
+            {"booking_id": args["booking_id"]},
+        )
+        await ctx.call_manager.broadcast("booking_cancelled", {"booking_id": args["booking_id"]})
+
     return {"booking_id": args["booking_id"], "status": "cancelled"}
 
 
@@ -101,6 +141,18 @@ async def take_message(args: dict, ctx: CallContext) -> dict:
         message=args["message"],
         urgent=args.get("urgent", False),
     )
+    if ctx.call_manager and ctx.call_sid:
+        await ctx.call_manager.record_action(
+            ctx.call_sid,
+            f"Message recorded from {args.get('caller_name') or 'Caller'}: {args['message'][:50]}...",
+            {"urgent": args.get("urgent", False)},
+        )
+        await ctx.call_manager.broadcast("message_taken", {
+            "caller_name": args.get("caller_name"),
+            "caller_phone": args.get("caller_phone"),
+            "message": args["message"],
+            "urgent": args.get("urgent", False),
+        })
     return {"status": "message_recorded"}
 
 
@@ -108,8 +160,23 @@ async def transfer_call(args: dict, ctx: CallContext) -> dict:
     """Transfer the live call to a human. Tries the MCP transfer_call tool
     first; if that fails (or no MCP client is configured), falls back to the
     WS-level transfer event, which call_session.py sends after this returns."""
-    target = args["target_number"]
+    target = args.get("target_number")
+    if not target and getattr(ctx, "settings_store", None):
+        try:
+            s = await ctx.settings_store.get_settings()
+            target = s.transfer_phone
+        except Exception:
+            target = "+94777412853"
+    elif not target:
+        target = "+94777412853"
     reason = args.get("reason", "caller requested transfer")
+
+    if ctx.call_manager and ctx.call_sid:
+        await ctx.call_manager.record_action(
+            ctx.call_sid,
+            f"Transfer requested to {target} ({reason})",
+            {"target": target, "reason": reason},
+        )
 
     if ctx.mcp is not None and ctx.call_sid:
         try:
@@ -126,6 +193,13 @@ async def end_call(args: dict, ctx: CallContext) -> dict:
     """End the live call. Best-effort MCP hangup, then always signal
     call_session.py to close the connection regardless of MCP outcome."""
     reason = args.get("reason", "completed")
+
+    if ctx.call_manager and ctx.call_sid:
+        await ctx.call_manager.record_action(
+            ctx.call_sid,
+            f"Hangup requested: {reason}",
+            {"reason": reason},
+        )
 
     if ctx.mcp is not None and ctx.call_sid:
         try:

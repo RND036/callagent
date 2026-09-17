@@ -20,6 +20,10 @@ def test_persona_forbids_asking_language():
     assert "NEVER ask" in SYSTEM_INSTRUCTION
     assert "DO NOT ASK" in SYSTEM_INSTRUCTION
 
-def test_persona_strict_sinhala_rule():
-    assert "ONLY AND EXCLUSIVELY ANSWER IN SINHALA" in SYSTEM_INSTRUCTION
+def test_persona_symmetric_mid_call_language_switching():
+    # Sinhala, Tamil, and English must all switch immediately and equally
+    # mid-call -- no language (e.g. Sinhala) gets "sticky" default treatment.
+    assert "EQUAL, ABSOLUTE strength to Sinhala, Tamil, and" in SYSTEM_INSTRUCTION
+    assert "switch to match on the very next turn" in SYSTEM_INSTRUCTION
     assert "සිංහලෙන් පමණක්" in SYSTEM_INSTRUCTION
+    assert "தமிழில் மட்டும்" in SYSTEM_INSTRUCTION

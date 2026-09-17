@@ -19,6 +19,13 @@ DATA_DIR = Path(os.environ.get("NAILAGENT_DATA_DIR", BASE_DIR / "data"))
 SEED_SERVICES_PATH = DATA_DIR / "seed_services.json"
 BOOKINGS_PATH = DATA_DIR / "bookings.json"
 MESSAGES_PATH = DATA_DIR / "messages.json"
+CALLS_PATH = DATA_DIR / "calls.json"
+SETTINGS_PATH = DATA_DIR / "settings.json"
+
+# Dashboard Web UI
+DASHBOARD_HOST = os.environ.get("DASHBOARD_HOST", "0.0.0.0")
+DASHBOARD_PORT = int(os.environ.get("DASHBOARD_PORT", "8080"))
+DASHBOARD_ENABLED = os.environ.get("DASHBOARD_ENABLED", "true").lower() in ("1", "true", "yes")
 
 # Business hours/slot granularity.
 BUSINESS_HOURS_START = "09:00"

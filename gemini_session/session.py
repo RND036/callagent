@@ -13,7 +13,11 @@ from typing import AsyncIterator
 from google import genai
 from google.genai import types
 
-from gemini_session.persona import SYSTEM_INSTRUCTION
+from gemini_session.persona import (
+    SYSTEM_INSTRUCTION,
+    build_initial_greeting,
+    build_system_instruction,
+)
 from gemini_session.tool_declarations import FUNCTION_DECLARATIONS
 from tools import registry
 from tools.context import CallContext
@@ -30,16 +34,24 @@ class LiveEvent:
     tool_calls: list[str] = field(default_factory=list)  # names, for logging/tests
 
 
-def build_connect_config() -> types.LiveConnectConfig:
+def build_connect_config(system_instruction: str | None = None) -> types.LiveConnectConfig:
     return types.LiveConnectConfig(
-        system_instruction=SYSTEM_INSTRUCTION,
+        system_instruction=system_instruction or SYSTEM_INSTRUCTION,
         response_modalities=["AUDIO"],
         speech_config=types.SpeechConfig(
             voice_config=types.VoiceConfig(
                 prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name="Aoede")
             )
         ),
-        input_audio_transcription=types.AudioTranscriptionConfig(),
+        # Explicit language codes for the caller-side transcriber -- without
+        # this hint the STT has been observed mis-hearing Tamil speech as
+        # Sinhala (the two are unrelated languages but the transcriber's
+        # auto-detection defaults toward Sinhala when unsure), which then
+        # makes the model reply in the wrong language even though the
+        # persona prompt says to match the caller.
+        input_audio_transcription=types.AudioTranscriptionConfig(
+            language_codes=["si-LK", "ta-IN", "en-US"]
+        ),
         output_audio_transcription=types.AudioTranscriptionConfig(),
         realtime_input_config=types.RealtimeInputConfig(
             turn_coverage="TURN_INCLUDES_ALL_INPUT",
@@ -61,6 +73,7 @@ class GeminiLiveSession:
         self._client = client
         self._model = model
         self._ctx = ctx
+        self._settings = None
         self._session_cm = None
         self._session = None
         self._send_queue: asyncio.Queue[bytes | None] = asyncio.Queue(maxsize=1500)
@@ -68,7 +81,24 @@ class GeminiLiveSession:
         self._closed = False
 
     async def __aenter__(self) -> "GeminiLiveSession":
-        config = build_connect_config()
+        system_instruction = SYSTEM_INSTRUCTION
+        services = None
+        if getattr(self._ctx, "store", None) is not None:
+            try:
+                services = await self._ctx.store.list_services()
+            except Exception as e:
+                logger.warning("Failed to fetch services for session: %s", e)
+
+        if getattr(self._ctx, "settings_store", None) is not None:
+            try:
+                self._settings = await self._ctx.settings_store.get_settings()
+                system_instruction = build_system_instruction(self._settings, services=services)
+            except Exception as e:
+                logger.warning("Failed to fetch dynamic settings for session: %s", e)
+        elif services is not None:
+            system_instruction = build_system_instruction(services=services)
+
+        config = build_connect_config(system_instruction=system_instruction)
         self._session_cm = self._client.aio.live.connect(model=self._model, config=config)
         self._session = await self._session_cm.__aenter__()
         self._send_task = asyncio.create_task(self._send_loop())
@@ -152,10 +182,11 @@ class GeminiLiveSession:
         treated as a system-level directive rather than something the caller
         said — avoids polluting Gemini's understanding of the conversation.
         """
+        greeting = build_initial_greeting(self._settings)
         await self._session.send_client_content(
             turns=types.Content(
                 role="user",
-                parts=[types.Part(text="(The call has just connected. Greet the caller in a warm, cheerful, and friendly tone in Sinhala only: 'ආයුබෝවන්! Classy Nail Spa වෙත සාදරයෙන් පිළිගනිමු. මම ඔබට කොහොමද උදව් කරන්නේ?')")],
+                parts=[types.Part(text=f"(The call has just connected. Greet the caller in a warm, cheerful, and friendly tone in Sinhala only: '{greeting}')")],
             ),
             turn_complete=True,
         )

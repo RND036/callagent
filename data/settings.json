@@ -1,0 +1,10 @@
+{
+  "salon_name": "Classy Nail Spa & Lounge",
+  "salon_address": "309 Kotte Road, Nugegoda 10250, Sri Lanka",
+  "salon_phone": "+94 77 741 2853",
+  "transfer_phone": "+94777412853",
+  "operating_hours_display": "Daily from 9:00 AM to 7:00 PM (open 7 days a week)",
+  "business_hours_start": "09:00",
+  "business_hours_end": "19:00",
+  "greeting_sinhala": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! {salon_name} \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+}

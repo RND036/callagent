@@ -3,5 +3,7 @@ websockets
 httpx
 audioop-lts; python_version >= "3.13"
 python-dotenv
+fastapi
+uvicorn
 pytest
 pytest-asyncio

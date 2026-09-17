@@ -82,6 +82,44 @@ class JsonBookingStore:
                 return service
         return None
 
+    async def upsert_service(self, service: Service) -> Service:
+        async with self._lock:
+            updated = False
+            new_services = []
+            for s in self._services:
+                if s.name.lower() == service.name.lower():
+                    new_services.append(service)
+                    updated = True
+                else:
+                    new_services.append(s)
+            if not updated:
+                new_services.append(service)
+            self._services = new_services
+            self._write_json(
+                self._services_path,
+                [
+                    {"name": s.name, "price_usd": s.price_usd, "duration_minutes": s.duration_minutes}
+                    for s in self._services
+                ],
+            )
+            return service
+
+    async def delete_service(self, name: str) -> bool:
+        async with self._lock:
+            name_lower = name.strip().lower()
+            initial_count = len(self._services)
+            self._services = [s for s in self._services if s.name.lower() != name_lower]
+            if len(self._services) < initial_count:
+                self._write_json(
+                    self._services_path,
+                    [
+                        {"name": s.name, "price_usd": s.price_usd, "duration_minutes": s.duration_minutes}
+                        for s in self._services
+                    ],
+                )
+                return True
+            return False
+
     async def check_availability(self, service_name: str, date: str) -> list[str]:
         async with self._lock:
             bookings = self._read_json(self._bookings_path)
@@ -177,3 +215,18 @@ class JsonBookingStore:
                 }
             )
             self._write_json(self._messages_path, messages)
+
+    async def list_bookings(self) -> list[Booking]:
+        async with self._lock:
+            bookings = self._read_json(self._bookings_path)
+            result = []
+            for b in bookings:
+                try:
+                    result.append(Booking(**b))
+                except Exception:
+                    pass
+            return result
+
+    async def list_messages(self) -> list[dict]:
+        async with self._lock:
+            return self._read_json(self._messages_path)

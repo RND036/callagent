@@ -1,11 +1,47 @@
 [
-  {"name": "Manicure", "price_usd": 25.0, "duration_minutes": 30},
-  {"name": "Acrylic nails", "price_usd": 55.0, "duration_minutes": 75},
-  {"name": "Gel manicure", "price_usd": 40.0, "duration_minutes": 45},
-  {"name": "Nail cut & filing", "price_usd": 15.0, "duration_minutes": 20},
-  {"name": "Nail extensions", "price_usd": 60.0, "duration_minutes": 90},
-  {"name": "Nail painting", "price_usd": 20.0, "duration_minutes": 25},
-  {"name": "Nail repair", "price_usd": 18.0, "duration_minutes": 20},
-  {"name": "Pedicure", "price_usd": 35.0, "duration_minutes": 45},
-  {"name": "Waterless pedicure", "price_usd": 40.0, "duration_minutes": 45}
+  {
+    "name": "Manicure",
+    "price_usd": 2500.0,
+    "duration_minutes": 30
+  },
+  {
+    "name": "Acrylic nails",
+    "price_usd": 7500.0,
+    "duration_minutes": 75
+  },
+  {
+    "name": "Gel manicure",
+    "price_usd": 4500.0,
+    "duration_minutes": 45
+  },
+  {
+    "name": "Nail cut & filing",
+    "price_usd": 1500.0,
+    "duration_minutes": 20
+  },
+  {
+    "name": "Nail extensions",
+    "price_usd": 8000.0,
+    "duration_minutes": 90
+  },
+  {
+    "name": "Nail painting",
+    "price_usd": 2000.0,
+    "duration_minutes": 25
+  },
+  {
+    "name": "Nail repair",
+    "price_usd": 1800.0,
+    "duration_minutes": 20
+  },
+  {
+    "name": "Pedicure",
+    "price_usd": 3500.0,
+    "duration_minutes": 45
+  },
+  {
+    "name": "Waterless pedicure",
+    "price_usd": 4000.0,
+    "duration_minutes": 45
+  }
 ]

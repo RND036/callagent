@@ -9,10 +9,12 @@ import asyncio
 import json
 import logging
 import uuid
+from typing import Any
 
 from google import genai
 
 from audio.codec import InboundTranscoder, OutboundTranscoder
+from data.call_manager import CallManager
 from data.store import BookingStore
 from gemini_session.session import GeminiLiveSession
 from pbx_bridge.audio_stream_protocol import (
@@ -105,18 +107,26 @@ class CallSession:
         model: str,
         store: BookingStore,
         mcp_client: McpClient | None = None,
+        call_manager: CallManager | None = None,
+        settings_store: Any = None,
     ) -> None:
         self._pbx_ws = pbx_ws
         self._gemini_client = gemini_client
         self._model = model
         self._store = store
         self._mcp_client = mcp_client
+        self._call_manager = call_manager
+        self._settings_store = settings_store
         self._control = FsAudioStreamAdapter()
 
     async def run(self) -> None:
         start = await self._wait_for_start()
         if start is None:
             return  # FreeSWITCH socket closed before we ever got a usable start event
+
+        if self._call_manager:
+            await self._call_manager.call_started(start.call_sid, start.caller_id_number)
+
         ctx = CallContext(
             store=self._store,
             mcp=self._mcp_client,
@@ -124,6 +134,8 @@ class CallSession:
             other_leg_call_id=start.other_leg_call_id,
             account_id=start.account_id,
             caller_number=start.caller_id_number,
+            call_manager=self._call_manager,
+            settings_store=self._settings_store,
         )
         sender = PacedMediaSender(self._pbx_ws, self._control, config.FS_STREAM_SAMPLE_RATE_HZ, start.call_sid)
         try:
@@ -167,6 +179,9 @@ class CallSession:
             logger.exception("Call %s ended with an error", start.call_sid)
         finally:
             await sender.close()
+            if self._call_manager and start:
+                status = "transferred" if ctx.ws_transfer_target else "completed"
+                await self._call_manager.call_ended(start.call_sid, status=status)
 
     async def _wait_for_start(self) -> StartEvent | None:
         try:

@@ -1,0 +1,5804 @@
+[
+  {
+    "call_id": "sim-0adda742",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:22:17.172748+00:00",
+    "ended_at": "2026-09-17T10:22:25.530658+00:00",
+    "duration_seconds": 8,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:22:17.172748+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:22:18.929533+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Classy",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Classy"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:19.397387+00:00",
+        "action": "AI Receptionist:  Nail",
+        "details": {
+          "speaker": "ai",
+          "text": " Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:19.447194+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:19.515183+00:00",
+        "action": "AI Receptionist:  &",
+        "details": {
+          "speaker": "ai",
+          "text": " &"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:19.582090+00:00",
+        "action": "AI Receptionist:  Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:19.677522+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:19.858061+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:19.969597+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:20.128336+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:20.243648+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:20.348235+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:20.431975+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:20.619883+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:22:25.530658+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 8
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-37c763c1",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:18:21.558137+00:00",
+    "ended_at": "2026-09-17T10:20:02.639753+00:00",
+    "duration_seconds": 101,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:18:21.558137+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:18:24.133489+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:24.604323+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:24.679760+00:00",
+        "action": "AI Receptionist:  & Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " & Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:24.821046+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:25.058985+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:25.294514+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8 \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8 \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:25.494799+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:25.597214+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:26.160749+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:34.558290+00:00",
+        "action": "AI Receptionist: \u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:34.970963+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.119568+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a\u0dda\u0daf\u0dd3",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a\u0dda\u0daf\u0dd3"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.194115+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dbb\u0dd4\u0dc0\u0db1\u0dca\u0d9c\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dbb\u0dd4\u0dc0\u0db1\u0dca\u0d9c\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.362610+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dab\u0dca\u0da9\u0dba",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dab\u0dca\u0da9\u0dba"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.488763+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd0\u0db4\u0dd3\u0db8\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd0\u0db4\u0dd3\u0db8\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.592903+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.659689+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.762415+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.918082+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd0\u0dc4\u0dd0.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd0\u0dc4\u0dd0."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:35.980041+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dd0\u0db6\u0dd0\u0dba\u0dd2,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dd0\u0db6\u0dd0\u0dba\u0dd2,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:36.142870+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:36.256158+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba \u0d85\u0dbd\u0d82\u0d9a\u0dbb\u0dab",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba \u0d85\u0dbd\u0d82\u0d9a\u0dbb\u0dab"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:36.480619+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:36.636932+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1 \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1 \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:36.690167+00:00",
+        "action": "AI Receptionist:  \u0d95\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d95\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:36.777907+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd4\u0db1\u0ddc\u0dad\u0dca,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd4\u0db1\u0ddc\u0dad\u0dca,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:36.937867+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8 \u0db6\u0ddc\u0dc4\u0ddc\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8 \u0db6\u0ddc\u0dc4\u0ddc\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.028564+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dad\u0dd4\u0da7\u0dd2\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dad\u0dd4\u0da7\u0dd2\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.118182+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.202142+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0db8\u0dca!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0db8\u0dca!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.356307+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.459281+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0db1\u0dc0\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0db1\u0dc0\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.511016+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dbb\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dbb\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.628255+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:37.790356+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:52.064427+00:00",
+        "action": "AI Receptionist: \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4 \u0d9a\u0db4\u0dbd\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4 \u0d9a\u0db4\u0dbd\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:52.406945+00:00",
+        "action": "AI Receptionist:  \u0dc6\u0dba\u0dd2\u0dbd\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc6\u0dba\u0dd2\u0dbd\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:52.521466+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:52.630120+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd2\u0dad\u0dbb\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd2\u0dad\u0dbb\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:52.795574+00:00",
+        "action": "AI Receptionist:  \u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:52.934379+00:00",
+        "action": "AI Receptionist:  1,500\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " 1,500\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:53.147802+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1\u0dc0\u0dcf.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1\u0dc0\u0dcf."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:53.238008+00:00",
+        "action": "AI Receptionist:  \u0d92 \u0dc3\u0db3\u0dc4\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92 \u0dc3\u0db3\u0dc4\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:53.491441+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd2\u0db1\u0dcf\u0da9\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd2\u0db1\u0dcf\u0da9\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:53.572712+00:00",
+        "action": "AI Receptionist:  20\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " 20\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:53.653083+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd2\u0dad\u0dbb",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd2\u0dad\u0dbb"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:53.815313+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dad\u0dc0\u0dd9\u0db1\u0dc0\u0dcf.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dad\u0dc0\u0dd9\u0db1\u0dc0\u0dcf."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:53.967693+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:54.104525+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dbd\u0dcf\u0dc0\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dbd\u0dcf\u0dc0\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:54.195671+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:18:54.402702+00:00",
+        "action": "AI Receptionist:  \u0d95\u0db1\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d95\u0db1\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:03.658953+00:00",
+        "action": "AI Receptionist: Certainly! Check",
+        "details": {
+          "speaker": "ai",
+          "text": "Certainly! Check"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:03.919031+00:00",
+        "action": "AI Receptionist:  availability",
+        "details": {
+          "speaker": "ai",
+          "text": " availability"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:04.082955+00:00",
+        "action": "AI Receptionist:  for which",
+        "details": {
+          "speaker": "ai",
+          "text": " for which"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:04.216880+00:00",
+        "action": "AI Receptionist:  service",
+        "details": {
+          "speaker": "ai",
+          "text": " service"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:04.346338+00:00",
+        "action": "AI Receptionist:  and date",
+        "details": {
+          "speaker": "ai",
+          "text": " and date"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:04.423582+00:00",
+        "action": "AI Receptionist:  would you",
+        "details": {
+          "speaker": "ai",
+          "text": " would you"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:04.550348+00:00",
+        "action": "AI Receptionist:  like?",
+        "details": {
+          "speaker": "ai",
+          "text": " like?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:12.340194+00:00",
+        "action": "AI Receptionist: \u0db8\u0db8 \u0daf\u0db1\u0dca\u0db1\u0dc0\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0db8\u0db8 \u0daf\u0db1\u0dca\u0db1\u0dc0\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:12.606287+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0db8\u0dc4\u0dbb",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0db8\u0dc4\u0dbb"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:12.732179+00:00",
+        "action": "AI Receptionist:  \u0d85\u0dba\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0dba\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:12.783241+00:00",
+        "action": "AI Receptionist:  \u0d92\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:12.835144+00:00",
+        "action": "AI Receptionist:  \u0da7\u0dd2\u0d9a\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0da7\u0dd2\u0d9a\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:12.922526+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd0\u0da9\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd0\u0da9\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:12.998429+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0d9c\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0d9c\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.082950+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dda\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dda\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.166388+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.313136+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0dbd\u0dcf,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0dbd\u0dcf,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.485502+00:00",
+        "action": "AI Receptionist:  \u0db1\u0db8\u0dd4\u0dad\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0db8\u0dd4\u0dad\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.536132+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.632758+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0db6\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0db6\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.677355+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd9\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd9\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.786833+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dca\u200d\u0dbb\u0db8\u0dd2\u0dad\u0dd2\u0dba",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dca\u200d\u0dbb\u0db8\u0dd2\u0dad\u0dd2\u0dba"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:13.896562+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dc4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dc4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.056893+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dc5\u0db4\u0dd4\u0dbb\u0dd4\u0daf\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dc5\u0db4\u0dd4\u0dbb\u0dd4\u0daf\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.170161+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.312661+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dc3\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dc3\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.393473+00:00",
+        "action": "AI Receptionist:  \u0d92",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.460765+00:00",
+        "action": "AI Receptionist:  \u0db8\u0dd2\u0dbd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0dd2\u0dbd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.565987+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0db0\u0dcf\u0dbb\u0dab",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0db0\u0dcf\u0dbb\u0dab"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.669157+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0dbd\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0dbd\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:14.784734+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8 \u0dc4\u0dd2\u0dad\u0db1\u0dc0\u0dcf.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8 \u0dc4\u0dd2\u0dad\u0db1\u0dc0\u0dcf."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:15.037160+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:15.087323+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:15.203485+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0db1\u0dc0\u0dcf\u0dc4\u0dbb\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0db1\u0dc0\u0dcf\u0dc4\u0dbb\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:15.329311+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:15.449630+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.364434+00:00",
+        "action": "AI Receptionist: \u0d85\u0db4\u0dd2 \u0daf\u0dd0\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d85\u0db4\u0dd2 \u0daf\u0dd0\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.389020+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd1\u0dc4\u0dd9\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd1\u0dc4\u0dd9\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.401132+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dcf\u0dbd\u0dba\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dcf\u0dbd\u0dba\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.436843+00:00",
+        "action": "AI Receptionist:  \u0d89\u0db3\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d89\u0db3\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.441934+00:00",
+        "action": "AI Receptionist:  \u0db8\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.455244+00:00",
+        "action": "AI Receptionist:  business",
+        "details": {
+          "speaker": "ai",
+          "text": " business"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.475863+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a \u0d9a\u0dbb\u0db1\u0dc0\u0dcf.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a \u0d9a\u0dbb\u0db1\u0dc0\u0dcf."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.509575+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.543343+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dc0 \u0db8\u0ddc\u0db1\u0dc0\u0dcf\u0dc4\u0dbb\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dc0 \u0db8\u0ddc\u0db1\u0dc0\u0dcf\u0dc4\u0dbb\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.711399+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.813663+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:29.934748+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:30.034750+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:30.193844+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:42.870943+00:00",
+        "action": "AI Receptionist: \u0dc4\u0dbb\u0dd2, \u0d91\u0dc4\u0dd9\u0db1\u0db8\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0dc4\u0dbb\u0dd2, \u0d91\u0dc4\u0dd9\u0db1\u0db8\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:46.316322+00:00",
+        "action": "AI Receptionist: \u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0db8\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0db8\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:46.658417+00:00",
+        "action": "AI Receptionist:  \u0d92 \u0d89\u0dbd\u0dca\u0dbd\u0dd3\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92 \u0d89\u0dbd\u0dca\u0dbd\u0dd3\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:46.772637+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:46.941986+00:00",
+        "action": "AI Receptionist:  \u0db6\u0dd0\u0dc4\u0dd0.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db6\u0dd0\u0dc4\u0dd0."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.037177+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.191851+00:00",
+        "action": "AI Receptionist:  \u0db8\u0dd9\u0dad\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0dd9\u0dad\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.318742+00:00",
+        "action": "AI Receptionist:  \u0d89\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d89\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.345737+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.462435+00:00",
+        "action": "AI Receptionist:  \u0d85\u0dbd\u0d82\u0d9a\u0dbb\u0dab",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0dbd\u0d82\u0d9a\u0dbb\u0dab"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.557419+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.621492+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.702442+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.780590+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.873178+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:47.970822+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd2\u0dad\u0dbb\u0dba\u0dd2.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd2\u0dad\u0dbb\u0dba\u0dd2."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:48.121319+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:48.239558+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:48.340678+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1\u0dad\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1\u0dad\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:48.460539+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:48.586236+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1 \u0dad\u0ddc\u0dbb\u0dad\u0dd4\u0dbb\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1 \u0dad\u0ddc\u0dbb\u0dad\u0dd4\u0dbb\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:48.712098+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:48.857096+00:00",
+        "action": "AI Receptionist:  \u0d95\u0db1\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d95\u0db1\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:19:59.904985+00:00",
+        "action": "AI Receptionist: \u0dc4\u0dbb\u0dd2 \u0d91\u0dc4\u0dd9\u0db1\u0db8\u0dca.",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0dc4\u0dbb\u0dd2 \u0d91\u0dc4\u0dd9\u0db1\u0db8\u0dca."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.032190+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dad\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dad\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.206708+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db4\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db4\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.257070+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.307652+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0ddc\u0da9\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0ddc\u0da9\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.529398+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dca\u0dad\u0dd4\u0dad\u0dd2\u0dba\u0dd2!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dca\u0dad\u0dd4\u0dad\u0dd2\u0dba\u0dd2!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.661599+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.761484+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0dc3\u0dca\u0dc3\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0dc3\u0dca\u0dc3\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:00.853816+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dc0\u0dc3\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dc0\u0dc3\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:01.460759+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dda\u0dc0\u0dcf!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dda\u0dc0\u0dcf!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:01.535264+00:00",
+        "action": "AI Receptionist: \u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dca\u0dad\u0dd6\u0dad\u0dd2\u0dba\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dca\u0dad\u0dd6\u0dad\u0dd2\u0dba\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:01.726781+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:01.794746+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dad\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dad\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:01.901513+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dc5\u0dcf\u0da7!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dc5\u0dcf\u0da7!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:02.037412+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:02.277117+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0dc3\u0dca\u0dc3\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0dc3\u0dca\u0dc3\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:02.352395+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dc0\u0dc3\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dc0\u0dc3\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:02.487009+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dda\u0dc0\u0dcf!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dda\u0dc0\u0dcf!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:02.547245+00:00",
+        "action": "Hangup requested: Caller indicates no further requests.",
+        "details": {
+          "reason": "Caller indicates no further requests."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:20:02.639753+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 101
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-5e0de47b",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:15:48.086516+00:00",
+    "ended_at": "2026-09-17T10:16:38.839488+00:00",
+    "duration_seconds": 50,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:15:48.086516+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:15:49.758314+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.145691+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.199140+00:00",
+        "action": "AI Receptionist:  &",
+        "details": {
+          "speaker": "ai",
+          "text": " &"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.271257+00:00",
+        "action": "AI Receptionist:  Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.328131+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.453704+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.682365+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.765806+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.846191+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.934027+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:50.993555+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:51.150884+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:59.056715+00:00",
+        "action": "AI Receptionist: \u0ba8\u0bbf\u0b9a\u0bcd\u0b9a\u0baf\u0bae\u0bbe\u0b95! \u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0ba8\u0bbf\u0b9a\u0bcd\u0b9a\u0baf\u0bae\u0bbe\u0b95! \u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:59.458112+00:00",
+        "action": "AI Receptionist:  \u0b95\u0b9f\u0bc8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b95\u0b9f\u0bc8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:59.569379+00:00",
+        "action": "AI Receptionist:  309",
+        "details": {
+          "speaker": "ai",
+          "text": " 309"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:59.866646+00:00",
+        "action": "AI Receptionist:  \u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0bc8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0bc8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:59.984132+00:00",
+        "action": "AI Receptionist:  \u0bb5\u0bc0\u0ba4\u0bbf,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb5\u0bc0\u0ba4\u0bbf,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:00.185657+00:00",
+        "action": "AI Receptionist:  \u0ba8\u0bc1\u0b95\u0bc7\u0b95\u0bca\u0b9f\u0bc8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba8\u0bc1\u0b95\u0bc7\u0b95\u0bca\u0b9f\u0bc8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:00.377557+00:00",
+        "action": "AI Receptionist:  10250,",
+        "details": {
+          "speaker": "ai",
+          "text": " 10250,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:00.693877+00:00",
+        "action": "AI Receptionist:  \u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0bb2\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0bb2\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:00.775032+00:00",
+        "action": "AI Receptionist:  \u0b89\u0bb3\u0bcd\u0bb3\u0ba4\u0bc1.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0bb3\u0bcd\u0bb3\u0ba4\u0bc1."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:00.941647+00:00",
+        "action": "AI Receptionist:  \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:01.102912+00:00",
+        "action": "AI Receptionist:  \u0bb5\u0bb4\u0bbf\u0baf\u0bc8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb5\u0bb4\u0bbf\u0baf\u0bc8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:01.197813+00:00",
+        "action": "AI Receptionist:  \u0b95\u0ba3\u0bcd\u0b9f\u0bb1\u0bbf\u0baf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b95\u0ba3\u0bcd\u0b9f\u0bb1\u0bbf\u0baf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:01.322184+00:00",
+        "action": "AI Receptionist:  \u0b89\u0ba4\u0bb5",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0ba4\u0bb5"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:01.421450+00:00",
+        "action": "AI Receptionist:  \u0b8f\u0ba4\u0bbe\u0bb5\u0ba4\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b8f\u0ba4\u0bbe\u0bb5\u0ba4\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:01.547140+00:00",
+        "action": "AI Receptionist:  \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bbe?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bbe?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:14.552193+00:00",
+        "action": "AI Receptionist: \u0ba8\u0bbf\u0b9a\u0bcd\u0b9a\u0baf\u0bae\u0bbe\u0b95! \u0ba8\u0bbe\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0ba8\u0bbf\u0b9a\u0bcd\u0b9a\u0baf\u0bae\u0bbe\u0b95! \u0ba8\u0bbe\u0b99\u0bcd\u0b95\u0bb3\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:14.961776+00:00",
+        "action": "AI Receptionist:  \u0ba4\u0bbf\u0ba9\u0bae\u0bc1\u0bae\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba4\u0bbf\u0ba9\u0bae\u0bc1\u0bae\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.089488+00:00",
+        "action": "AI Receptionist:  \u0b95\u0bbe\u0bb2\u0bc8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b95\u0bbe\u0bb2\u0bc8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.185863+00:00",
+        "action": "AI Receptionist:  9:00",
+        "details": {
+          "speaker": "ai",
+          "text": " 9:00"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.307341+00:00",
+        "action": "AI Receptionist:  \u0bae\u0ba3\u0bbf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0ba3\u0bbf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.390454+00:00",
+        "action": "AI Receptionist:  \u0bae\u0bc1\u0ba4\u0bb2\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0bc1\u0ba4\u0bb2\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.488083+00:00",
+        "action": "AI Receptionist:  \u0bae\u0bbe\u0bb2\u0bc8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0bbe\u0bb2\u0bc8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.573472+00:00",
+        "action": "AI Receptionist:  7:00",
+        "details": {
+          "speaker": "ai",
+          "text": " 7:00"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.613145+00:00",
+        "action": "AI Receptionist:  \u0bae\u0ba3\u0bbf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0ba3\u0bbf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.678539+00:00",
+        "action": "AI Receptionist:  \u0bb5\u0bb0\u0bc8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb5\u0bb0\u0bc8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.771881+00:00",
+        "action": "AI Receptionist:  \u0ba4\u0bbf\u0bb1\u0ba8\u0bcd\u0ba4\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba4\u0bbf\u0bb1\u0ba8\u0bcd\u0ba4\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:15.916133+00:00",
+        "action": "AI Receptionist:  \u0b87\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bcb\u0bae\u0bcd.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b87\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bcb\u0bae\u0bcd."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.075229+00:00",
+        "action": "AI Receptionist:  \u0bb5\u0bbe\u0bb0\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb5\u0bbe\u0bb0\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.173638+00:00",
+        "action": "AI Receptionist:  \u0b8f\u0bb4\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b8f\u0bb4\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.285277+00:00",
+        "action": "AI Receptionist:  \u0ba8\u0bbe\u0b9f\u0bcd\u0b95\u0bb3\u0bc1\u0bae\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba8\u0bbe\u0b9f\u0bcd\u0b95\u0bb3\u0bc1\u0bae\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.426411+00:00",
+        "action": "AI Receptionist:  \u0ba4\u0bbf\u0bb1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba4\u0bbf\u0bb1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.580788+00:00",
+        "action": "AI Receptionist:  \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.757146+00:00",
+        "action": "AI Receptionist:  \u0b8f\u0ba4\u0bc7\u0ba9\u0bc1\u0bae\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b8f\u0ba4\u0bc7\u0ba9\u0bc1\u0bae\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.869724+00:00",
+        "action": "AI Receptionist:  \u0ba8\u0bc7\u0bb0\u0bae\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba8\u0bc7\u0bb0\u0bae\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:16.946885+00:00",
+        "action": "AI Receptionist:  \u0b92\u0ba4\u0bc1\u0b95\u0bcd\u0b95",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b92\u0ba4\u0bc1\u0b95\u0bcd\u0b95"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:17.153302+00:00",
+        "action": "AI Receptionist:  \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bbe?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bbe?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:29.350935+00:00",
+        "action": "AI Receptionist: \u0d85\u0db1\u0dd2\u0dc0\u0dcf\u0dbb\u0dca\u0dba\u0dba\u0dd9\u0db1\u0dca\u0db8! \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d85\u0db1\u0dd2\u0dc0\u0dcf\u0dbb\u0dca\u0dba\u0dba\u0dd9\u0db1\u0dca\u0db8! \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:29.766234+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:29.877286+00:00",
+        "action": "AI Receptionist:  \u0d92 \u0dc3\u0db3\u0dc4\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92 \u0dc3\u0db3\u0dc4\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.018745+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.106816+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0db8\u0dca.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0db8\u0dca."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.325730+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.378988+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.563392+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.616734+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0db6\u0dcf\u0d9c\u0db1\u0dca\u0db1\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0db6\u0dcf\u0d9c\u0db1\u0dca\u0db1\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.821156+00:00",
+        "action": "AI Receptionist:  \u0d95\u0db1?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d95\u0db1?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:30.974816+00:00",
+        "action": "AI Receptionist:  \u0d92 \u0dc0\u0d9c\u0dda\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92 \u0dc0\u0d9c\u0dda\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:31.082146+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:31.204020+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd0\u0db8\u0dad\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd0\u0db8\u0dad\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:31.296011+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd2\u0db1\u0dba\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd2\u0db1\u0dba\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:31.414197+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dc4 \u0dc0\u0dd9\u0dbd\u0dcf\u0dc0\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dc4 \u0dc0\u0dd9\u0dbd\u0dcf\u0dc0\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:31.635460+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:16:38.839488+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 50
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-d893cdf0",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:14:53.082932+00:00",
+    "ended_at": "2026-09-17T10:15:46.284461+00:00",
+    "duration_seconds": 53,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:14:53.082932+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:14:54.993512+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:55.436786+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:55.537905+00:00",
+        "action": "AI Receptionist:  & Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " & Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:55.634219+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:55.791284+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:55.900527+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:56.119470+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:56.187354+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:56.304143+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:56.373156+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:56.526672+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:04.036254+00:00",
+        "action": "AI Receptionist: \u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0db8\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0db8\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:04.246331+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd0\u0dc4\u0dd0\u0daf\u0dd2\u0dbd\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd0\u0dc4\u0dd0\u0daf\u0dd2\u0dbd\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:04.449423+00:00",
+        "action": "AI Receptionist:  \u0db8\u0daf\u0dd2.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0daf\u0dd2."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:04.464596+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0dd4\u0dab\u0dcf\u0d9a\u0dbb\u0dbd\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0dd4\u0dab\u0dcf\u0d9a\u0dbb\u0dbd\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:04.642781+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd0\u0dc0\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd0\u0dc0\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:04.757431+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:04.928945+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:11.544356+00:00",
+        "action": "AI Receptionist: \u0db8\u0db8 \u0dc4\u0dd2\u0dad\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0db8\u0db8 \u0dc4\u0dd2\u0dad\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:11.857834+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:11.972582+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.130420+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.132483+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd0\u0dbd\u0ddc\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd0\u0dbd\u0ddc\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.179476+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.437401+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0ddc\u0dba\u0dcf\u0d9c\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0ddc\u0dba\u0dcf\u0d9c\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.438552+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0dbd\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0dbd\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.541499+00:00",
+        "action": "AI Receptionist:  \u0d85\u0dc4\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0dc4\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.747410+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.766437+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd0\u0dbd\u0ddc\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd0\u0dbd\u0ddc\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:12.852090+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:13.067625+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:13.166312+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddd\u0da7\u0dca\u0da7\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddd\u0da7\u0dca\u0da7\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:13.274675+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dcf\u0dbb\u0dda.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dcf\u0dbb\u0dda."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:13.361282+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:13.559509+00:00",
+        "action": "AI Receptionist:  \u0db8\u0d9c\u0db4\u0dd9\u0db1\u0dca\u0dc0\u0dd3\u0db8\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0d9c\u0db4\u0dd9\u0db1\u0dca\u0dc0\u0dd3\u0db8\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:13.678386+00:00",
+        "action": "AI Receptionist:  \u0d85\u0dc0\u0dc1\u0dca\u200d\u0dba\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0dc0\u0dc1\u0dca\u200d\u0dba\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:20.210696+00:00",
+        "action": "AI Receptionist: Oh, yes!",
+        "details": {
+          "speaker": "ai",
+          "text": "Oh, yes!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:20.456668+00:00",
+        "action": "AI Receptionist:  We",
+        "details": {
+          "speaker": "ai",
+          "text": " We"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:20.621400+00:00",
+        "action": "AI Receptionist:  are located",
+        "details": {
+          "speaker": "ai",
+          "text": " are located"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:20.757807+00:00",
+        "action": "AI Receptionist:  at 309",
+        "details": {
+          "speaker": "ai",
+          "text": " at 309"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.132717+00:00",
+        "action": "AI Receptionist:  Kotte",
+        "details": {
+          "speaker": "ai",
+          "text": " Kotte"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.218654+00:00",
+        "action": "AI Receptionist:  Road,",
+        "details": {
+          "speaker": "ai",
+          "text": " Road,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.364808+00:00",
+        "action": "AI Receptionist:  Nugegoda.",
+        "details": {
+          "speaker": "ai",
+          "text": " Nugegoda."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.517245+00:00",
+        "action": "AI Receptionist:  Is",
+        "details": {
+          "speaker": "ai",
+          "text": " Is"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.672994+00:00",
+        "action": "AI Receptionist:  there anything",
+        "details": {
+          "speaker": "ai",
+          "text": " there anything"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.740829+00:00",
+        "action": "AI Receptionist:  else",
+        "details": {
+          "speaker": "ai",
+          "text": " else"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.816624+00:00",
+        "action": "AI Receptionist:  I can",
+        "details": {
+          "speaker": "ai",
+          "text": " I can"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.868287+00:00",
+        "action": "AI Receptionist:  help",
+        "details": {
+          "speaker": "ai",
+          "text": " help"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:21.962277+00:00",
+        "action": "AI Receptionist:  you with",
+        "details": {
+          "speaker": "ai",
+          "text": " you with"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:22.047444+00:00",
+        "action": "AI Receptionist:  about",
+        "details": {
+          "speaker": "ai",
+          "text": " about"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:22.157366+00:00",
+        "action": "AI Receptionist:  our location?",
+        "details": {
+          "speaker": "ai",
+          "text": " our location?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:31.457651+00:00",
+        "action": "AI Receptionist: \u0ba8\u0bbf\u0b9a\u0bcd\u0b9a\u0baf\u0bae\u0bbe\u0b95! \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0ba8\u0bbf\u0b9a\u0bcd\u0b9a\u0baf\u0bae\u0bbe\u0b95! \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:31.861077+00:00",
+        "action": "AI Receptionist:  \u0b89\u0ba4\u0bb5\u0bc1\u0bb5\u0ba4\u0bbf\u0bb2\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0ba4\u0bb5\u0bc1\u0bb5\u0ba4\u0bbf\u0bb2\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:32.045391+00:00",
+        "action": "AI Receptionist:  \u0b8e\u0ba9\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b8e\u0ba9\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:32.098902+00:00",
+        "action": "AI Receptionist:  \u0bae\u0bbf\u0b95\u0bcd\u0b95",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0bbf\u0b95\u0bcd\u0b95"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:32.317136+00:00",
+        "action": "AI Receptionist:  \u0bae\u0b95\u0bbf\u0bb4\u0bcd\u0b9a\u0bcd\u0b9a\u0bbf!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0b95\u0bbf\u0bb4\u0bcd\u0b9a\u0bcd\u0b9a\u0bbf!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:32.457128+00:00",
+        "action": "AI Receptionist:  \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:32.511331+00:00",
+        "action": "AI Receptionist:  \u0b8e\u0ba9\u0bcd\u0ba9",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b8e\u0ba9\u0bcd\u0ba9"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:32.595004+00:00",
+        "action": "AI Receptionist:  \u0b89\u0ba4\u0bb5\u0bbf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0ba4\u0bb5\u0bbf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:32.729061+00:00",
+        "action": "AI Receptionist:  \u0ba4\u0bc7\u0bb5\u0bc8?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba4\u0bc7\u0bb5\u0bc8?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:39.785890+00:00",
+        "action": "AI Receptionist: \u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bc7\u0bb2\u0bc2\u0ba9\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b9a\u0bc7\u0bb2\u0bc2\u0ba9\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:39.911174+00:00",
+        "action": "AI Receptionist:  \u0ba8\u0bc1\u0bb5\u0bb0\u0bc6\u0bb2\u0bbf\u0baf\u0bbe,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba8\u0bc1\u0bb5\u0bb0\u0bc6\u0bb2\u0bbf\u0baf\u0bbe,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:40.067051+00:00",
+        "action": "AI Receptionist:  \u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0bc7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0bc7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:40.210066+00:00",
+        "action": "AI Receptionist:  \u0bb0\u0bcb\u0b9f\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb0\u0bcb\u0b9f\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:40.264618+00:00",
+        "action": "AI Receptionist:  \u0b89\u0bb3\u0bcd\u0bb3\u0ba4\u0bc1.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0bb3\u0bcd\u0bb3\u0ba4\u0bc1."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:40.455937+00:00",
+        "action": "AI Receptionist:  \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:40.590061+00:00",
+        "action": "AI Receptionist:  \u0b85\u0b99\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b85\u0b99\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:40.690455+00:00",
+        "action": "AI Receptionist:  \u0b9a\u0bc6\u0bb2\u0bcd\u0bb5\u0ba4\u0bb1\u0bcd\u0b95\u0bbe\u0ba9",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b9a\u0bc6\u0bb2\u0bcd\u0bb5\u0ba4\u0bb1\u0bcd\u0b95\u0bbe\u0ba9"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:40.898003+00:00",
+        "action": "AI Receptionist:  \u0bb5\u0bb4\u0bbf\u0b95\u0bbe\u0b9f\u0bcd\u0b9f\u0bb2\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bb5\u0bb4\u0bbf\u0b95\u0bbe\u0b9f\u0bcd\u0b9f\u0bb2\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:41.046735+00:00",
+        "action": "AI Receptionist:  \u0ba4\u0bc7\u0bb5\u0bc8\u0baf\u0bbe?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba4\u0bc7\u0bb5\u0bc8\u0baf\u0bbe?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:15:46.284461+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 53
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-b175d88b",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:14:44.304832+00:00",
+    "ended_at": "2026-09-17T10:14:50.670788+00:00",
+    "duration_seconds": 6,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:14:44.304832+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:14:46.051125+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:46.459505+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:46.532225+00:00",
+        "action": "AI Receptionist:  &",
+        "details": {
+          "speaker": "ai",
+          "text": " &"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:46.598736+00:00",
+        "action": "AI Receptionist:  Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:46.659950+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:46.775379+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:46.970430+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:47.094411+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8 \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8 \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:47.280924+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:47.346721+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:47.487445+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:50.670788+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 6
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-9f0d70cb",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:14:01.600345+00:00",
+    "ended_at": "2026-09-17T10:14:36.426927+00:00",
+    "duration_seconds": 34,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:14:01.600345+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:14:03.609443+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.077337+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.133434+00:00",
+        "action": "AI Receptionist:  & Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " & Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.263637+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.438142+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.541928+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.693431+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.816765+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.933294+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:04.999040+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:05.162801+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:14:36.426927+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 34
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-a39f84d4",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:10:28.361544+00:00",
+    "ended_at": "2026-09-17T10:11:22.598856+00:00",
+    "duration_seconds": 54,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:10:28.361544+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:10:30.182738+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:30.666161+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:30.728652+00:00",
+        "action": "AI Receptionist:  &",
+        "details": {
+          "speaker": "ai",
+          "text": " &"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:30.787888+00:00",
+        "action": "AI Receptionist:  Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:30.888267+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:31.055945+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:31.208462+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:31.311583+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:31.398508+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:31.510986+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:31.581071+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:31.721389+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:41.281802+00:00",
+        "action": "AI Receptionist: \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b89\u0ba4\u0bb5\u0bc1\u0bb5\u0ba4\u0bbf\u0bb2\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b89\u0ba4\u0bb5\u0bc1\u0bb5\u0ba4\u0bbf\u0bb2\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:41.738164+00:00",
+        "action": "AI Receptionist:  \u0b8e\u0ba9\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b8e\u0ba9\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:41.739081+00:00",
+        "action": "AI Receptionist:  \u0bae\u0bbf\u0b95\u0bcd\u0b95",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0bbf\u0b95\u0bcd\u0b95"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:41.816147+00:00",
+        "action": "AI Receptionist:  \u0bae\u0b95\u0bbf\u0bb4\u0bcd\u0b9a\u0bcd\u0b9a\u0bbf!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0bae\u0b95\u0bbf\u0bb4\u0bcd\u0b9a\u0bcd\u0b9a\u0bbf!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.064484+00:00",
+        "action": "AI Receptionist:  \u0ba8\u0bbe\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba8\u0bbe\u0b99\u0bcd\u0b95\u0bb3\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.162590+00:00",
+        "action": "AI Receptionist:  \u0baa\u0bbf\u0baf\u0bc2\u0b9f\u0bcd\u0b9f\u0bbf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0baa\u0bbf\u0baf\u0bc2\u0b9f\u0bcd\u0b9f\u0bbf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.514521+00:00",
+        "action": "AI Receptionist:  \u0baa\u0bbe\u0bb0\u0bcd\u0bb2\u0bb0\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0baa\u0bbe\u0bb0\u0bcd\u0bb2\u0bb0\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.516037+00:00",
+        "action": "AI Receptionist:  \u0b9a\u0bc7\u0bb5\u0bc8\u0b95\u0bb3\u0bcd",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b9a\u0bc7\u0bb5\u0bc8\u0b95\u0bb3\u0bcd"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.599244+00:00",
+        "action": "AI Receptionist:  \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b9a\u0bc6\u0baf\u0bcd\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.651850+00:00",
+        "action": "AI Receptionist:  \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.766076+00:00",
+        "action": "AI Receptionist:  \u0b8e\u0ba9\u0bcd\u0ba9",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b8e\u0ba9\u0bcd\u0ba9"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.843590+00:00",
+        "action": "AI Receptionist:  \u0b89\u0ba4\u0bb5\u0bbf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0b89\u0ba4\u0bb5\u0bbf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:42.984342+00:00",
+        "action": "AI Receptionist:  \u0ba4\u0bc7\u0bb5\u0bc8?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0ba4\u0bc7\u0bb5\u0bc8?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:45.833002+00:00",
+        "action": "AI Receptionist: \u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dad\u0dd4\u0da7\u0dd4\u0dba\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dad\u0dd4\u0da7\u0dd4\u0dba\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:45.956078+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.031679+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.132065+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0dd0\u0db6\u0dd3\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0dd0\u0db6\u0dd3\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.210177+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.359155+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.437030+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0d9c\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0d9c\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.532462+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd0\u0da9\u0d9a\u0dca\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd0\u0da9\u0d9a\u0dca\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.629402+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:46.731841+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.089978+00:00",
+        "action": "AI Receptionist: \u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0db8\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0dc3\u0db8\u0dcf\u0dc0\u0dd9\u0db1\u0dca\u0db1, \u0db8\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.462630+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.494998+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0db4\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0db4\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.580002+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.653884+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd0\u0dc4\u0dd0\u0daf\u0dd2\u0dbd\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd0\u0dc4\u0dd0\u0daf\u0dd2\u0dbd\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.785039+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd4\u0dab\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd4\u0dab\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.849159+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd1.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd1."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:54.954332+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0dd4\u0dab\u0dcf\u0d9a\u0dbb\u0dbd\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0dd4\u0dab\u0dcf\u0d9a\u0dbb\u0dbd\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:55.201827+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd0\u0dc0\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd0\u0dc0\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:55.268852+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:10:55.438094+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:03.751320+00:00",
+        "action": "AI Receptionist: \u0d87\u0dad\u0dca\u0dad\u0da7\u0db8 \u0db8\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d87\u0dad\u0dca\u0dad\u0da7\u0db8 \u0db8\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:03.999071+00:00",
+        "action": "AI Receptionist:  \u0d92\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.065792+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dc0\u0db8\u0dad\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dc0\u0db8\u0dad\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.183634+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db8\u0dcf\u0dbb\u0dd4\u0dba\u0dd2.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db8\u0dcf\u0dbb\u0dd4\u0dba\u0dd2."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.348311+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.479936+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0d9a\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0d9a\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.559752+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.657892+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dad\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dad\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.805241+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:04.955240+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:05.073549+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd2\u0daf\u0dd2\u0dc4\u0d9a\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd2\u0daf\u0dd2\u0dc4\u0d9a\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:05.174434+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:05.311532+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.006535+00:00",
+        "action": "AI Receptionist: \u0d85\u0db1\u0dda \u0db8\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d85\u0db1\u0dda \u0db8\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.183638+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dbb\u0dd2\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dbb\u0dd2\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.249943+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dc4\u0dc3\u0dd4\u0dba\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dc4\u0dc3\u0dd4\u0dba\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.347792+00:00",
+        "action": "AI Receptionist:  \u0d92\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.443704+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dda\u0dbb\u0dd4\u0db8\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dda\u0dbb\u0dd4\u0db8\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.588336+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0db1\u0dca\u0db1.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0db1\u0dca\u0db1."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.723215+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.788335+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0d9a\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0d9a\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.870869+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:16.970286+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:17.067307+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0dad\u0dca\u0dc3\u0dcf\u0dc4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0dad\u0dca\u0dc3\u0dcf\u0dc4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:17.192737+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:17.311397+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd0\u0dc0\u0dad\u0dad\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd0\u0dc0\u0dad\u0dad\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:17.472340+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dba\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:17.579191+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:11:22.598856+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 54
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-5e30b69e",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:09:35.016799+00:00",
+    "ended_at": "2026-09-17T10:09:37.082280+00:00",
+    "duration_seconds": 2,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:09:35.016799+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:09:36.893973+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:09:37.082280+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 2
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-c7eb6640",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:03:17.301811+00:00",
+    "ended_at": "2026-09-17T10:03:40.241540+00:00",
+    "duration_seconds": 22,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:03:17.301811+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:03:18.880058+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:19.254426+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:19.325452+00:00",
+        "action": "AI Receptionist:  & lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " & lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:19.429896+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:19.697699+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:19.948361+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8 \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8 \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:20.026708+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:20.086427+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:20.241892+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:29.422035+00:00",
+        "action": "AI Receptionist: \u0d85\u0db4\u0dda \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d85\u0db4\u0dda \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:29.424336+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:29.515074+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:29.806874+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:29.808894+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddd\u0da7\u0dca\u0da7\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddd\u0da7\u0dca\u0da7\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:29.876692+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dcf\u0dbb\u0dda.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dcf\u0dbb\u0dda."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.000372+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.181496+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0dda\u0dc3\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0dda\u0dc3\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.312728+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0ddc\u0dba\u0dcf\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0ddc\u0dba\u0dcf\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.429699+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.524937+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.636050+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.736201+00:00",
+        "action": "AI Receptionist:  \u0d89\u0db3\u0db1\u0dca\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d89\u0db3\u0db1\u0dca\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.785451+00:00",
+        "action": "AI Receptionist:  \u0d91\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:30.878535+00:00",
+        "action": "AI Receptionist:  \u0db6\u0dbd\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db6\u0dbd\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:03:40.241540+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 22
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-857562a2",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T10:00:56.839778+00:00",
+    "ended_at": "2026-09-17T10:01:58.271088+00:00",
+    "duration_seconds": 61,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T10:00:56.839778+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T10:00:58.499819+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:58.914725+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:58.977835+00:00",
+        "action": "AI Receptionist:  &",
+        "details": {
+          "speaker": "ai",
+          "text": " &"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.031899+00:00",
+        "action": "AI Receptionist:  Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.108798+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.240836+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.399249+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.536116+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.614883+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.718388+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.794945+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:00:59.924565+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:07.352403+00:00",
+        "action": "AI Receptionist: Yes, we",
+        "details": {
+          "speaker": "ai",
+          "text": "Yes, we"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:07.379979+00:00",
+        "action": "AI Receptionist:  are!",
+        "details": {
+          "speaker": "ai",
+          "text": " are!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:07.438297+00:00",
+        "action": "AI Receptionist:  We're open",
+        "details": {
+          "speaker": "ai",
+          "text": " We're open"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:07.669300+00:00",
+        "action": "AI Receptionist:  every",
+        "details": {
+          "speaker": "ai",
+          "text": " every"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:07.792050+00:00",
+        "action": "AI Receptionist:  day",
+        "details": {
+          "speaker": "ai",
+          "text": " day"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:07.842671+00:00",
+        "action": "AI Receptionist:  from",
+        "details": {
+          "speaker": "ai",
+          "text": " from"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:07.935411+00:00",
+        "action": "AI Receptionist:  9",
+        "details": {
+          "speaker": "ai",
+          "text": " 9"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:08.032522+00:00",
+        "action": "AI Receptionist:  AM",
+        "details": {
+          "speaker": "ai",
+          "text": " AM"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:08.141186+00:00",
+        "action": "AI Receptionist:  to 7",
+        "details": {
+          "speaker": "ai",
+          "text": " to 7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:08.237265+00:00",
+        "action": "AI Receptionist:  PM.",
+        "details": {
+          "speaker": "ai",
+          "text": " PM."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:08.367127+00:00",
+        "action": "AI Receptionist:  Would you",
+        "details": {
+          "speaker": "ai",
+          "text": " Would you"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:08.462275+00:00",
+        "action": "AI Receptionist:  like",
+        "details": {
+          "speaker": "ai",
+          "text": " like"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:08.590479+00:00",
+        "action": "AI Receptionist:  to schedule",
+        "details": {
+          "speaker": "ai",
+          "text": " to schedule"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:08.706740+00:00",
+        "action": "AI Receptionist:  an appointment?",
+        "details": {
+          "speaker": "ai",
+          "text": " an appointment?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:20.958720+00:00",
+        "action": "AI Receptionist: \u0d85\u0db4\u0dda \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d85\u0db4\u0dda \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:21.191782+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:21.278403+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:21.417959+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:21.491153+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd0\u0da9",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd0\u0da9"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:21.544017+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0ddc\u0da9\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0ddc\u0da9\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:21.710360+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0dcf!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0dcf!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:21.814636+00:00",
+        "action": "AI Receptionist:  \u0db8\u0dd0\u0db1\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca\u0dc3\u0dca,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0dd0\u0db1\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca\u0dc3\u0dca,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:22.089628+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd1\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca\u0dc3\u0dca,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd1\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca\u0dc3\u0dca,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:22.291443+00:00",
+        "action": "AI Receptionist:  \u0d87\u0d9a\u0dca\u200d\u0dbb\u0dd2\u0dbd\u0dd2\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d87\u0d9a\u0dca\u200d\u0dbb\u0dd2\u0dbd\u0dd2\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:22.508834+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:22.634837+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dda\u0dbd\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dda\u0dbd\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:22.956612+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a\u0dca\u0dc3\u0dca\u0da7\u0dd9\u0db1\u0dca\u0dc2\u0db1\u0dca\u0dc3\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a\u0dca\u0dc3\u0dca\u0da7\u0dd9\u0db1\u0dca\u0dc2\u0db1\u0dca\u0dc3\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.002390+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0d9c\u0dda\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0d9c\u0dda\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.086116+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dda\u0dbd\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dda\u0dbd\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.246365+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dda\u0db1\u0dca\u0da7\u0dd2\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dda\u0db1\u0dca\u0da7\u0dd2\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.316877+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0d9c\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0d9c\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.651638+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dda\u0dc0\u0dbd\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dda\u0dc0\u0dbd\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.652644+00:00",
+        "action": "AI Receptionist:  \u0daf \u0d87\u0dad\u0dd4\u0dc5\u0dd4\u0dc0.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf \u0d87\u0dad\u0dd4\u0dc5\u0dd4\u0dc0."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.879911+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.881128+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.882337+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.887096+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:23.985541+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:24.144528+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd0\u0db8\u0dad\u0dd2?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd0\u0db8\u0dad\u0dd2?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:36.535407+00:00",
+        "action": "AI Receptionist: \u0d87\u0dad\u0dca\u0dad\u0da7\u0db8 \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d87\u0dad\u0dca\u0dad\u0da7\u0db8 \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:36.671284+00:00",
+        "action": "AI Receptionist:  \u0dc5\u0d9f",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc5\u0d9f"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:36.707358+00:00",
+        "action": "AI Receptionist:  \u0d92 \u0dad\u0ddc\u0dbb\u0dad\u0dd4\u0dbb\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92 \u0dad\u0ddc\u0dbb\u0dad\u0dd4\u0dbb\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:36.867599+00:00",
+        "action": "AI Receptionist:  \u0db1\u0db8\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0db8\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:36.906363+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd1.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd1."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:36.993238+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dd0\u0db6\u0dd0\u0dba\u0dd2,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dd0\u0db6\u0dd0\u0dba\u0dd2,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.238364+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.342986+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.409010+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.517701+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.614492+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.701797+00:00",
+        "action": "AI Receptionist:  \u0d95\u0db1\u0dd1\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d95\u0db1\u0dd1\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.763707+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd9\u0dba\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd9\u0dba\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.876666+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:37.927220+00:00",
+        "action": "AI Receptionist:  \u0db8\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:38.020718+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:38.166944+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:38.275415+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1 \u0db8\u0ddc\u0db1\u0dc0\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1 \u0db8\u0ddc\u0db1\u0dc0\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:38.411842+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dbb\u0dd2 \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dbb\u0dd2 \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:38.595547+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.151261+00:00",
+        "action": "AI Receptionist: \u0db8\u0db8 \u0dc4\u0dd2\u0dad\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0db8\u0db8 \u0dc4\u0dd2\u0dad\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.395645+00:00",
+        "action": "AI Receptionist:  \u0db8\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.477881+00:00",
+        "action": "AI Receptionist:  \u0d92\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.542493+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.648071+00:00",
+        "action": "AI Receptionist:  \u0db6\u0dd0\u0dbb\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db6\u0dd0\u0dbb\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.715044+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dba\u0dd2.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dba\u0dd2."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.793161+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:52.973934+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.037453+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.182778+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.228285+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.322307+00:00",
+        "action": "AI Receptionist:  \u0dad\u0ddc\u0dbb\u0dad\u0dd4\u0dbb\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0ddc\u0dbb\u0dad\u0dd4\u0dbb\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.461791+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.577577+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd0\u0db8\u0dad\u0dd2\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd0\u0db8\u0dad\u0dd2\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.720593+00:00",
+        "action": "AI Receptionist:  \u0d91\u0dc4\u0dd9\u0db8\u0dad\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0dc4\u0dd9\u0db8\u0dad\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.859310+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd0\u0dad\u0dca\u0db1\u0db8\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd0\u0dad\u0dca\u0db1\u0db8\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.941149+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:53.990860+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:54.065798+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0db1\u0dc0\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0db1\u0dc0\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:54.189619+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dbb\u0dd2 \u0d95\u0db1\u0dda\u0daf?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dbb\u0dd2 \u0d95\u0db1\u0dda\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T10:01:58.271088+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 61
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-d3b0d5c9",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T09:57:07.349223+00:00",
+    "ended_at": "2026-09-17T09:58:05.538090+00:00",
+    "duration_seconds": 58,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:57:07.349223+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:57:08.883099+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:09.318684+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:09.422339+00:00",
+        "action": "AI Receptionist:  & Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " & Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:09.538735+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:09.708887+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:09.808834+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:09.968071+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:10.055748+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:10.155137+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:10.261292+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:10.351066+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:17.986343+00:00",
+        "action": "AI Receptionist: \u0d94\u0dc0\u0dca, \u0d85\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d94\u0dc0\u0dca, \u0d85\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.092288+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.195302+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.240330+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.273236+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd2\u0dc0\u0dd8\u0dad\u0dba\u0dd2.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd2\u0dc0\u0dd8\u0dad\u0dba\u0dd2."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.519386+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.630333+00:00",
+        "action": "AI Receptionist:  9",
+        "details": {
+          "speaker": "ai",
+          "text": " 9"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.735095+00:00",
+        "action": "AI Receptionist:  \u0d89\u0db3\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d89\u0db3\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.817269+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dc0\u0dc3",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dc0\u0dc3"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.879401+00:00",
+        "action": "AI Receptionist:  7",
+        "details": {
+          "speaker": "ai",
+          "text": " 7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:18.983393+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1\u0d9a\u0db8\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1\u0d9a\u0db8\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:19.050846+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:19.160350+00:00",
+        "action": "AI Receptionist:  \u0d87\u0dbb\u0dbd\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d87\u0dbb\u0dbd\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:19.233551+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dca\u0db1\u0dda."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:19.389107+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:19.545762+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dbd\u0dcf\u0dc0\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dbd\u0dcf\u0dc0\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:19.653973+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dbb\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:19.916581+00:00",
+        "action": "AI Receptionist:  \u0daf \u0d95\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf \u0d95\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:31.222529+00:00",
+        "action": "AI Receptionist: \u0d85\u0db4\u0dd2 \u0d9c\u0ddc\u0da9\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d85\u0db4\u0dd2 \u0d9c\u0ddc\u0da9\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:31.476796+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dda\u0dc0\u0dcf\u0dc0\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:31.602922+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0db6\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0db6\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:31.663690+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd9\u0db1\u0dc0\u0dcf!",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd9\u0db1\u0dc0\u0dcf!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:31.752191+00:00",
+        "action": "AI Receptionist:  \u0db8\u0dd0\u0db1\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0dd0\u0db1\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.075373+00:00",
+        "action": "AI Receptionist:  \u0d87\u0d9a\u0dca\u200d\u0dbb\u0dd2\u0dbd\u0dd2\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d87\u0d9a\u0dca\u200d\u0dbb\u0dd2\u0dbd\u0dd2\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.190153+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.277020+00:00",
+        "action": "AI Receptionist:  \u0da2\u0dd9\u0dbd\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0da2\u0dd9\u0dbd\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.414895+00:00",
+        "action": "AI Receptionist:  \u0db8\u0dd0\u0db1\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0dd0\u0db1\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.533997+00:00",
+        "action": "AI Receptionist:  \u0d92 \u0dc0\u0d9c\u0dda\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d92 \u0dc0\u0d9c\u0dda\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.692246+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.777702+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd0\u0db4\u0dd3\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd0\u0db4\u0dd3\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:32.907652+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dcf \u0dc4\u0dd0\u0da9",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dcf \u0dc4\u0dd0\u0da9"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:33.061226+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1\u0dca\u0dc0\u0dd3\u0db8,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1\u0dca\u0dc0\u0dd3\u0db8,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:33.199054+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:33.316122+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd2\u0d9c\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd2\u0d9c\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:33.405921+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dbb\u0dd3\u0db8,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dbb\u0dd3\u0db8,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:33.573901+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:33.687857+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0db1\u0dca\u0dad\u0dcf\u0dbb\u0dd4 \u0d9a\u0dd2\u0dbb\u0dd3\u0db8,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0db1\u0dca\u0dad\u0dcf\u0dbb\u0dd4 \u0d9a\u0dd2\u0dbb\u0dd3\u0db8,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.002078+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd2\u0dba\u0db4\u0ddc\u0dad\u0dd4"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.087952+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0d9a\u0dc3\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0d9a\u0dc3\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.179376+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dbb\u0dd3\u0db8,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dbb\u0dd3\u0db8,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.457694+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.534303+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0d9c\u0dda\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0d9c\u0dda\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.683995+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0ddd\u0da7\u0dbb\u0dca\u0dbd\u0dc3\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0ddd\u0da7\u0dbb\u0dca\u0dbd\u0dc3\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.767110+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.864312+00:00",
+        "action": "AI Receptionist: \u0dad\u0dca \u0d85\u0db4\u0dd2\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0dad\u0dca \u0d85\u0db4\u0dd2\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:34.960929+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0dcf.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0dcf."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:35.101472+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:35.239444+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0d9a\u0d9a\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0d9a\u0d9a\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:35.313644+00:00",
+        "action": "AI Receptionist:  \u0d9c\u0dd0\u0db1\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9c\u0dd0\u0db1\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:35.422957+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dbb\u0dd3\u0d9a\u0dca\u0dc2\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dbb\u0dd3\u0d9a\u0dca\u0dc2\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:35.495642+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:35.604978+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd0\u0db8\u0dad\u0dd2?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd0\u0db8\u0dad\u0dd2?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:55.494390+00:00",
+        "action": "AI Receptionist: \u0d85\u0db4\u0dd2 \u0d89\u0db1\u0dca\u0db1\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d85\u0db4\u0dd2 \u0d89\u0db1\u0dca\u0db1\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:55.703000+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:55.875907+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dbb\u0dd2\u0dba\u0da7\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dbb\u0dd2\u0dba\u0da7\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:56.061515+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dd2\u0dc0\u0dca\u0dc0\u0ddc\u0dad\u0dca,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dd2\u0dc0\u0dca\u0dc0\u0ddc\u0dad\u0dca,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:56.292650+00:00",
+        "action": "AI Receptionist:  \u0d85\u0d82\u0d9a",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0d82\u0d9a"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:56.414104+00:00",
+        "action": "AI Receptionist:  309,",
+        "details": {
+          "speaker": "ai",
+          "text": " 309,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:56.604988+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddd\u0da7\u0dca\u0da7\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddd\u0da7\u0dca\u0da7\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:56.717006+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dcf\u0dbb,",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dcf\u0dbb,"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:56.847984+00:00",
+        "action": "AI Receptionist:  \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db1\u0dd4\u0d9c\u0dda\u0d9c\u0ddc\u0da9."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:56.991906+00:00",
+        "action": "AI Receptionist:  \u0d94\u0dba\u0dcf\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0dba\u0dcf\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.162945+00:00",
+        "action": "AI Receptionist:  \u0dbd\u0dda\u0dc3\u0dd2\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dbd\u0dda\u0dc3\u0dd2\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.224121+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.360814+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd0\u0db1 \u0dc3\u0ddc\u0dba\u0dcf\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd0\u0db1 \u0dc3\u0ddc\u0dba\u0dcf\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.571019+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd4\u0dc5\u0dd4\u0dc0\u0db1\u0dca."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.704128+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dc0",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dc0"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.771816+00:00",
+        "action": "AI Receptionist:  \u0db8\u0ddc\u0db1\u0dc0\u0dcf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0ddc\u0db1\u0dc0\u0dcf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.835370+00:00",
+        "action": "AI Receptionist:  \u0dc4\u0dbb\u0dd2",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc4\u0dbb\u0dd2"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:57.946185+00:00",
+        "action": "AI Receptionist:  \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0daf\u0dd0\u0db1\u0d9c\u0db1\u0dca\u0db1"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:58.053530+00:00",
+        "action": "AI Receptionist:  \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:58.123668+00:00",
+        "action": "AI Receptionist:  \u0d85\u0db4\u0dda",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d85\u0db4\u0dda"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:58.223881+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dd0\u0dbd\u0ddd\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:57:58.394676+00:00",
+        "action": "AI Receptionist:  \u0d91\u0d9a \u0d9c\u0dd0\u0db1?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d91\u0d9a \u0d9c\u0dd0\u0db1?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:58:05.538090+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 58
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-b7ded489",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T09:56:02.436687+00:00",
+    "ended_at": "2026-09-17T09:56:26.435269+00:00",
+    "duration_seconds": 23,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:56:02.436687+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:56:03.940524+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:04.426303+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:04.448353+00:00",
+        "action": "AI Receptionist:  &",
+        "details": {
+          "speaker": "ai",
+          "text": " &"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:04.524276+00:00",
+        "action": "AI Receptionist:  Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:04.583826+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:04.747140+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:04.959427+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:05.041815+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:05.122294+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:05.227938+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:05.303757+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:05.456956+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:56:26.435269+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 23
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-4942c1ef",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T09:41:54.396642+00:00",
+    "ended_at": "2026-09-17T09:42:20.023713+00:00",
+    "duration_seconds": 25,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:41:54.396642+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:41:55.968330+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:56.322540+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:56.419726+00:00",
+        "action": "AI Receptionist:  & Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " & Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:56.507084+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:56.697845+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:56.885311+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:57.012882+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:57.075092+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:57.174406+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:57.251670+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:57.415742+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.190962+00:00",
+        "action": "AI Receptionist: Hello there!",
+        "details": {
+          "speaker": "ai",
+          "text": "Hello there!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.224269+00:00",
+        "action": "AI Receptionist:  Welcome",
+        "details": {
+          "speaker": "ai",
+          "text": " Welcome"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.233026+00:00",
+        "action": "AI Receptionist:  to Nail",
+        "details": {
+          "speaker": "ai",
+          "text": " to Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.283594+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.331242+00:00",
+        "action": "AI Receptionist:  &",
+        "details": {
+          "speaker": "ai",
+          "text": " &"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.339846+00:00",
+        "action": "AI Receptionist:  Lounge.",
+        "details": {
+          "speaker": "ai",
+          "text": " Lounge."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.385955+00:00",
+        "action": "AI Receptionist:  What can",
+        "details": {
+          "speaker": "ai",
+          "text": " What can"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.392047+00:00",
+        "action": "AI Receptionist:  I help",
+        "details": {
+          "speaker": "ai",
+          "text": " I help"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.425344+00:00",
+        "action": "AI Receptionist:  you with",
+        "details": {
+          "speaker": "ai",
+          "text": " you with"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:12.436415+00:00",
+        "action": "AI Receptionist:  today?",
+        "details": {
+          "speaker": "ai",
+          "text": " today?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:42:20.023713+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 25
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-be90f2bd",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T09:41:25.321581+00:00",
+    "ended_at": "2026-09-17T09:41:36.089819+00:00",
+    "duration_seconds": 10,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:41:25.321581+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:41:26.782179+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:27.285989+00:00",
+        "action": "AI Receptionist:  Spa",
+        "details": {
+          "speaker": "ai",
+          "text": " Spa"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:27.338480+00:00",
+        "action": "AI Receptionist:  & Lounge",
+        "details": {
+          "speaker": "ai",
+          "text": " & Lounge"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:27.450747+00:00",
+        "action": "AI Receptionist:  \u0dc0\u0dd9\u0dad",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc0\u0dd9\u0dad"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:27.614153+00:00",
+        "action": "AI Receptionist:  \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:27.706715+00:00",
+        "action": "AI Receptionist:  \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4.",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:27.948916+00:00",
+        "action": "AI Receptionist:  \u0db8\u0db8",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0db8\u0db8"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:28.013851+00:00",
+        "action": "AI Receptionist:  \u0d94\u0db6\u0da7",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d94\u0db6\u0da7"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:28.100712+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:28.185760+00:00",
+        "action": "AI Receptionist:  \u0d8b\u0daf\u0dc0\u0dca",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d8b\u0daf\u0dc0\u0dca"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:28.275791+00:00",
+        "action": "AI Receptionist:  \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speaker": "ai",
+          "text": " \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:36.089819+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 10
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "sim-aa65150b",
+    "caller_number": "Browser Simulation",
+    "started_at": "2026-09-17T09:41:07.192683+00:00",
+    "ended_at": "2026-09-17T09:41:09.987320+00:00",
+    "duration_seconds": 2,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:41:07.192683+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:41:09.796394+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail",
+        "details": {
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:41:09.987320+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 2
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-150130",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T09:31:30.671451+00:00",
+    "ended_at": "2026-09-17T09:31:34.360266+00:00",
+    "duration_seconds": 3,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:31:30.671451+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:31:31.673303+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speech": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda? Ayubowan! Welcome to Nail Spa & Lounge. How can I help you today?",
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:31:34.360266+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 3
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-145716",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T09:27:16.137855+00:00",
+    "ended_at": "2026-09-17T09:27:36.644636+00:00",
+    "duration_seconds": 20,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:27:16.137855+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:27:17.139718+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speech": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda? Ayubowan! Welcome to Nail Spa & Lounge. How can I help you today?",
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:27:21.640905+00:00",
+        "action": "Caller (Jane Doe): Pedicure price \u0d91\u0d9a \u0d9a\u0dd3\u0dba\u0daf? \u0d85\u0daf 11:00 AM slot \u0d91\u0d9a\u0d9a\u0dca \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?",
+        "details": {
+          "speaker": "caller",
+          "text": "Pedicure price \u0d91\u0d9a \u0d9a\u0dd3\u0dba\u0daf? \u0d85\u0daf 11:00 AM slot \u0d91\u0d9a\u0d9a\u0dca \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:27:25.142033+00:00",
+        "action": "AI Receptionist: \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc3\u0db3\u0dc4\u0dcf \u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca 3,500\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dc0\u0dcf (LKR 3,500). \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 slot \u0d91\u0d9a reserve \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0daf?",
+        "details": {
+          "speech": "\u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca 3,500\u0dba\u0dd2. A pedicure is LKR 3,500. I have an opening at 11:00 AM today. Shall I reserve it for you?",
+          "speaker": "ai",
+          "text": "AI Receptionist: \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc3\u0db3\u0dc4\u0dcf \u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca 3,500\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dc0\u0dcf (LKR 3,500). \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 slot \u0d91\u0d9a reserve \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:27:29.643208+00:00",
+        "action": "Caller (Jane Doe): \u0d94\u0dc0\u0dca, 11:00\u0da7 \u0db8\u0d9c\u0dda \u0db1\u0db8\u0da7 \u0daf\u0dcf\u0db1\u0dca\u0db1. Jane Doe.",
+        "details": {
+          "speaker": "caller",
+          "text": "\u0d94\u0dc0\u0dca, 11:00\u0da7 \u0db8\u0d9c\u0dda \u0db1\u0db8\u0da7 \u0daf\u0dcf\u0db1\u0dca\u0db1. Jane Doe."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:27:33.144386+00:00",
+        "action": "AI Receptionist: \u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dca\u0dad\u0dd6\u0dad\u0dd2\u0dba\u0dd2 Jane! \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dc5\u0dcf. \u0d94\u0db6\u0da7 \u0dc3\u0dd4\u0db6 \u0daf\u0dc0\u0dc3\u0d9a\u0dca!",
+        "details": {
+          "speech": "Your pedicure appointment is confirmed for today at 11:00 AM. Thank you for choosing Nail Spa & Lounge!",
+          "speaker": "ai",
+          "text": "AI Receptionist: \u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dca\u0dad\u0dd6\u0dad\u0dd2\u0dba\u0dd2 Jane! \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dc5\u0dcf. \u0d94\u0db6\u0da7 \u0dc3\u0dd4\u0db6 \u0daf\u0dc0\u0dc3\u0d9a\u0dca!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:27:36.644636+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 20
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-145551",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T09:25:51.324835+00:00",
+    "ended_at": "2026-09-17T09:26:11.831099+00:00",
+    "duration_seconds": 20,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:25:51.324835+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:25:52.326283+00:00",
+        "action": "AI Receptionist: \u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?",
+        "details": {
+          "speech": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda? Ayubowan! Welcome to Nail Spa & Lounge. How can I help you today?",
+          "speaker": "ai",
+          "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca! Nail Spa & Lounge \u0dc0\u0dd9\u0dad \u0dc3\u0dcf\u0daf\u0dbb\u0dba\u0dd9\u0db1\u0dca \u0db4\u0dd2\u0dc5\u0dd2\u0d9c\u0db1\u0dd2\u0db8\u0dd4. \u0db8\u0db8 \u0d94\u0db6\u0da7 \u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf \u0d8b\u0daf\u0dc0\u0dca \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0dda?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:25:56.827247+00:00",
+        "action": "Caller (Jane Doe): Pedicure price \u0d91\u0d9a \u0d9a\u0dd3\u0dba\u0daf? \u0d85\u0daf 11:00 AM slot \u0d91\u0d9a\u0d9a\u0dca \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?",
+        "details": {
+          "speaker": "caller",
+          "text": "Pedicure price \u0d91\u0d9a \u0d9a\u0dd3\u0dba\u0daf? \u0d85\u0daf 11:00 AM slot \u0d91\u0d9a\u0d9a\u0dca \u0dad\u0dd2\u0dba\u0dd9\u0db1\u0dc0\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:26:00.328227+00:00",
+        "action": "AI Receptionist: \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc3\u0db3\u0dc4\u0dcf \u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca 3,500\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dc0\u0dcf (LKR 3,500). \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 slot \u0d91\u0d9a reserve \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0daf?",
+        "details": {
+          "speech": "\u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca 3,500\u0dba\u0dd2. A pedicure is LKR 3,500. I have an opening at 11:00 AM today. Shall I reserve it for you?",
+          "speaker": "ai",
+          "text": "AI Receptionist: \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc3\u0db3\u0dc4\u0dcf \u0dbb\u0dd4\u0db4\u0dd2\u0dba\u0dbd\u0dca 3,500\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dc0\u0dcf (LKR 3,500). \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 slot \u0d91\u0d9a reserve \u0d9a\u0dbb\u0db1\u0dca\u0db1\u0daf?"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:26:04.829419+00:00",
+        "action": "Caller (Jane Doe): \u0d94\u0dc0\u0dca, 11:00\u0da7 \u0db8\u0d9c\u0dda \u0db1\u0db8\u0da7 \u0daf\u0dcf\u0db1\u0dca\u0db1. Jane Doe.",
+        "details": {
+          "speaker": "caller",
+          "text": "\u0d94\u0dc0\u0dca, 11:00\u0da7 \u0db8\u0d9c\u0dda \u0db1\u0db8\u0da7 \u0daf\u0dcf\u0db1\u0dca\u0db1. Jane Doe."
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:26:08.329923+00:00",
+        "action": "AI Receptionist: \u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dca\u0dad\u0dd6\u0dad\u0dd2\u0dba\u0dd2 Jane! \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dc5\u0dcf. \u0d94\u0db6\u0da7 \u0dc3\u0dd4\u0db6 \u0daf\u0dc0\u0dc3\u0d9a\u0dca!",
+        "details": {
+          "speech": "Your pedicure appointment is confirmed for today at 11:00 AM. Thank you for choosing Nail Spa & Lounge!",
+          "speaker": "ai",
+          "text": "AI Receptionist: \u0db6\u0ddc\u0dc4\u0ddc\u0db8 \u0dc3\u0dca\u0dad\u0dd6\u0dad\u0dd2\u0dba\u0dd2 Jane! \u0d85\u0daf \u0d8b\u0daf\u0dda 11:00\u0da7 \u0db4\u0dd9\u0da9\u0dd2\u0d9a\u0dd2\u0dba\u0dd4\u0dbb\u0dca \u0d91\u0d9a\u0d9a\u0dca \u0dc0\u0dd9\u0db1\u0dca \u0d9a\u0dc5\u0dcf. \u0d94\u0db6\u0da7 \u0dc3\u0dd4\u0db6 \u0daf\u0dc0\u0dc3\u0d9a\u0dca!"
+        }
+      },
+      {
+        "timestamp": "2026-09-17T09:26:11.831099+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 20
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-145121",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T09:21:21.847589+00:00",
+    "ended_at": "2026-09-17T09:21:30.851131+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:21:21.847589+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:21:23.849410+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:21:26.850087+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:21:30.851131+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-145107",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T09:21:07.864896+00:00",
+    "ended_at": "2026-09-17T09:21:16.867895+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T09:21:07.864896+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:21:09.866347+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:21:12.866685+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T09:21:16.867895+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-140101",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T08:31:01.361120+00:00",
+    "ended_at": "2026-09-17T08:31:10.364645+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T08:31:01.361120+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:31:03.362469+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:31:06.363477+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:31:10.364645+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-135749",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T08:27:49.222248+00:00",
+    "ended_at": "2026-09-17T08:27:58.226867+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T08:27:49.222248+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:27:51.224534+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:27:54.225697+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:27:58.226867+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-135703",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T08:27:03.585117+00:00",
+    "ended_at": "2026-09-17T08:27:12.589121+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T08:27:03.585117+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:27:05.586854+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:27:08.587870+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:27:12.589121+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-135548",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T08:25:48.532962+00:00",
+    "ended_at": "2026-09-17T08:25:57.536306+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T08:25:48.532962+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:25:50.534578+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:25:53.535836+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:25:57.536306+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-135539",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T08:25:39.929510+00:00",
+    "ended_at": "2026-09-17T08:25:48.933350+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T08:25:39.929510+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:25:41.930825+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:25:44.932061+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:25:48.933350+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  },
+  {
+    "call_id": "demo-133113",
+    "caller_number": "+94 77 123 4567",
+    "started_at": "2026-09-17T08:01:13.094957+00:00",
+    "ended_at": "2026-09-17T08:01:22.098308+00:00",
+    "duration_seconds": 9,
+    "status": "completed",
+    "actions": [
+      {
+        "timestamp": "2026-09-17T08:01:13.094957+00:00",
+        "action": "Call Connected",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:01:15.095897+00:00",
+        "action": "Caller asked about Pedicure availability",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:01:18.097084+00:00",
+        "action": "Informed caller about 11:00 AM slot",
+        "details": {}
+      },
+      {
+        "timestamp": "2026-09-17T08:01:22.098308+00:00",
+        "action": "Call Ended (completed)",
+        "details": {
+          "duration_seconds": 9
+        }
+      }
+    ]
+  }
+]
