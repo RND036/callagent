@@ -8,8 +8,8 @@ from dashboard.server import create_app
 from data.call_manager import CallManager
 from data.json_store import JsonBookingStore
 from data.settings_store import SettingsStore
+from pbx_bridge.audiosocket_server import serve
 from pbx_bridge.mcp_client import McpClient
-from pbx_bridge.ws_server import serve
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -50,7 +50,7 @@ async def main() -> None:
         call_manager,
         settings_store,
     )
-    logger.info("nailagent listening on ws://%s:%d", config.WS_HOST, config.WS_PORT)
+    logger.info("nailagent AudioSocket bridge listening on %s:%d", config.WS_HOST, config.WS_PORT)
 
     dash_task = None
     if config.DASHBOARD_ENABLED:

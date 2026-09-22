@@ -1,6 +1,6 @@
 """Client for the PBX's MCP server, used for call transfer and hangup.
 
-Transfer/hangup are NOT sent over the mod_audio_stream WebSocket (which has
+Transfer/hangup are NOT sent over the AudioSocket TCP connection (which has
 no transfer mechanism of its own) -- they go through a separate MCP server
 (JSON-RPC 2.0 over HTTP, "tools/list" + "tools/call"), authenticated via
 MCP_SERVER_URL + MCP_API_KEY with call_id/account_id carried as headers.

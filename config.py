@@ -12,7 +12,7 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-live-preview")
 
 WS_HOST = os.environ.get("NAILAGENT_WS_HOST", "127.0.0.1")
-WS_PORT = int(os.environ.get("NAILAGENT_WS_PORT", "8766"))
+WS_PORT = int(os.environ.get("NAILAGENT_WS_PORT", "8090"))
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = Path(os.environ.get("NAILAGENT_DATA_DIR", BASE_DIR / "data"))
@@ -41,18 +41,20 @@ SPA_HOURS = "Daily from 9:00 AM to 7:00 PM"
 GEMINI_INPUT_SAMPLE_RATE_HZ = 16000
 GEMINI_OUTPUT_SAMPLE_RATE_HZ = 24000
 
-# FreeSWITCH mod_audio_stream PCM16 sample rate -- must match the
-# <sampling-rate> arg in the FusionPBX dialplan's uuid_audio_stream call and
-# the metadata string's sample_rate= field.
-FS_STREAM_SAMPLE_RATE_HZ = int(os.environ.get("NAILAGENT_FS_SAMPLE_RATE_HZ", "16000"))
+# Asterisk AudioSocket PCM16 sample rate. AudioSocket's packet type byte
+# selects the rate (0x10=8kHz ... 0x18=192kHz), but a PSTN/SIP trunk (the
+# UCM6302A here) realistically negotiates 8kHz codecs, so this is real audio
+# resampling up to GEMINI_INPUT_SAMPLE_RATE_HZ, not a passthrough. Confirm
+# against a real call if this ever changes.
+AUDIOSOCKET_SAMPLE_RATE_HZ = int(os.environ.get("NAILAGENT_AUDIOSOCKET_SAMPLE_RATE_HZ", "8000"))
 
 LIVE_SESSION_WARN_AFTER_SECONDS = 13 * 60  # ~2 min before the ~15 min Live API cap
 
-# FreeSWITCH mod_audio_stream WebSocket protocol.
+# Asterisk AudioSocket protocol (raw TCP, TLV-framed) -- see pbx_bridge/audiosocket_protocol.py.
 START_TIMEOUT_SECONDS = float(os.environ.get("NAILAGENT_START_TIMEOUT_SECONDS", "15"))
 
-# MCP server for call transfer/hangup (separate from the mod_audio_stream
-# WebSocket, which has no transfer mechanism of its own). Leave
-# MCP_SERVER_URL unset to disable transfer/hangup.
+# MCP server for call transfer (AudioSocket has no transfer primitive of its
+# own; hangup can go over the socket directly, see build_hangup_packet).
+# Leave MCP_SERVER_URL unset to disable transfer.
 MCP_SERVER_URL = os.environ.get("MCP_SERVER_URL", "")
 MCP_API_KEY = os.environ.get("MCP_API_KEY", "")

@@ -35,23 +35,27 @@ def test_resample_state_continuity_matches_single_call() -> None:
     assert chunked == whole
 
 
-def test_inbound_transcoder_is_passthrough_when_rates_match() -> None:
-    assert config.FS_STREAM_SAMPLE_RATE_HZ == config.GEMINI_INPUT_SAMPLE_RATE_HZ
+def test_inbound_transcoder_upsamples_8k_to_16k_by_default() -> None:
+    assert config.AUDIOSOCKET_SAMPLE_RATE_HZ == 8000
+    assert config.GEMINI_INPUT_SAMPLE_RATE_HZ == 16000
 
-    pcm_in = sine_wave_pcm16(config.FS_STREAM_SAMPLE_RATE_HZ, freq=440, seconds=0.1)
+    pcm_in = sine_wave_pcm16(config.AUDIOSOCKET_SAMPLE_RATE_HZ, freq=440, seconds=0.1)
     transcoder = InboundTranscoder()
     pcm_out = transcoder.transcode(pcm_in)
 
-    assert pcm_out == pcm_in
+    expected_samples = (len(pcm_in) // 2) * 2  # 8k -> 16k doubles the sample count
+    assert abs(len(pcm_out) // 2 - expected_samples) <= 1
 
 
-def test_outbound_transcoder_produces_pcm_at_fs_stream_rate_from_24k_pcm() -> None:
+def test_outbound_transcoder_produces_pcm_at_audiosocket_rate_from_24k_pcm() -> None:
     pcm_24k = sine_wave_pcm16(config.GEMINI_OUTPUT_SAMPLE_RATE_HZ, freq=440, seconds=0.1)
 
     transcoder = OutboundTranscoder()
     pcm_out = transcoder.transcode(pcm_24k)
 
-    expected_samples = (len(pcm_24k) // 2) * config.FS_STREAM_SAMPLE_RATE_HZ // config.GEMINI_OUTPUT_SAMPLE_RATE_HZ
+    expected_samples = (
+        (len(pcm_24k) // 2) * config.AUDIOSOCKET_SAMPLE_RATE_HZ // config.GEMINI_OUTPUT_SAMPLE_RATE_HZ
+    )
     assert abs(len(pcm_out) // 2 - expected_samples) <= 2
 
 

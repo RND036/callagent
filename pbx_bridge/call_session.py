@@ -1,12 +1,11 @@
-"""Owns one phone call end-to-end: bridges FreeSWITCH's mod_audio_stream
-WebSocket (one metadata text frame, then binary PCM16 audio frames) to a
-Gemini Live session, running both directions concurrently until the call
-ends or either side drops.
+"""Owns one phone call end-to-end: bridges Asterisk's AudioSocket TCP
+connection (TLV-framed: a UUID packet, then PCM16 audio/DTMF/hangup packets)
+to a Gemini Live session, running both directions concurrently until the
+call ends or either side drops.
 """
 from __future__ import annotations
 
 import asyncio
-import json
 import logging
 import uuid
 from typing import Any
@@ -17,14 +16,14 @@ from audio.codec import InboundTranscoder, OutboundTranscoder
 from data.call_manager import CallManager
 from data.store import BookingStore
 from gemini_session.session import GeminiLiveSession
-from pbx_bridge.audio_stream_protocol import (
+from pbx_bridge.audiosocket_protocol import (
+    AudioSocketAdapter,
     ControlProtocolError,
-    FsAudioStreamAdapter,
+    DtmfEvent,
     HangupEvent,
     StartEvent,
     UnknownEvent,
 )
-from pbx_bridge.inband_dtmf import InbandDtmfDetector
 from pbx_bridge.mcp_client import McpClient
 from tools.context import CallContext
 
@@ -37,13 +36,13 @@ _SAMPLE_WIDTH_BYTES = 2  # 16-bit PCM
 
 
 class PacedMediaSender:
-    """Sends outbound audio to FreeSWITCH as 20ms PCM16 media frames, paced
+    """Sends outbound audio to Asterisk as 20ms PCM16 media packets, paced
     against a monotonic deadline (not sleep-after-send, which lets drift
     compound). There is no flush/clear event in the protocol -- barge_in()
     can only stop *further* queued chunks from going out; audio already sent
-    will still play out on the FreeSWITCH side."""
+    will still play out on the Asterisk side."""
 
-    def __init__(self, ws, control: FsAudioStreamAdapter, sample_rate: int, call_uuid: str | None = None) -> None:
+    def __init__(self, ws, control: AudioSocketAdapter, sample_rate: int, call_uuid: str | None = None) -> None:
         self._ws = ws
         self._control = control
         self._sample_rate = sample_rate
@@ -92,9 +91,7 @@ class PacedMediaSender:
             next_deadline = max(next_deadline + _OUTBOUND_FRAME_SECONDS, now)
             await asyncio.sleep(next_deadline - now)
             try:
-                await self._ws.send(
-                    json.dumps(self._control.build_stream_audio_frame(frame, self._sample_rate))
-                )
+                await self._ws.send_packet(*self._control.build_audio_packet(frame, self._sample_rate))
             except Exception:  # noqa: BLE001 - socket may already be closed; let the reader loop notice
                 return
 
@@ -117,12 +114,12 @@ class CallSession:
         self._mcp_client = mcp_client
         self._call_manager = call_manager
         self._settings_store = settings_store
-        self._control = FsAudioStreamAdapter()
+        self._control = AudioSocketAdapter()
 
     async def run(self) -> None:
         start = await self._wait_for_start()
         if start is None:
-            return  # FreeSWITCH socket closed before we ever got a usable start event
+            return  # Asterisk socket closed before we ever got a usable start event
 
         if self._call_manager:
             await self._call_manager.call_started(start.call_sid, start.caller_id_number)
@@ -137,15 +134,14 @@ class CallSession:
             call_manager=self._call_manager,
             settings_store=self._settings_store,
         )
-        sender = PacedMediaSender(self._pbx_ws, self._control, config.FS_STREAM_SAMPLE_RATE_HZ, start.call_sid)
+        sender = PacedMediaSender(self._pbx_ws, self._control, config.AUDIOSOCKET_SAMPLE_RATE_HZ, start.call_sid)
         try:
             async with GeminiLiveSession(self._gemini_client, self._model, ctx) as session:
                 inbound = InboundTranscoder()
                 outbound = OutboundTranscoder()
-                inband_dtmf = InbandDtmfDetector()
 
                 pbx_to_gemini = asyncio.create_task(
-                    self._pump_pbx_to_gemini(session, ctx, inbound, inband_dtmf, sender),
+                    self._pump_pbx_to_gemini(session, ctx, inbound, sender),
                     name="pbx-to-gemini",
                 )
                 gemini_to_pbx = asyncio.create_task(
@@ -185,25 +181,27 @@ class CallSession:
 
     async def _wait_for_start(self) -> StartEvent | None:
         try:
-            message = await asyncio.wait_for(self._pbx_ws.recv(), timeout=config.START_TIMEOUT_SECONDS)
+            packet = await asyncio.wait_for(self._pbx_ws.recv_packet(), timeout=config.START_TIMEOUT_SECONDS)
         except asyncio.TimeoutError:
-            logger.warning("No start metadata within %ss; proceeding with defaults", config.START_TIMEOUT_SECONDS)
+            logger.warning("No start UUID packet within %ss; proceeding with defaults", config.START_TIMEOUT_SECONDS)
             return self._default_start()
-        except Exception:  # noqa: BLE001 - socket closed before anything arrived
-            logger.info("FreeSWITCH socket closed before stream metadata arrived")
+
+        if packet is None:
+            logger.info("Asterisk socket closed before stream UUID arrived")
             return None
 
-        if isinstance(message, bytes):
-            logger.warning("Expected metadata text frame first, got binary audio; proceeding with defaults")
-            return self._default_start()
-
+        msg_type, payload = packet
         try:
-            event = self._control.parse_stream_metadata(message, expected_sample_rate=config.FS_STREAM_SAMPLE_RATE_HZ)
+            event = self._control.parse_packet(msg_type, payload)
         except ControlProtocolError:
-            logger.warning("Malformed stream metadata: %r", message)
+            logger.warning("Malformed start packet: type=%s payload=%r", msg_type, payload)
             return self._default_start()
 
-        logger.info("Call started: %s (from %s)", event.call_sid, event.caller_id_number)
+        if not isinstance(event, StartEvent):
+            logger.warning("Expected UUID packet first, got type=%s; proceeding with defaults", msg_type)
+            return self._default_start()
+
+        logger.info("Call started: %s", event.call_sid)
         return event
 
     def _default_start(self) -> StartEvent:
@@ -213,7 +211,7 @@ class CallSession:
             other_leg_call_id=None,
             account_id=None,
             caller_id_number=None,
-            sample_rate=config.FS_STREAM_SAMPLE_RATE_HZ,
+            sample_rate=config.AUDIOSOCKET_SAMPLE_RATE_HZ,
         )
 
     async def _pump_pbx_to_gemini(
@@ -221,33 +219,39 @@ class CallSession:
         session: GeminiLiveSession,
         ctx: CallContext,
         inbound: InboundTranscoder,
-        inband_dtmf: InbandDtmfDetector,
         sender: PacedMediaSender,
     ) -> None:
         frame_count = 0
-        async for message in self._pbx_ws:
-            if isinstance(message, bytes):
+        while True:
+            packet = await self._pbx_ws.recv_packet()
+            if packet is None:
+                return
+
+            msg_type, payload = packet
+            try:
+                event = self._control.parse_packet(
+                    msg_type, payload, expected_sample_rate=config.AUDIOSOCKET_SAMPLE_RATE_HZ
+                )
+            except ControlProtocolError:
+                logger.warning("Ignoring malformed packet: type=%s payload=%r", msg_type, payload)
+                continue
+
+            if isinstance(event, HangupEvent):
+                logger.info("Call ended by Asterisk (reason: %s)", event.reason)
+                return
+            elif isinstance(event, StartEvent):
+                # UUID packet, already consumed in _wait_for_start(); ignore if it repeats.
+                pass
+            elif isinstance(event, DtmfEvent):
+                await self._handle_dtmf(event.digit, session, sender)
+            elif isinstance(event, UnknownEvent):
+                logger.info("Unhandled Asterisk control packet: type=%s raw=%r", event.msg_type, event.raw)
+            else:  # MediaEvent
                 frame_count += 1
                 if frame_count % 150 == 0:
-                    logger.debug("Received %d audio frames from FreeSWITCH for call %s", frame_count, ctx.call_sid)
-                event = self._control.wrap_audio_frame(message)
+                    logger.debug("Received %d audio packets from Asterisk for call %s", frame_count, ctx.call_sid)
                 pcm16k = inbound.transcode(event.payload)
                 session.send_audio_chunk_nowait(pcm16k)
-
-                digit = inband_dtmf.feed_pcm16(event.payload)
-                if digit is not None:
-                    await self._handle_dtmf(digit, session, sender)
-            else:
-                try:
-                    event = self._control.parse_text_message(message)
-                except ControlProtocolError:
-                    logger.warning("Ignoring malformed control frame: %r", message)
-                    continue
-                if isinstance(event, HangupEvent):
-                    logger.info("Call ended by FreeSWITCH (reason: %s)", event.reason)
-                    return
-                elif isinstance(event, UnknownEvent):
-                    logger.info("Unhandled FreeSWITCH control message: %r", event.raw)
 
             if ctx.hangup_requested:
                 logger.info("Ending call: end_call tool invoked")
@@ -257,7 +261,7 @@ class CallSession:
         logger.info("DTMF digit: %s", digit)
         # Barge-in: the protocol has no flush/clear event, so the only lever
         # is to stop sending further queued chunks -- there's an unavoidable
-        # tail from FreeSWITCH's own playout buffer.
+        # tail from Asterisk's own playout buffer.
         sender.barge_in()
         await session.send_text(f"[caller pressed keypad digit: {digit}]")
 
@@ -274,8 +278,9 @@ class CallSession:
                 sender.flush()
 
     async def _send_transfer(self, target: str) -> None:
-        # mod_audio_stream has no WS-level transfer mechanism (uuid_transfer
-        # is a FreeSWITCH API call, not something a WS client can trigger);
-        # transfer/hangup goes solely through MCP (see mcp_client.py). This
-        # is a log-only fallback for when MCP transfer wasn't available.
-        logger.warning("No FreeSWITCH-side WS transfer path; relying on MCP for transfer (target=%s)", target)
+        # AudioSocket has no transfer primitive either (unlike hangup --
+        # build_hangup_packet -- there's no protocol-level equivalent of
+        # dialplan Dial()/transfer a connected socket client can trigger);
+        # transfer goes solely through MCP (see mcp_client.py). This is a
+        # log-only fallback for when MCP transfer wasn't available.
+        logger.warning("No AudioSocket-level transfer path; relying on MCP for transfer (target=%s)", target)
