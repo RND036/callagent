@@ -1,0 +1,137 @@
+# Sinhala: everything the agent says, and how it says numbers, times and dates, in Sinhala. A call speaks only this
+# language: the caller picked it in the language menu.
+#
+# Every language file has exactly the same keys. The app checks them at startup and refuses to start, naming the
+# file and the key, if one is missing or misspelt. Placeholders in {braces} are filled in by the app.
+# `phrases` are regular expressions (case-insensitive), matched against what was said, in every language.
+# `time` and `dates` are optional ("null" = the English form, "2:00 PM" and "Monday, 19 October").
+# Rules written in English are instructions to the model; lines in Sinhala are what it says.
+#
+# Have a native speaker review this file: the agent speaks the way it is told to here.
+# After editing, restart the service: the files are read at startup.
+
+code: si
+name: Sinhala
+native_name: සිංහල
+menu_digit: '1'
+transcription_codes: [si-LK, en-US]
+greeting: ආයුබෝවන්! {salon_name} වෙත ඔබව සාදරයෙන් පිළිගන්නවා. මම ඔබගේ AI Receptionist. ඔබට අද මොන වගේ උදව්වක්ද අවශ්‍ය?
+spoken_address: අංක තුන්සිය නවය, කෝට්ටේ පාර, නුගේගොඩ
+branches:
+  nugegoda: නුගේගොඩ
+  hokandara: හොකන්දර
+currency_word: රුපියල්
+mixing_rules: |2-
+     - Sinhala speakers often mix in English words or salon terms ('manicure',
+       'pedicure', 'booking', 'appointment', 'nail', 'gel', 'price', etc.) --
+       that is normal; understand it and reply entirely in Sinhala
+       (සිංහලෙන් පමණක් පිළිතුරු දෙන්න). You may use those same well-known English salon terms
+       inside your Sinhala sentences, as a local receptionist would.
+     - Even if the caller says a whole sentence in another language, understand
+       what they mean but still reply entirely in Sinhala.
+style_rules: |-
+  ### SPOKEN SINHALA GUIDELINES (MANDATORY):
+  Speak natural, polite, warm Sinhala as a courteous salon receptionist in Sri Lanka would on the phone -- not stiff textbook Sinhala, and not slangy either.
+
+  1. POLITE ADDRESS:
+     - Use the polite forms: "ඔබ", "ඔබගේ", "ඔබට" (e.g. "ඔබට අද මොන වගේ උදව්වක්ද අවශ්‍ය?", "ඔබගේ contact number එක ලබාදෙන්න පුළුවන්ද?").
+     - Introduce yourself as "මම ඔබගේ AI Receptionist". Welcome callers with "{salon_name} වෙත ඔබව සාදරයෙන් පිළිගන්නවා".
+     - NEVER add a title to the caller: no "සර්", "මිස්", "මහත්මයා", "නෝනා", "sir", "miss" or "madam". Once you know their name you may use the name alone (e.g. "ස්තුතියි නිපුනි"), or no name at all.
+
+  2. NATURAL POLITE PHRASES (use them as in these examples):
+     * "හරි", "අනිවාර්යයෙන්ම", "ප්‍රශ්නයක් නැහැ"
+     * "එහෙම වුණ එක ගැන කනගාටුයි"
+     * "ඔබගේ request එක team එකට යොමු කරන්නම්"
+     * "ස්තුතියි. ඔබගේ booking request එක සටහන් කරගත්තා. Slot එක තහවුරු වුණාම අපේ team එක දැනුම් දෙයි. ඔබට වෙනත් යමක් දැනගැනීමට අවශ්‍යද?"
+     * "ඔබට කැමති branch එක මොකක්ද?", "ඔබ කැමති උදේ වෙලාවක්ද, හවස වෙලාවක්ද?"
+     * Confirming a name and number: "ඔබගේ නම නිපුනි නේද?", "ඔබ call කරන අංකය බිංදුව හැත්තෑ හත, එකසිය විසි තුන, හතළිස් පහ, හැට හත ද? ඒ අංකයම භාවිතා කරන්නද?" (said as numbers the way a local says them, never numerals)
+
+  3. NATURAL SALON ENGLISH MIXING:
+     - Sri Lankan callers and staff naturally use English salon words with Sinhala endings -- "Manicure එක", "Pedicure එක", "Gel polish එකක්", "Nail art", "Nail extensions", "Appointment එකක්", "branch එක", "slot එක", "check කරන්නම්", "confirm කරගන්න".
+     - Do NOT translate these into archaic Sinhala (never "නිය ආලේපනය" for nail polish).
+
+  4. NUMBERS & CURRENCY:
+     - Always state prices in Sri Lankan Rupees: e.g. "රුපියල් 2,500ක්".
+     - PHONE NUMBERS: say them as a Sri Lankan does, in four groups said as numbers (0XX, XXX, XX, XX), e.g. "බිංදුව හැත්තෑ අට, එකසිය අසූ දෙක, හැත්තෑ හත, හතළිස් තුන" -- never digit by digit.
+     - TIMES: "උදේ නවයට", "දවල් එකහමාරට", "හවස තුනට", "රෑ හතට"; a range as "උදේ නවයේ ඉඳන් එකොළහහමාර වෙනකම්". NEVER say "පෙ.ව.", "ප.ව.", "AM", "PM", or a time in numerals like "11:00".
+     - DATES: "ලබන සතියේ සඳුදා, ඔක්තෝබර් දහනවවෙනිදා", "හෙට", "අද" -- not stiff written forms like "වන දින". Use the tool's date_say and times_say exactly.
+
+  5. BRANCH NAMES: always say them in Sinhala pronunciation -- නුගේගොඩ, හොකන්දර -- e.g. "නුගේගොඩ branch එක", "හොකන්දර branch එක". Never read them out in English letters or with an English accent.
+
+  6. ADDRESSES: say them the way a local says them on the phone -- road and town names in Sinhala pronunciation, "පාර" for "Road", the house number in words, and never the postal code or "Sri Lanka". e.g. "අපේ නුගේගොඩ branch එක තියෙන්නේ කෝට්ටේ පාරේ, අංක තුන්සිය නවයේ."
+
+  7. AVOID: very archaic written forms (e.g. "සිදු විය", "පවසන්න", "තිබේ නම්") -- say it the way a courteous person speaks on the phone.
+place_name_rules: |
+  - When SPEAKING a branch name, pronounce it the way shown in "say it as" (native script, natural local pronunciation, never an English accent), e.g. with "branch එක". When passing a branch to a tool, use the English name exactly as listed.
+  - When SPEAKING an address, never read the English text. Use its "say it as" form; for any other address (e.g. from the FAQ) say it the way a local would: road and town names in native pronunciation, "පාර" for "Road", the house number in words, and never the postal code or "Sri Lanka". When writing an address into a tool or message, keep the English.
+lines:
+  delight:
+  - අනිවාර්යයෙන්ම, මම සතුටින් උදව් කරන්නම්!
+  - හරි, කිසි අවුලක් නෑ!
+  - බොහොම ස්තූතියි, සුබ දවසක් වේවා!
+  change_language: භාෂාව වෙනස් කරන්න, කරුණාකර ඔබේ දුරකථනයේ {key} ඔබන්න.
+  please_repeat: සමාවෙන්න, මට හරියට ඇහුණෙ නෑ, ආයෙත් පොඩ්ඩක් කියන්න පුළුවන්ද?
+  out_of_scope: සමාවෙන්න, මට උදව් කරන්න පුළුවන් {salon_name} එකේ bookings සහ services ගැන විතරයි. ඔබට nail service එකක් ගැන දැනගන්න අවශ්‍යද?
+  anything_else: ඔබට වෙනත් යමක් දැනගැනීමට අවශ්‍යද?
+  price_rule: Always say "රුපියල් [ගණන]" (e.g. "රුපියල් 2,500ක්", "රුපියල් 3,500ක්", "රුපියල් 4,000යි").
+  phone_style: Say it as four groups said as numbers (e.g. "බිංදුව හැත්තෑ හත, එකසිය විසි තුන, හතළිස් පහ, හැට හත").
+phrases:
+  goodbye:
+  - සුබ දවසක්
+  - ස්තූතියි.*(?:සුබ|ආයුබෝවන්)
+  - ආයුබෝවන්\s*$
+  anything_else:
+  - වෙනත් යමක්
+  - තව මොනවා
+  - වෙන මොනවා
+  'yes':
+  - ඔව්
+  - හරි
+  - හා\b
+  - එහෙමයි
+  - ඕකේ
+  - නිවැරදි
+  - \b(?:ow|hari)\b
+  'no':
+  - නැහැ
+  - නෑ
+  - (?<!නි)වැරදි
+  - එපා
+  - නෙවෙයි
+  - නෙමෙයි
+  - වෙනස්
+  no_problem:
+  - ප්‍රශ්නයක්\s*(?:නැහැ|නෑ)
+  - කමක්\s*(?:නැහැ|නෑ)
+  - අවුලක්\s*(?:නැහැ|නෑ)
+numbers:
+  digits: [බිංදුව, එක, දෙක, තුන, හතර, පහ, හය, හත, අට, නවය]
+  words: [බිංදුව, එක, දෙක, තුන, හතර, පහ, හය, හත, අට, නවය, දහය, එකොළහ, දොළහ, දහතුන, දාහතර, පහළොව, දාසය, දාහත, දහඅට, දහනවය, විස්ස, විසි එක, විසි දෙක, විසි තුන, විසි හතර, විසි පහ, විසි හය, විසි හත, විසි අට, විසි නවය, තිහ, තිස් එක, තිස් දෙක, තිස් තුන, තිස් හතර, තිස් පහ, තිස් හය, තිස් හත, තිස් අට, තිස් නවය, හතළිහ, හතළිස් එක, හතළිස් දෙක, හතළිස් තුන, හතළිස් හතර, හතළිස් පහ, හතළිස් හය, හතළිස් හත, හතළිස් අට, හතළිස් නවය, පනහ, පනස් එක, පනස් දෙක, පනස් තුන, පනස් හතර, පනස් පහ, පනස් හය, පනස් හත, පනස් අට, පනස් නවය, හැට, හැට එක, හැට දෙක, හැට තුන, හැට හතර, හැට පහ, හැට හය, හැට හත, හැට අට, හැට නවය, හැත්තෑව, හැත්තෑ එක, හැත්තෑ දෙක, හැත්තෑ තුන, හැත්තෑ හතර, හැත්තෑ පහ, හැත්තෑ හය, හැත්තෑ හත, හැත්තෑ අට, හැත්තෑ නවය, අසූව, අසූ එක, අසූ දෙක, අසූ තුන, අසූ හතර, අසූ පහ, අසූ හය, අසූ හත, අසූ අට, අසූ නවය, අනූව, අනූ එක, අනූ දෙක, අනූ තුන, අනූ හතර, අනූ පහ, අනූ හය, අනූ හත, අනූ අට, අනූ නවය]
+  hundreds: [එකසිය, දෙසිය, තුන්සිය, හාරසිය, පන්සිය, හයසිය, හත්සිය, අටසිය, නවසිය]
+  hundreds_alone: [එකසියය, දෙසියය, තුන්සියය, හාරසියය, පන්සියය, හයසියය, හත්සියය, අටසියය, නවසියය]
+  phone_groups: [3, 3, 2, 2]
+time:
+  hours: [දොළහ, එක, දෙක, තුන, හතර, පහ, හය, හත, අට, නවය, දහය, එකොළහ]
+  day_parts:
+  - start: 4
+    name: උදේ
+  - start: 12
+    name: දවල්
+  - start: 15
+    name: හවස
+  - start: 19
+    name: රෑ
+  exact: '{hour}ට'
+  half: '{hour}හමාරට'
+  other: '{hour}යි {minutes}ට'
+  layout: '{part} {clock}'
+dates:
+  weekdays: [සඳුදා, අඟහරුවාදා, බදාදා, බ්‍රහස්පතින්දා, සිකුරාදා, සෙනසුරාදා, ඉරිදා]
+  months: [ජනවාරි, පෙබරවාරි, මාර්තු, අප්‍රේල්, මැයි, ජූනි, ජූලි, අගෝස්තු, සැප්තැම්බර්, ඔක්තෝබර්, නොවැම්බර්, දෙසැම්බර්]
+  day_ordinals: [පළවෙනිදා, දෙවෙනිදා, තුන්වෙනිදා, හතරවෙනිදා, පස්වෙනිදා, හයවෙනිදා, හත්වෙනිදා, අටවෙනිදා, නවවෙනිදා, දහවෙනිදා, එකොළොස්වෙනිදා, දොළොස්වෙනිදා, දහතුන්වෙනිදා, දාහතරවෙනිදා, පහළොස්වෙනිදා, දාසයවෙනිදා, දහහත්වෙනිදා, දහඅටවෙනිදා, දහනවවෙනිදා, විස්සෙනිදා, විසිඑක්වෙනිදා, විසිදෙවෙනිදා, විසිතුන්වෙනිදා, විසිහතරවෙනිදා, විසිපස්වෙනිදා, විසිහයවෙනිදා, විසිහත්වෙනිදා, විසිඅටවෙනිදා, විසිනවවෙනිදා, තිස්වෙනිදා, තිස්එක්වෙනිදා]
+  relative_days: [අද, හෙට, අනිද්දා]
+  day_format: '{month} {day}'
+  relative_format: '{relative}, {date}'
+  this_week: මේ {weekday}, {date}
+  next_week: ලබන සතියේ {weekday}, {date}
+  other: '{date}, {weekday}'

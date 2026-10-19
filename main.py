@@ -4,11 +4,15 @@ import uvicorn
 from google import genai
 
 import config
+import languages
 from dashboard.server import create_app
 from data.call_manager import CallManager
+from data.faq_store import FaqStore
+from data.ivr_store import IvrStore
 from data.json_store import JsonBookingStore
 from data.settings_store import SettingsStore
 from pbx_bridge.audiosocket_server import serve
+from pbx_bridge.call_session import request_callback
 from pbx_bridge.mcp_client import McpClient
 
 logging.basicConfig(level=logging.INFO)
@@ -18,6 +22,12 @@ logger = logging.getLogger(__name__)
 async def main() -> None:
     if not config.GEMINI_API_KEY:
         raise SystemExit("GEMINI_API_KEY is not set (see .env.example).")
+
+    try:  # a broken language file stops the app here, naming the file and the key
+        langs = languages.languages()
+    except languages.LanguageFileError as exc:
+        raise SystemExit(f"Language file error: {exc}")
+    logging.getLogger(__name__).info("languages: %s", ", ".join(l.name for l in langs.values()))
 
     settings_store = SettingsStore(settings_path=config.SETTINGS_PATH)
     current_settings = await settings_store.get_settings()
@@ -30,7 +40,15 @@ async def main() -> None:
         business_hours_end=current_settings.business_hours_end,
         slot_increment_minutes=config.SLOT_INCREMENT_MINUTES,
     )
-    call_manager = CallManager(calls_path=config.CALLS_PATH)
+    faq_store = FaqStore(config.FAQS_PATH)
+    ivr_store = IvrStore(config.IVR_PATH, config.IVR_PROMPTS_DIR)
+    call_manager = CallManager(
+        calls_path=config.CALLS_PATH, recordings_dir=config.RECORDINGS_DIR, active_path=config.ACTIVE_CALLS_PATH
+    )
+    # Calls cut off by the last stop/crash: into Call History with what they had, and a callback for the staff.
+    for call in call_manager.recover_interrupted(config.AUDIOSOCKET_SAMPLE_RATE_HZ):
+        await request_callback(store, call_manager, call.caller_number, call.customer,
+                               "This caller's call was cut off when the AI receptionist's server restarted.")
     gemini_client = genai.Client(api_key=config.GEMINI_API_KEY)
 
     mcp_client = None
@@ -49,12 +67,15 @@ async def main() -> None:
         mcp_client,
         call_manager,
         settings_store,
+        faq_store,
+        ivr_store,
     )
     logger.info("nailagent AudioSocket bridge listening on %s:%d", config.WS_HOST, config.WS_PORT)
 
     dash_task = None
     if config.DASHBOARD_ENABLED:
-        dash_app = create_app(store, call_manager, settings_store, gemini_client, config.GEMINI_MODEL)
+        dash_app = create_app(store, call_manager, settings_store, gemini_client, config.GEMINI_MODEL, faq_store,
+                              ivr_store)
         dash_config = uvicorn.Config(
             dash_app,
             host=config.DASHBOARD_HOST,

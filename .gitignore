@@ -6,4 +6,8 @@ __pycache__/
 *.pem
 data/bookings.json
 data/messages.json
+data/active_calls.json
+data/*.tmp
 tests/fixtures/response.wav
+data/recordings/
+data/ivr_prompts/

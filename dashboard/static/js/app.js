@@ -1,11 +1,23 @@
 // Front Desk & Voice Receptionist Client Logic
 (() => {
+  // Any API call that comes back 401 means the session expired or was never
+  // established (e.g. a direct hit on /static/index.html) -- bounce to login.
+  const nativeFetch = window.fetch.bind(window);
+  window.fetch = async (...args) => {
+    const res = await nativeFetch(...args);
+    if (res.status === 401) {
+      window.location.href = `/login?next=${encodeURIComponent(location.pathname + location.search)}`;
+    }
+    return res;
+  };
+
   let ws = null;
   let activeCalls = [];
   let allBookings = [];
   let callHistory = [];
   let messages = [];
   let services = [];
+  let faqs = [];
   let timerInterval = null;
 
   // Header & Brand Elements
@@ -53,6 +65,7 @@
   const serviceModalName = document.getElementById('serviceModalName');
   const serviceModalPrice = document.getElementById('serviceModalPrice');
   const serviceModalDuration = document.getElementById('serviceModalDuration');
+  const serviceModalPriceVaries = document.getElementById('serviceModalPriceVaries');
   const btnCloseServiceModal = document.getElementById('btnCloseServiceModal');
   const btnCancelServiceModal = document.getElementById('btnCancelServiceModal');
 
@@ -68,25 +81,37 @@
   const settingSalonPhone = document.getElementById('settingSalonPhone');
   const settingTransferPhone = document.getElementById('settingTransferPhone');
   const settingSalonAddress = document.getElementById('settingSalonAddress');
+  const settingAddressSinhala = document.getElementById('settingAddressSinhala');
+  const settingAddressTamil = document.getElementById('settingAddressTamil');
   const settingOperatingHours = document.getElementById('settingOperatingHours');
   const settingHoursStart = document.getElementById('settingHoursStart');
   const settingHoursEnd = document.getElementById('settingHoursEnd');
   const settingGreetingSinhala = document.getElementById('settingGreetingSinhala');
+  const settingGreetingTamil = document.getElementById('settingGreetingTamil');
+  const settingGreetingEnglish = document.getElementById('settingGreetingEnglish');
+  const settingAiVoice = document.getElementById('settingAiVoice');
+  const settingAiTemperature = document.getElementById('settingAiTemperature');
+  const settingAiSilenceMs = document.getElementById('settingAiSilenceMs');
+  const settingBranches = document.getElementById('settingBranches');
+  const settingWhatsapp = document.getElementById('settingWhatsapp');
   const btnSaveSettings = document.getElementById('btnSaveSettings');
   const saveStatusIndicator = document.getElementById('saveStatusIndicator');
 
   // Actions
   const btnSimulateCall = document.getElementById('btnSimulateCall');
   const btnRefresh = document.getElementById('btnRefresh');
+  const btnLogout = document.getElementById('btnLogout');
   const toastContainer = document.getElementById('toastContainer');
 
   const tabTitles = {
     liveCallsTab: 'Live Calls & Console',
     bookingsTab: 'Appointments & Schedule',
     servicesTab: 'Services & Pricing Menu',
+    faqTab: 'FAQ for the AI Receptionist',
     callHistoryTab: 'Call History & Logs',
     messagesTab: 'Customer Voicemails',
     settingsTab: 'Salon & AI Receptionist Settings',
+    ivrTab: 'Language Menu (IVR)',
   };
 
   // Tab Navigation Handling
@@ -154,10 +179,18 @@
     }, 3500);
   }
 
+  // Caller speech, customer names and tool output reach the DOM, so anything
+  // that isn't known-safe markup must pass through here before innerHTML.
+  function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, ch => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]
+    ));
+  }
+
   function appendFeedEvent(timeStr, content) {
     const item = document.createElement('div');
     item.className = 'feed-row';
-    item.innerHTML = `<span class="feed-row-time">${timeStr}</span><span class="feed-row-content">${content}</span>`;
+    item.innerHTML = `<span class="feed-row-time">${escapeHtml(timeStr)}</span><span class="feed-row-content">${escapeHtml(content)}</span>`;
 
     const placeholder = eventStreamFeed.querySelector('.placeholder');
     if (placeholder) placeholder.remove();
@@ -275,7 +308,10 @@
     silentGain.connect(micCtx.destination);
 
     const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const ws = new WebSocket(`${protocol}//${location.host}/ws/simulate-call`);
+    // Stands in for the phone IVR menu: the agent speaks only this language.
+    const langSelect = document.getElementById('simulateCallLanguage');
+    const lang = encodeURIComponent(langSelect ? langSelect.value : 'si');
+    const ws = new WebSocket(`${protocol}//${location.host}/ws/simulate-call?lang=${lang}`);
     ws.binaryType = 'arraybuffer';
 
     simState = {
@@ -370,7 +406,7 @@
               <span class="dialogue-speaker">${roleLabel}</span>
               <span class="log-timestamp">${formatTime(act.timestamp)}</span>
             </div>
-            <div class="log-msg" style="margin-top: 2px;">${act.action.replace(/^(AI Receptionist:|AI Spoke:|Caller:)\s*/, '')}</div>
+            <div class="log-msg" style="margin-top: 2px;">${escapeHtml(act.action.replace(/^(AI Receptionist:|AI Spoke:|Caller:)\s*/, ''))}</div>
           </div>
         `;
       }).join('');
@@ -379,16 +415,16 @@
         <div class="call-item-top">
           <div>
             <div class="call-caller-title">
-              <span>${call.caller_number || 'Unknown Caller'}</span>
+              <span>${escapeHtml(call.caller_number || 'Unknown Caller')}</span>
               <span class="call-status-badge">● Active Telephony Line</span>
             </div>
-            <div class="call-sid-code">CHANNEL SID: ${call.call_id}</div>
+            <div class="call-sid-code">CHANNEL SID: ${escapeHtml(call.call_id)}</div>
           </div>
           <div style="display: flex; align-items: center; gap: 10px;">
             <div class="call-timer-display timer-value" data-start="${call.started_at}">
               ${formatDuration(elapsedSec)}
             </div>
-            <button class="btn btn-danger-subtle btn-hangup-call" data-id="${call.call_id}">
+            <button class="btn btn-danger-subtle btn-hangup-call" data-id="${escapeHtml(call.call_id)}">
               Hang Up
             </button>
           </div>
@@ -482,35 +518,71 @@
     }
     noBookingsState.style.display = 'none';
 
+    const pills = {
+      requested: '<span class="status-pill" style="background: rgba(245,158,11,.15); color: #b45309;">Requested</span>',
+      confirmed: '<span class="status-pill status-confirmed">Confirmed</span>',
+      declined: '<span class="status-pill status-cancelled">Declined</span>',
+      cancelled: '<span class="status-pill status-cancelled">Cancelled</span>',
+    };
+
     filtered.forEach(b => {
       const tr = document.createElement('tr');
-      const isConfirmed = b.status === 'confirmed';
-      const statusBadge = isConfirmed
-        ? '<span class="status-pill status-confirmed">Confirmed</span>'
-        : '<span class="status-pill status-cancelled">Cancelled</span>';
+      const id = escapeHtml(b.booking_id);
+      const active = b.status === 'requested' || b.status === 'confirmed';
+      const hasChange = active && b.requested_date;
+      const statusBadge = (pills[b.status] || escapeHtml(b.status)) +
+        (hasChange ? `<div style="font-size: 11px; margin-top: 4px; color: #b45309;">Change requested &rarr; ${escapeHtml(b.requested_date)} ${escapeHtml(b.requested_time)}</div>` : '');
 
-      const actionBtn = isConfirmed
-        ? `<button class="btn btn-danger-subtle btn-cancel-booking" data-id="${b.booking_id}">Cancel</button>`
-        : '<span style="color: var(--text-dim); font-size: 12px;">Archived</span>';
+      const btns = [];
+      if (b.status === 'requested') {
+        btns.push(`<button class="btn btn-primary btn-booking-action" data-act="confirm" data-id="${id}" style="padding: 4px 10px; font-size: 12px;">Confirm</button>`);
+        btns.push(`<button class="btn btn-danger-subtle btn-booking-action" data-act="decline" data-id="${id}">Decline</button>`);
+      }
+      if (hasChange) {
+        btns.push(`<button class="btn btn-primary btn-booking-action" data-act="change/approve" data-id="${id}" style="padding: 4px 10px; font-size: 12px;">Approve change</button>`);
+        btns.push(`<button class="btn btn-secondary btn-booking-action" data-act="change/reject" data-id="${id}" style="padding: 4px 10px; font-size: 12px;">Reject</button>`);
+      }
+      if (b.status === 'confirmed') {
+        btns.push(`<button class="btn btn-danger-subtle btn-cancel-booking" data-id="${id}">Cancel</button>`);
+      }
+      const actionBtn = btns.length ? btns.join(' ') : '<span style="color: var(--text-dim); font-size: 12px;">Archived</span>';
 
       tr.innerHTML = `
-        <td style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">${b.booking_id.slice(0, 8)}</td>
+        <td style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">${escapeHtml(b.booking_id.slice(0, 8))}</td>
         <td>
           <div class="client-meta-group">
-            <div class="client-avatar-monogram">${getInitials(b.customer_name)}</div>
-            <span class="client-name-text">${b.customer_name || 'Walk-in Client'}</span>
+            <div class="client-avatar-monogram">${escapeHtml(getInitials(b.customer_name))}</div>
+            <span class="client-name-text">${escapeHtml(b.customer_name || 'Walk-in Client')}</span>
           </div>
         </td>
-        <td style="font-family: var(--font-mono); font-size: 12.5px;">${b.customer_phone || '--'}</td>
-        <td><span class="service-pill-tag">${b.service_name}</span></td>
+        <td style="font-family: var(--font-mono); font-size: 12.5px;">${escapeHtml(b.customer_phone || '--')}</td>
         <td>
-          <div style="font-weight: 600; color: var(--text-primary);">${b.date}</div>
-          <div style="font-size: 11.5px; color: var(--text-muted);">${b.time}</div>
+          <span class="service-pill-tag">${escapeHtml(b.service_name)}</span>
+          ${b.notes ? `<div style="font-size: 11.5px; color: var(--text-muted); margin-top: 4px;">${escapeHtml(b.notes)}</div>` : ''}
+        </td>
+        <td>${escapeHtml(b.branch || '--')}</td>
+        <td>
+          <div style="font-weight: 600; color: var(--text-primary);">${escapeHtml(b.date)}</div>
+          <div style="font-size: 11.5px; color: var(--text-muted);">${escapeHtml(b.time)}</div>
         </td>
         <td>${statusBadge}</td>
-        <td style="text-align: right;">${actionBtn}</td>
+        <td style="text-align: right; white-space: nowrap;">${actionBtn}</td>
       `;
       bookingsTableBody.appendChild(tr);
+    });
+
+    document.querySelectorAll('.btn-booking-action').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const id = e.target.getAttribute('data-id');
+        const act = e.target.getAttribute('data-act');
+        try {
+          const res = await fetch(`/api/bookings/${id}/${act}`, { method: 'POST' });
+          showToast(res.ok ? 'Appointment updated' : 'Could not update the appointment', res.ok ? 'success' : 'error');
+          if (res.ok) await fetchState();
+        } catch (err) {
+          showToast('Network error', 'error');
+        }
+      });
     });
 
     // Attach cancellation listeners
@@ -551,7 +623,7 @@
           <div style="font-size: 11.5px; color: var(--text-muted);">Standard salon treatment</div>
         </td>
         <td>
-          <span class="price-display-text">LKR ${Number(s.price_usd).toLocaleString()}</span>
+          ${s.price_varies ? '<span class="price-display-text">Price varies (team confirms)</span>' : `<span class="price-display-text">LKR ${Number(s.price_usd).toLocaleString()}</span>`}
         </td>
         <td>
           <span class="duration-chip">${s.duration_minutes} mins</span>
@@ -560,7 +632,7 @@
           <span class="status-active-tag">AI Quotable</span>
         </td>
         <td style="text-align: right;">
-          <button class="btn btn-secondary btn-edit-service" data-name="${s.name}" data-price="${s.price_usd}" data-duration="${s.duration_minutes}" style="padding: 4px 10px; font-size: 12px; margin-right: 6px;">Edit</button>
+          <button class="btn btn-secondary btn-edit-service" data-name="${s.name}" data-price="${s.price_usd}" data-duration="${s.duration_minutes}" data-varies="${s.price_varies ? "1" : ""}" style="padding: 4px 10px; font-size: 12px; margin-right: 6px;">Edit</button>
           <button class="btn btn-danger-subtle btn-delete-service" data-name="${s.name}">Delete</button>
         </td>
       `;
@@ -573,7 +645,7 @@
         const name = btn.getAttribute('data-name');
         const price = btn.getAttribute('data-price');
         const duration = btn.getAttribute('data-duration');
-        openServiceModal('edit', { name, price, duration });
+        openServiceModal('edit', { name, price, duration, varies: btn.getAttribute('data-varies') === '1' });
       });
     });
 
@@ -605,12 +677,14 @@
       serviceModalName.value = serviceData.name;
       serviceModalPrice.value = serviceData.price;
       serviceModalDuration.value = serviceData.duration;
+      serviceModalPriceVaries.checked = !!serviceData.varies;
     } else {
       serviceModalTitle.textContent = 'Add New Treatment';
       serviceOriginalName.value = '';
       serviceModalName.value = '';
       serviceModalPrice.value = '3500';
       serviceModalDuration.value = '45';
+      serviceModalPriceVaries.checked = false;
     }
     serviceModal.style.display = 'flex';
     serviceModalName.focus();
@@ -650,14 +724,14 @@
           res = await fetch(`/api/services/${encodeURIComponent(originalName)}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, price_usd: price, duration_minutes: duration }),
+            body: JSON.stringify({ name, price_usd: price, duration_minutes: duration, price_varies: serviceModalPriceVaries.checked }),
           });
         } else {
           // Create new
           res = await fetch('/api/services', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, price_usd: price, duration_minutes: duration }),
+            body: JSON.stringify({ name, price_usd: price, duration_minutes: duration, price_varies: serviceModalPriceVaries.checked }),
           });
         }
 
@@ -675,6 +749,36 @@
     });
   }
 
+  // Transcript lines carry details.speaker; everything else is a system/tool action.
+  function isSpokenLine(a) {
+    return !!(a.details && a.details.speaker);
+  }
+
+  // Calls the AI could not finish: the staff should call the customer back.
+  const CALL_BACK_STATUSES = { dropped: 'AI Dropped – Call Back', interrupted: 'Interrupted – Call Back' };
+
+  const CUSTOMER_LABELS = {
+    name: 'Name', phone: 'Phone', service: 'Service', branch: 'Branch', date: 'Date', time: 'Time',
+    booking_id: 'Booking', booking_status: 'Booking status', message: 'Message',
+  };
+
+  function customerSummary(c) {
+    const customer = c.customer || {};
+    return Object.keys(CUSTOMER_LABELS)
+      .filter(k => customer[k])
+      .map(k => `${CUSTOMER_LABELS[k]}: ${customer[k]}`)
+      .join(' · ');
+  }
+
+  function callOutcome(c) {
+    if (CALL_BACK_STATUSES[c.status]) return CALL_BACK_STATUSES[c.status];
+    const events = (c.actions || []).filter(a => a.action && !isSpokenLine(a)).map(a => a.action.toLowerCase());
+    if (events.some(e => e.startsWith('booked') || e.startsWith('modified booking'))) return 'Appointment Booked';
+    if (events.some(e => e.startsWith('transfer'))) return 'Transferred to Staff';
+    if (events.some(e => e.startsWith('message recorded'))) return 'Voicemail Recorded';
+    return 'General Inquiry';
+  }
+
   function renderCallHistory() {
     callHistoryTableBody.innerHTML = '';
     if (callHistory.length === 0) {
@@ -688,30 +792,107 @@
       const duration = formatDuration(c.duration_seconds);
       const started = formatTime(c.started_at);
       const date = formatDate(c.started_at);
-
-      let summary = 'General Inquiry';
-      if ((c.actions || []).some(a => a.action && a.action.toLowerCase().includes('booking'))) {
-        summary = 'Appointment Booked';
-      } else if ((c.actions || []).some(a => a.action && a.action.toLowerCase().includes('transfer'))) {
-        summary = 'Transferred to Staff';
-      } else if ((c.actions || []).some(a => a.action && a.action.toLowerCase().includes('message'))) {
-        summary = 'Voicemail Recorded';
-      }
+      const summary = callOutcome(c);
 
       tr.innerHTML = `
-        <td style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">${c.call_id}</td>
-        <td style="font-weight: 600; color: var(--text-primary); font-family: var(--font-mono);">${c.caller_number || 'Unknown'}</td>
+        <td style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">${escapeHtml(c.call_id)}</td>
+        <td style="font-weight: 600; color: var(--text-primary); font-family: var(--font-mono);">${escapeHtml(c.caller_number || 'Unknown')}</td>
         <td>
-          <div style="color: var(--text-primary);">${date}</div>
-          <div style="font-size: 11.5px; color: var(--text-muted);">${started}</div>
+          <div style="color: var(--text-primary);">${escapeHtml(date)}</div>
+          <div style="font-size: 11.5px; color: var(--text-muted);">${escapeHtml(started)}</div>
         </td>
-        <td style="font-family: var(--font-mono); font-weight: 600;">${duration}</td>
-        <td><span class="status-pill status-confirmed">${summary}</span></td>
+        <td style="font-family: var(--font-mono); font-weight: 600;">${escapeHtml(duration)}</td>
+        <td><span class="status-pill ${CALL_BACK_STATUSES[c.status] ? 'status-cancelled' : 'status-confirmed'}">${escapeHtml(summary)}</span></td>
         <td style="font-size: 12px; color: var(--text-secondary);">${c.actions ? c.actions.length : 0} interactions</td>
+        <td style="text-align: right; white-space: nowrap;">
+          ${c.recording_file ? '<span title="Recording available">🎧</span> ' : ''}
+          <button class="btn btn-secondary btn-view-call" data-id="${escapeHtml(c.call_id)}">View</button>
+        </td>
       `;
       callHistoryTableBody.appendChild(tr);
     });
+
+    document.querySelectorAll('.btn-view-call').forEach(btn => {
+      btn.addEventListener('click', () => openCallDetail(btn.dataset.id));
+    });
   }
+
+  // Call detail modal: recording player + transcript
+  const callDetailModal = document.getElementById('callDetailModal');
+  const callDetailMeta = document.getElementById('callDetailMeta');
+  const callDetailRecording = document.getElementById('callDetailRecording');
+  const callDetailTranscript = document.getElementById('callDetailTranscript');
+
+  function closeCallDetail() {
+    // Dropping the markup also stops any audio that is still playing.
+    callDetailRecording.innerHTML = '';
+    callDetailModal.style.display = 'none';
+  }
+
+  // Asterisk's view of the line: how many of the agent's packets the caller's side lost. Over 2% is audible.
+  function lineQualityChip(c) {
+    const q = c.line_quality;
+    if (!q || !q.txcount) return '';
+    const lost = Math.round((1000 * (q.rlp || 0)) / q.txcount) / 10;
+    const rtt = q.rtt ? ` · rtt ${Math.round(q.rtt * 1000)} ms` : '';
+    const warn = lost > 2 ? ' style="color: var(--danger, #c0392b); font-weight: 600;"' : '';
+    return `<span${warn} title="Packets we sent that the caller's side lost">Line: ${lost}% lost to caller${rtt}</span>`;
+  }
+
+  function openCallDetail(callId) {
+    const c = callHistory.find(x => x.call_id === callId);
+    if (!c) return;
+
+    callDetailMeta.innerHTML = `
+      <span><strong>${escapeHtml(c.caller_number || 'Unknown')}</strong></span>
+      <span>${escapeHtml(formatDate(c.started_at))} ${escapeHtml(formatTime(c.started_at))}</span>
+      <span>Duration <strong>${escapeHtml(formatDuration(c.duration_seconds))}</strong></span>
+      <span>${escapeHtml(callOutcome(c))}</span>
+      ${c.reconnects ? `<span>AI reconnected ${escapeHtml(String(c.reconnects))}×</span>` : ''}
+      ${lineQualityChip(c)}
+      ${customerSummary(c) ? `<span>${escapeHtml(customerSummary(c))}</span>` : ''}
+    `;
+
+    if (c.recording_file) {
+      const url = `/api/calls/${encodeURIComponent(c.call_id)}/recording`;
+      callDetailRecording.innerHTML = `
+        <div class="call-detail-audio">
+          <div class="call-detail-section-label">RECORDING</div>
+          <audio controls preload="none" src="${url}"></audio>
+          <a class="btn btn-secondary" href="${url}" download style="align-self: flex-start;">Download recording</a>
+        </div>
+      `;
+    } else {
+      callDetailRecording.innerHTML = '<div class="call-detail-nofile">No recording for this call.</div>';
+    }
+
+    callDetailTranscript.innerHTML = '';
+    const lines = c.actions || [];
+    lines.forEach(a => {
+      const spoken = isSpokenLine(a);
+      const role = spoken ? a.details.speaker : 'system';
+      const text = spoken ? a.details.text : a.action;
+      const who = role === 'ai' ? 'AI RECEPTIONIST' : (role === 'caller' ? 'CALLER' : '');
+      const div = document.createElement('div');
+      div.className = `transcript-line ${role}`;
+      div.innerHTML = `
+        <div class="transcript-who"><span>${escapeHtml(who)}</span><span>${escapeHtml(formatTime(a.timestamp))}</span></div>
+        <div>${escapeHtml(text)}</div>
+      `;
+      callDetailTranscript.appendChild(div);
+    });
+    if (!lines.length) {
+      callDetailTranscript.innerHTML = '<div class="call-detail-nofile">No transcript recorded.</div>';
+    }
+
+    callDetailModal.style.display = 'flex';
+  }
+
+  document.getElementById('btnCloseCallDetail').addEventListener('click', closeCallDetail);
+  document.getElementById('btnDoneCallDetail').addEventListener('click', closeCallDetail);
+  callDetailModal.addEventListener('click', e => {
+    if (e.target === callDetailModal) closeCallDetail();
+  });
 
   function renderMessages() {
     messagesTabCount.textContent = messages.length;
@@ -725,18 +906,32 @@
 
     messages.forEach(m => {
       const card = document.createElement('div');
-      card.className = `message-card-item ${m.urgent ? 'urgent' : ''}`;
+      const done = m.status === 'done';
+      const catLabels = {complaint: 'Complaint', price_inquiry: 'Price inquiry', treatment_inquiry: 'Treatment inquiry', location_link: 'Send location link', callback: 'Callback'};
+      const cat = catLabels[m.category] ? `<span class="status-pill status-confirmed">${catLabels[m.category]}</span> ` : '';
+      card.className = `message-card-item ${m.urgent && !done ? 'urgent' : ''}`;
+      if (done) card.style.opacity = '0.55';
       card.innerHTML = `
         <div class="msg-header-line">
-          <span class="msg-caller-name">${m.caller_name || 'Anonymous Caller'}</span>
-          <span class="msg-phone-chip">${m.caller_phone || 'No phone'}</span>
+          <span class="msg-caller-name">${escapeHtml(m.caller_name || 'Anonymous Caller')}</span>
+          <span class="msg-phone-chip">${escapeHtml(m.caller_phone || 'No phone')}</span>
         </div>
-        <div class="msg-content-text">"${m.message}"</div>
+        <div style="margin-bottom: 6px;">${cat}${m.branch ? `<span style="font-size: 12px; color: var(--text-muted);">${escapeHtml(m.branch)} branch</span>` : ''}</div>
+        <div class="msg-content-text">"${escapeHtml(m.message)}"</div>
         <div class="msg-footer-line">
           <span>${formatDate(m.taken_at)} at ${formatTime(m.taken_at)}</span>
-          ${m.urgent ? '<span class="status-pill status-cancelled">Urgent Callback</span>' : '<span style="color: var(--text-muted); font-size: 11px;">Standard Message</span>'}
+          ${m.urgent && !done ? '<span class="status-pill status-cancelled">Urgent Callback</span>' : '<span style="color: var(--text-muted); font-size: 11px;">Standard Message</span>'}
+          ${m.message_id && !done ? `<button class="btn btn-secondary btn-msg-done" data-id="${escapeHtml(m.message_id)}" style="padding: 3px 10px; font-size: 12px;">Mark done</button>` : ''}
+          ${done ? '<span style="font-size: 11px;">Done</span>' : ''}
         </div>
       `;
+      const doneBtn = card.querySelector('.btn-msg-done');
+      if (doneBtn) {
+        doneBtn.addEventListener('click', async () => {
+          const res = await fetch(`/api/messages/${doneBtn.getAttribute('data-id')}/done`, { method: 'POST' });
+          if (res.ok) await fetchState();
+        });
+      }
       messagesGrid.appendChild(card);
     });
   }
@@ -751,10 +946,24 @@
         if (settingSalonPhone) settingSalonPhone.value = s.salon_phone || '';
         if (settingTransferPhone) settingTransferPhone.value = s.transfer_phone || '';
         if (settingSalonAddress) settingSalonAddress.value = s.salon_address || '';
+        if (settingAddressSinhala) settingAddressSinhala.value = s.salon_address_sinhala || '';
+        if (settingAddressTamil) settingAddressTamil.value = s.salon_address_tamil || '';
         if (settingOperatingHours) settingOperatingHours.value = s.operating_hours_display || '';
         if (settingHoursStart) settingHoursStart.value = s.business_hours_start || '09:00';
         if (settingHoursEnd) settingHoursEnd.value = s.business_hours_end || '19:00';
         if (settingGreetingSinhala) settingGreetingSinhala.value = s.greeting_sinhala || '';
+        if (settingGreetingTamil) settingGreetingTamil.value = s.greeting_tamil || '';
+        if (settingGreetingEnglish) settingGreetingEnglish.value = s.greeting_english || '';
+        if (settingAiVoice) {
+          const voices = s.ai_voices || [];
+          if (s.ai_voice && !voices.includes(s.ai_voice)) voices.push(s.ai_voice);
+          settingAiVoice.innerHTML = voices.map(v => `<option value="${v}">${v}</option>`).join('');
+          settingAiVoice.value = s.ai_voice || '';
+        }
+        if (settingBranches) settingBranches.value = s.branches || '';
+        if (settingWhatsapp) settingWhatsapp.value = s.whatsapp_number || '';
+        if (settingAiTemperature) settingAiTemperature.value = s.ai_temperature || '';
+        if (settingAiSilenceMs) settingAiSilenceMs.value = s.ai_vad_silence_ms || 1000;
 
         // Update brand in top bar & sidebar
         if (brandTitle) brandTitle.textContent = s.salon_name || 'Classy Nail Spa';
@@ -778,10 +987,19 @@
         salon_phone: settingSalonPhone.value.trim(),
         transfer_phone: settingTransferPhone.value.trim(),
         salon_address: settingSalonAddress.value.trim(),
+        salon_address_sinhala: settingAddressSinhala.value.trim(),
+        salon_address_tamil: settingAddressTamil.value.trim(),
         operating_hours_display: settingOperatingHours.value.trim(),
         business_hours_start: settingHoursStart.value,
         business_hours_end: settingHoursEnd.value,
         greeting_sinhala: settingGreetingSinhala.value.trim(),
+        greeting_tamil: settingGreetingTamil.value.trim(),
+        greeting_english: settingGreetingEnglish.value.trim(),
+        branches: settingBranches.value.trim(),
+        whatsapp_number: settingWhatsapp.value.trim(),
+        ai_voice: settingAiVoice.value,
+        ai_temperature: settingAiTemperature.value.trim(),
+        ai_vad_silence_ms: parseInt(settingAiSilenceMs.value, 10) || 1000,
       };
 
       try {
@@ -798,7 +1016,10 @@
         } else {
           saveStatusIndicator.textContent = 'Failed to save settings';
           saveStatusIndicator.className = 'save-status-badge error';
-          showToast('Failed to save settings', 'error');
+          let msg = 'Failed to save settings';
+          try { msg = (await res.json()).detail || msg; } catch (_) {}
+          saveStatusIndicator.textContent = msg;
+          showToast(msg, 'error');
         }
       } catch (err) {
         saveStatusIndicator.textContent = 'Error connecting to server';
@@ -827,13 +1048,14 @@
   // Data Fetching
   async function fetchState() {
     try {
-      const [statsRes, activeRes, historyRes, bookingsRes, msgRes, servicesRes] = await Promise.all([
+      const [statsRes, activeRes, historyRes, bookingsRes, msgRes, servicesRes, faqRes] = await Promise.all([
         fetch('/api/stats').then(r => r.json()),
         fetch('/api/calls/active').then(r => r.json()),
         fetch('/api/calls/history').then(r => r.json()),
         fetch('/api/bookings').then(r => r.json()),
         fetch('/api/messages').then(r => r.json()),
         fetch('/api/services').then(r => r.json()),
+        fetch('/api/faqs').then(r => r.json()),
       ]);
 
       activeCalls = activeRes;
@@ -841,6 +1063,7 @@
       allBookings = bookingsRes;
       messages = msgRes;
       services = servicesRes;
+      faqs = faqRes;
 
       valTodayCalls.textContent = statsRes.today_calls || 0;
       valConfirmedBookings.textContent = statsRes.confirmed_bookings || 0;
@@ -859,6 +1082,7 @@
       renderServices();
       renderCallHistory();
       renderMessages();
+      renderFaqs();
     } catch (err) {
       console.error('Error fetching state:', err);
     }
@@ -874,6 +1098,16 @@
         if (label) label.textContent = 'Simulated Call Active';
       } catch (e) {
         btnSimulateCall.disabled = false;
+      }
+    });
+  }
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async () => {
+      try {
+        await nativeFetch('/api/logout', { method: 'POST' });
+      } finally {
+        window.location.href = '/login';
       }
     });
   }
@@ -944,10 +1178,17 @@
       const idx = activeCalls.findIndex(c => c.call_id === data.call_id);
       if (idx !== -1) {
         if (!activeCalls[idx].actions) activeCalls[idx].actions = [];
-        activeCalls[idx].actions.push({ timestamp: msg.timestamp, action: data.action, details: data.details });
+        // data.action is the whole action object ({timestamp, action, details}).
+        activeCalls[idx].actions.push(data.action);
         renderActiveCalls();
       }
-      appendFeedEvent(timeStr, `[${data.call_id}] ${data.action}`);
+      appendFeedEvent(timeStr, `[${data.call_id}] ${data.action.action}`);
+    } else if (type === 'call_updated') {
+      const idx = activeCalls.findIndex(c => c.call_id === data.call_id);
+      if (idx !== -1) {
+        activeCalls[idx].customer = data.customer;
+        renderActiveCalls();
+      }
     } else if (type === 'call_ended') {
       if (simState && data.call_id === simState.callId) {
         stopSimulatedCall(false);
@@ -960,13 +1201,235 @@
       fetchState();
     } else if (type === 'settings_updated') {
       loadSettings();
-    } else if (type === 'booking_cancelled') {
+    } else if (type === 'ivr_updated') {
+      renderIvr(data);
+    } else if (type === 'booking_cancelled' || type === 'booking_created' || type === 'booking_modified' || type === 'faqs_updated' || type === 'message_updated' || type === 'message_taken') {
       fetchState();
     }
   }
 
+  // FAQ management
+  const faqList = document.getElementById('faqList');
+  const noFaqState = document.getElementById('noFaqState');
+  const faqTabCount = document.getElementById('faqTabCount');
+  const faqModal = document.getElementById('faqModal');
+  const faqModalForm = document.getElementById('faqModalForm');
+
+  function renderFaqs() {
+    if (!faqList) return;
+    faqTabCount.textContent = faqs.length;
+    faqList.innerHTML = '';
+    noFaqState.style.display = faqs.length ? 'none' : 'block';
+    faqs.forEach(f => {
+      const card = document.createElement('div');
+      card.className = 'message-card-item';
+      const empty = !(f.answer || '').trim();
+      if (!f.enabled || empty) card.style.opacity = '0.65';
+      card.innerHTML = `
+        <div class="msg-header-line">
+          <span class="msg-caller-name">${escapeHtml(f.question)}</span>
+          ${empty ? '<span class="status-pill status-cancelled">No answer yet: AI skips it</span>' : (f.enabled ? '<span class="status-pill status-confirmed">AI uses this</span>' : '<span class="status-pill status-cancelled">Off</span>')}
+        </div>
+        <div class="msg-content-text" style="white-space: pre-wrap;">${escapeHtml(f.answer || '')}</div>
+        <div class="msg-footer-line">
+          <span></span>
+          <span>
+            <button class="btn btn-secondary btn-faq-edit" style="padding: 4px 10px; font-size: 12px;">Edit</button>
+            <button class="btn btn-danger-subtle btn-faq-delete">Delete</button>
+          </span>
+        </div>`;
+      card.querySelector('.btn-faq-edit').addEventListener('click', () => openFaqModal(f));
+      card.querySelector('.btn-faq-delete').addEventListener('click', async () => {
+        if (!confirm('Delete this FAQ entry?')) return;
+        const res = await fetch(`/api/faqs/${encodeURIComponent(f.faq_id)}`, { method: 'DELETE' });
+        showToast(res.ok ? 'FAQ deleted' : 'Failed to delete FAQ', res.ok ? 'success' : 'error');
+        if (res.ok) await fetchState();
+      });
+      faqList.appendChild(card);
+    });
+  }
+
+  function openFaqModal(f) {
+    document.getElementById('faqModalTitle').textContent = f ? 'Edit FAQ' : 'Add FAQ';
+    document.getElementById('faqModalId').value = f ? f.faq_id : '';
+    document.getElementById('faqModalQuestion').value = f ? f.question : '';
+    document.getElementById('faqModalAnswer').value = f ? f.answer : '';
+    document.getElementById('faqModalEnabled').checked = f ? !!f.enabled : true;
+    faqModal.style.display = 'flex';
+    document.getElementById('faqModalQuestion').focus();
+  }
+  function closeFaqModal() { faqModal.style.display = 'none'; }
+
+  const btnOpenAddFaq = document.getElementById('btnOpenAddFaq');
+  if (btnOpenAddFaq) btnOpenAddFaq.addEventListener('click', () => openFaqModal(null));
+  ['btnCloseFaqModal', 'btnCancelFaqModal'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', closeFaqModal);
+  });
+  if (faqModalForm) {
+    faqModalForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const id = document.getElementById('faqModalId').value;
+      const body = {
+        question: document.getElementById('faqModalQuestion').value.trim(),
+        answer: document.getElementById('faqModalAnswer').value.trim(),
+        enabled: document.getElementById('faqModalEnabled').checked,
+      };
+      try {
+        const res = await fetch(id ? `/api/faqs/${encodeURIComponent(id)}` : '/api/faqs', {
+          method: id ? 'PUT' : 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        if (res.ok) {
+          closeFaqModal();
+          showToast('FAQ saved. The AI uses it from the next call.', 'success');
+          await fetchState();
+        } else {
+          showToast((await res.json()).detail || 'Failed to save FAQ', 'error');
+        }
+      } catch (err) {
+        showToast('Network error saving FAQ', 'error');
+      }
+    });
+  }
+
+  // Language Menu (IVR)
+  const IVR_KEYS = ['1','2','3','4','5','6','7','8','9','0','*','#'];
+  const ivrForm = document.getElementById('ivrForm');
+  let ivrState = null;
+  let ivrOptions = [];
+
+  function ivrLanguageOptions(selected) {
+    const langs = (ivrState && ivrState.languages) || {};
+    return Object.entries(langs).map(([code, name]) =>
+      `<option value="${escapeHtml(code)}"${code === selected ? ' selected' : ''}>${escapeHtml(name)}</option>`).join('');
+  }
+
+  function renderIvrOptions() {
+    const box = document.getElementById('ivrOptions');
+    box.innerHTML = ivrOptions.map((o, i) => `
+      <div class="ivr-option-row" data-index="${i}">
+        <span>Press</span>
+        <select class="form-input ivr-key">${IVR_KEYS.map(k => `<option${k === o.digit ? ' selected' : ''}>${k}</option>`).join('')}</select>
+        <span>for</span>
+        <select class="form-input ivr-lang">${ivrLanguageOptions(o.language)}</select>
+        <button type="button" class="btn btn-secondary ivr-remove">Remove</button>
+      </div>`).join('');
+    box.querySelectorAll('.ivr-option-row').forEach(row => {
+      const i = Number(row.dataset.index);
+      row.querySelector('.ivr-key').addEventListener('change', e => { ivrOptions[i].digit = e.target.value; });
+      row.querySelector('.ivr-lang').addEventListener('change', e => { ivrOptions[i].language = e.target.value; });
+      row.querySelector('.ivr-remove').addEventListener('click', () => { ivrOptions.splice(i, 1); renderIvrOptions(); });
+    });
+  }
+
+  function renderIvrPrompts() {
+    document.querySelectorAll('.ivr-prompt').forEach(el => {
+      const slot = el.dataset.slot;
+      const meta = ivrState.prompts[slot];
+      const body = el.querySelector('.ivr-prompt-body');
+      const accept = ivrState.ffmpeg_available ? 'audio/*,.wav,.mp3,.m4a,.ogg' : '.wav,audio/wav';
+      body.innerHTML = (meta ? `
+        <div class="ivr-prompt-meta">${escapeHtml(meta.original_name)} &middot; ${meta.duration_s}s &middot; uploaded ${escapeHtml(new Date(meta.uploaded_at).toLocaleString())}</div>
+        <audio controls preload="none" src="/api/ivr/prompts/${slot}?v=${encodeURIComponent(meta.uploaded_at)}"></audio>`
+        : '<div class="ivr-prompt-meta">No recording uploaded yet.</div>') + `
+        <div class="ivr-prompt-actions">
+          <button type="button" class="btn btn-secondary ivr-upload">${meta ? 'Replace recording' : 'Upload recording'}</button>
+          ${meta ? '<button type="button" class="btn btn-secondary ivr-delete">Delete</button>' : ''}
+          <input type="file" class="ivr-file" accept="${accept}" hidden>
+        </div>`;
+      const fileInput = body.querySelector('.ivr-file');
+      body.querySelector('.ivr-upload').addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', () => { if (fileInput.files[0]) uploadIvrPrompt(slot, fileInput.files[0]); });
+      const del = body.querySelector('.ivr-delete');
+      if (del) del.addEventListener('click', () => deleteIvrPrompt(slot));
+    });
+  }
+
+  function renderIvr(state, keepEdits = false) {
+    ivrState = state;
+    document.getElementById('ivrEnabled').checked = !!state.enabled;
+    if (!keepEdits) {
+      ivrOptions = state.options.map(o => ({ ...o }));
+      document.getElementById('ivrMaxTries').value = state.max_tries;
+      document.getElementById('ivrWaitSeconds').value = state.wait_seconds;
+    }
+    const def = document.getElementById('ivrDefaultLanguage');
+    def.innerHTML = ivrLanguageOptions(state.default_language);
+    renderIvrOptions();
+    renderIvrPrompts();
+    const pill = document.getElementById('ivrStatusPill');
+    if (state.active) { pill.textContent = 'Active'; }
+    else if (state.enabled) { pill.textContent = 'Needs menu recording'; }
+    else { pill.textContent = 'Off'; }
+  }
+
+  async function loadIvr() {
+    try {
+      const res = await fetch('/api/ivr');
+      if (res.ok) renderIvr(await res.json());
+    } catch (err) { /* the next refresh retries */ }
+  }
+
+  async function uploadIvrPrompt(slot, file) {
+    showToast('Uploading and converting...', 'info');
+    try {
+      const res = await fetch(`/api/ivr/prompts/${slot}?filename=${encodeURIComponent(file.name)}`, { method: 'PUT', body: file });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) { showToast(data.detail || 'Upload failed', 'error'); return; }
+      renderIvr(data.ivr, true);
+      showToast('Recording saved', 'success');
+    } catch (err) { showToast('Network error uploading the recording', 'error'); }
+  }
+
+  async function deleteIvrPrompt(slot) {
+    if (!confirm('Delete this recording?')) return;
+    try {
+      const res = await fetch(`/api/ivr/prompts/${slot}`, { method: 'DELETE' });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) { showToast(data.detail || 'Delete failed', 'error'); return; }
+      renderIvr(data.ivr, true);
+      showToast('Recording deleted', 'success');
+    } catch (err) { showToast('Network error', 'error'); }
+  }
+
+  if (ivrForm) {
+    document.getElementById('btnIvrAddKey').addEventListener('click', () => {
+      const used = new Set(ivrOptions.map(o => o.digit));
+      const digit = IVR_KEYS.find(k => !used.has(k));
+      if (!digit) return;
+      ivrOptions.push({ digit, language: Object.keys(ivrState.languages)[0] });
+      renderIvrOptions();
+    });
+    ivrForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const badge = document.getElementById('ivrSaveStatus');
+      const payload = {
+        enabled: document.getElementById('ivrEnabled').checked,
+        options: ivrOptions,
+        default_language: document.getElementById('ivrDefaultLanguage').value,
+        max_tries: Number(document.getElementById('ivrMaxTries').value),
+        wait_seconds: Number(document.getElementById('ivrWaitSeconds').value),
+      };
+      try {
+        const res = await fetch('/api/ivr', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          badge.textContent = data.detail || 'Could not save'; badge.className = 'save-status-badge error';
+          showToast(data.detail || 'Could not save the language menu', 'error');
+          return;
+        }
+        renderIvr(data.ivr);
+        badge.textContent = 'Saved'; badge.className = 'save-status-badge success';
+        showToast('Language menu saved', 'success');
+      } catch (err) { showToast('Network error saving the language menu', 'error'); }
+    });
+  }
+
   // Init
   loadSettings();
+  loadIvr();
   fetchState();
   connectWebSocket();
   startDurationTickers();

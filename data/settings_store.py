@@ -3,26 +3,96 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
+import config
+import languages
+
 logger = logging.getLogger(__name__)
+
+# Gemini Live prebuilt voices the dashboard offers.
+AI_VOICES = [
+    "Aoede", "Kore", "Puck", "Charon", "Fenrir", "Leda", "Orus", "Zephyr", "Callirrhoe", "Autonoe", "Enceladus",
+    "Iapetus", "Umbriel", "Algieba", "Despina", "Erinome", "Algenib", "Rasalgethi", "Laomedeia", "Achernar",
+    "Alnilam", "Schedar", "Gacrux", "Pulcherrima", "Achird", "Zubenelgenubi", "Vindemiatrix", "Sadachbia",
+    "Sadaltager", "Sulafat",
+]
+
+
+def validate_ai_settings(updates: dict[str, Any]) -> dict[str, Any]:
+    """Cleaned copy of the validated fields in `updates` (AI voice/temperature/pause, branches, WhatsApp); raises
+    ValueError on a bad value."""
+    out = dict(updates)
+    if "branches" in out:
+        names = [n.strip() for n in str(out["branches"]).split(",") if n.strip()]
+        if not names:
+            raise ValueError("Add at least one branch.")
+        if len({n.lower() for n in names}) != len(names):
+            raise ValueError("Branch names must be different from each other.")
+        out["branches"] = ", ".join(names)
+    if "whatsapp_number" in out:
+        number = str(out["whatsapp_number"]).strip()
+        if number and not all(c.isdigit() or c in "+ -" for c in number):
+            raise ValueError("WhatsApp number may only contain digits, spaces, + and -.")
+        out["whatsapp_number"] = number
+    if "ai_voice" in out:
+        voice = str(out["ai_voice"]).strip()
+        if voice not in AI_VOICES and voice != config.GEMINI_VOICE_NAME:
+            raise ValueError(f"Unknown voice '{voice}'.")
+        out["ai_voice"] = voice
+    if "ai_temperature" in out:
+        raw = str(out["ai_temperature"]).strip()
+        if raw:  # blank = the model's default
+            try:
+                value = float(raw)
+            except ValueError:
+                raise ValueError("Temperature must be a number between 0 and 2.") from None
+            if not 0.0 <= value <= 2.0:
+                raise ValueError("Temperature must be between 0 and 2.")
+            raw = f"{value:g}"
+        out["ai_temperature"] = raw
+    if "ai_vad_silence_ms" in out:
+        try:
+            ms = int(out["ai_vad_silence_ms"])
+        except (TypeError, ValueError):
+            raise ValueError("Silence wait must be a whole number of milliseconds.") from None
+        if not 300 <= ms <= 3000:
+            raise ValueError("Silence wait must be between 300 and 3000 ms.")
+        out["ai_vad_silence_ms"] = ms
+    return out
 
 
 @dataclass
 class SalonSettings:
     salon_name: str = "CLASSY NAIL SPA"
     salon_address: str = "309 Kotte Road, Nugegoda 10250, Sri Lanka"
+    # How the voice says the address on Sinhala/Tamil calls (numbers in words, no postal code).
+    salon_address_sinhala: str = field(default_factory=lambda: languages.get("si").spoken_address)
+    salon_address_tamil: str = field(default_factory=lambda: languages.get("ta").spoken_address)
     salon_phone: str = "+94 77 741 2853"
     transfer_phone: str = "+94777412853"
     operating_hours_display: str = "Daily from 9:00 AM to 7:00 PM (open 7 days a week)"
     business_hours_start: str = "09:00"
     business_hours_end: str = "19:00"
-    greeting_sinhala: str = "ආයුබෝවන්! {salon_name} වෙත සාදරයෙන් පිළිගනිමු. මම ඔබට කොහොමද උදව් කරන්නේ?"
+    # The greetings default to the language files (languages/*.yaml).
+    greeting_sinhala: str = field(default_factory=lambda: languages.get("si").greeting)
+    greeting_tamil: str = field(default_factory=lambda: languages.get("ta").greeting)
+    greeting_english: str = field(default_factory=lambda: languages.get("en").greeting)
+    branches: str = "Nugegoda, Hokandara"  # comma-separated branch names callers book at (addresses live in the FAQ)
+    whatsapp_number: str = ""  # where callers send design photos
+    # The AI agent (applies to the next call; a call in progress keeps its settings so the voice never changes mid-call).
+    ai_voice: str = config.GEMINI_VOICE_NAME
+    ai_temperature: str = "" if config.GEMINI_TEMPERATURE is None else f"{config.GEMINI_TEMPERATURE:g}"  # blank = default
+    ai_vad_silence_ms: int = config.VAD_SILENCE_MS  # how long the caller must pause before the agent answers
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+    @property
+    def branch_list(self) -> list[str]:
+        return [b.strip() for b in self.branches.split(",") if b.strip()]
 
 
 class SettingsStore:

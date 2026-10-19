@@ -7,3 +7,5 @@ fastapi
 uvicorn
 pytest
 pytest-asyncio
+numpy
+pyyaml

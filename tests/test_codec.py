@@ -70,3 +70,33 @@ def test_transcoders_maintain_state_across_chunks_without_error() -> None:
         out = transcoder.transcode(chunk)
         total_out += len(out)
     assert total_out > 0
+
+
+def _rms(pcm: bytes) -> float:
+    n = len(pcm) // 2
+    vals = struct.unpack(f"<{n}h", pcm)
+    return math.sqrt(sum(v * v for v in vals) / n)
+
+
+def test_outbound_suppresses_frequencies_that_would_alias() -> None:
+    # 6 kHz is above the 4 kHz Nyquist of the 8 kHz phone line; unfiltered
+    # decimation would fold it back as a loud 2 kHz tone.
+    pcm = sine_wave_pcm16(config.GEMINI_OUTPUT_SAMPLE_RATE_HZ, freq=6000, seconds=0.5)
+    out = OutboundTranscoder().transcode(pcm)
+    assert _rms(out[400:]) < 0.05 * _rms(pcm)
+
+
+def test_outbound_passes_speech_band() -> None:
+    pcm = sine_wave_pcm16(config.GEMINI_OUTPUT_SAMPLE_RATE_HZ, freq=1000, seconds=0.5)
+    out = OutboundTranscoder().transcode(pcm)
+    ratio = _rms(out[400:]) / _rms(pcm)
+    assert 0.9 < ratio < 1.1
+
+
+def test_outbound_chunked_equals_one_shot() -> None:
+    pcm = sine_wave_pcm16(config.GEMINI_OUTPUT_SAMPLE_RATE_HZ, freq=700, seconds=0.3)
+    whole = OutboundTranscoder().transcode(pcm)
+    t = OutboundTranscoder()
+    # Odd chunk size so chunk boundaries don't line up with the decimation factor.
+    chunked = b"".join(t.transcode(pcm[i : i + 1002]) for i in range(0, len(pcm), 1002))
+    assert chunked == whole

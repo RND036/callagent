@@ -1331,3 +1331,107 @@ body {
 .app-toast.toast-error {
   background: #be123c;
 }
+
+
+/* Call Detail Modal */
+.modal-dialog-wide {
+  max-width: 640px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-dialog-wide .modal-body {
+  overflow-y: auto;
+}
+
+.call-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.call-detail-meta strong {
+  color: var(--text-primary);
+}
+
+.call-detail-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.call-detail-audio {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.call-detail-audio audio {
+  width: 100%;
+}
+
+.call-detail-nofile {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.call-transcript {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.transcript-line {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: #f1f5f9;
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 88%;
+  word-break: break-word;
+}
+
+.transcript-line.caller {
+  align-self: flex-start;
+}
+
+.transcript-line.ai {
+  align-self: flex-end;
+  background: #eef2ff;
+}
+
+.transcript-line.system {
+  align-self: center;
+  max-width: 100%;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.transcript-who {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+/* Language Menu (IVR) tab */
+.ivr-prompt-body { display: flex; flex-direction: column; gap: 8px; }
+.ivr-prompt-body audio { width: 100%; }
+.ivr-prompt-meta { font-size: 13px; color: var(--text-muted); }
+.ivr-prompt-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.ivr-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+.ivr-option-row { display: flex; align-items: center; gap: 8px; }
+.ivr-option-row select:first-child { width: 90px; }

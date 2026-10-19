@@ -73,11 +73,14 @@ def make_handler(
     mcp_client: McpClient | None,
     call_manager: CallManager | None = None,
     settings_store: Any = None,
+    faq_store: Any = None,
+    ivr_store: Any = None,
 ):
     async def handler(reader: asyncio.StreamReader, writer: asyncio.StreamWriter) -> None:
         conn = AudioSocketConnection(reader, writer)
         logger.info("PBX connection opened: %s", conn.remote_address)
-        session = CallSession(conn, gemini_client, model, store, mcp_client, call_manager, settings_store)
+        session = CallSession(conn, gemini_client, model, store, mcp_client, call_manager, settings_store, faq_store,
+                              ivr_store)
         try:
             await session.run()
         finally:
@@ -96,6 +99,9 @@ async def serve(
     mcp_client: McpClient | None = None,
     call_manager: CallManager | None = None,
     settings_store: Any = None,
+    faq_store: Any = None,
+    ivr_store: Any = None,
 ):
-    handler = make_handler(gemini_client, model, store, mcp_client, call_manager, settings_store)
+    handler = make_handler(gemini_client, model, store, mcp_client, call_manager, settings_store, faq_store,
+                           ivr_store)
     return await asyncio.start_server(handler, host, port)

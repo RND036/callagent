@@ -1,0 +1,71 @@
+# Tamil: everything the agent says, and how it says numbers, times and dates, in Tamil. A call speaks only this
+# language: the caller picked it in the language menu.
+#
+# Every language file has exactly the same keys. The app checks them at startup and refuses to start, naming the
+# file and the key, if one is missing or misspelt. Placeholders in {braces} are filled in by the app.
+# `phrases` are regular expressions (case-insensitive), matched against what was said, in every language.
+# `time` and `dates` are optional ("null" = the English form, "2:00 PM" and "Monday, 19 October").
+# Rules written in English are instructions to the model; lines in Tamil are what it says.
+#
+# Have a native speaker review this file: the agent speaks the way it is told to here.
+# After editing, restart the service: the files are read at startup.
+
+code: ta
+name: Tamil
+native_name: தமிழ்
+menu_digit: '2'
+transcription_codes: [ta-IN, en-US]
+greeting: வணக்கம்! {salon_name}-க்கு உங்களை அன்புடன் வரவேற்கிறோம். நான் உங்கள் AI receptionist. இன்று உங்களுக்கு எப்படி உதவலாம்?
+spoken_address: இலக்கம் முன்னூற்று ஒன்பது, கோட்டை வீதி, நுகேகொட
+branches:
+  nugegoda: நுகேகொட
+  hokandara: ஹோகந்தர
+currency_word: ரூபாய்
+mixing_rules: |2-
+     - Tamil speakers often mix in English words or salon terms ('manicure',
+       'pedicure', 'booking', 'appointment', 'nail', 'gel', 'price', etc.) --
+       that is normal; understand it and reply entirely in Tamil
+       (தமிழில் மட்டும் பதிலளிக்கவும்). You may use those same well-known English salon terms
+       inside your Tamil sentences, as a local receptionist would.
+     - Even if the caller says a whole sentence in another language, understand
+       what they mean but still reply entirely in Tamil.
+style_rules: ''
+place_name_rules: |
+  - When SPEAKING a branch name, pronounce it the way shown in "say it as" (native script, natural local pronunciation, never an English accent). When passing a branch to a tool, use the English name exactly as listed.
+  - When SPEAKING an address, never read the English text. Use its "say it as" form; for any other address (e.g. from the FAQ) say it the way a local would: road and town names in native pronunciation, "வீதி" for "Road", the house number in words, and never the postal code or "Sri Lanka". When writing an address into a tool or message, keep the English.
+lines:
+  delight:
+  - உங்களுக்கு உதவுவதில் எனக்கு மிக்க மகிழ்ச்சி!
+  - நிச்சயமாக!
+  - அழகான நாளாக அமையட்டும்!
+  change_language: மொழியை மாற்ற, உங்கள் தொலைபேசியில் {key} அழுத்தவும்.
+  please_repeat: மன்னிக்கவும், மீண்டும் சொல்ல முடியுமா?
+  out_of_scope: மன்னிக்கவும், என்னால் {salon_name}-ன் சேவைகள் மற்றும் முன்பதிவு தொடர்பாக மட்டுமே உதவ முடியும். இன்று உங்களுக்கு எங்கள் சேவை ஒன்றில் உதவலாமா?
+  anything_else: வேறு ஏதாவது தெரிந்துகொள்ள வேண்டுமா?
+  price_rule: Always say "[தொகை] ரூபாய்" (e.g. "2,500 ரூபாய்").
+  phone_style: Say it as digit words in groups of 3-3-4.
+phrases:
+  goodbye:
+  - நன்றி.*(?:வணக்கம்)
+  - அழகான நாளாக
+  - வணக்கம்\s*$
+  anything_else:
+  - வேறு ஏதா
+  'yes':
+  - ஆம்
+  - ஆமா
+  - சரி
+  'no':
+  - இல்லை
+  - தவறு
+  - வேண்டாம்
+  no_problem:
+  - பிரச்சனை\s*இல்லை
+numbers:
+  digits: [பூஜ்ஜியம், ஒன்று, இரண்டு, மூன்று, நான்கு, ஐந்து, ஆறு, ஏழு, எட்டு, ஒன்பது]
+  words: []
+  hundreds: []
+  hundreds_alone: []
+  phone_groups: [3, 3, 4]
+time: null
+dates: null

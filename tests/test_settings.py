@@ -69,6 +69,7 @@ def test_dynamic_system_instruction_and_greeting():
     custom = SalonSettings(
         salon_name="Luxe Glow",
         salon_address="45 Flower Road, Colombo 07",
+        salon_address_sinhala="අංක හතළිහ පහ, මල් පාර, කොළඹ හත",
         salon_phone="+94 11 234 5678",
         transfer_phone="+94112345678",
         operating_hours_display="Daily 10 AM to 8 PM",
@@ -81,6 +82,7 @@ def test_dynamic_system_instruction_and_greeting():
     instruction = build_system_instruction(custom)
     assert "LUXE GLOW" in instruction
     assert "45 Flower Road, Colombo 07" in instruction
+    assert "say it as: අංක හතළිහ පහ, මල් පාර, කොළඹ හත" in instruction
     assert "+94 11 234 5678" in instruction
     assert "Daily 10 AM to 8 PM" in instruction
     assert 'target_number="+94112345678"' in instruction
@@ -90,7 +92,19 @@ def test_dynamic_system_instruction_and_greeting():
     custom_services = [Service(name="Diamond Gel Nail Art", price_usd=60.0, duration_minutes=90)]
     instruction_with_services = build_system_instruction(custom, services=custom_services)
     assert "Diamond Gel Nail Art" in instruction_with_services
-    assert "LKR 60" in instruction_with_services
+    assert "Diamond Gel Nail Art (LKR" not in instruction_with_services  # prices only via tools, when asked
+
+
+def test_greeting_per_ivr_language_uses_its_own_setting():
+    custom = SalonSettings(
+        salon_name="Luxe Glow",
+        greeting_tamil="வணக்கம் {salon_name}!",
+        greeting_english="Hi from {salon_name}!",
+    )
+
+    assert build_initial_greeting(custom, "ta") == "வணக்கம் Luxe Glow!"
+    assert build_initial_greeting(custom, "en") == "Hi from Luxe Glow!"
+    assert '"Hi from Luxe Glow!"' in build_system_instruction(custom, language="en")
 
 
 @pytest.mark.asyncio
@@ -99,6 +113,9 @@ async def test_settings_api_endpoints(mock_store: JsonBookingStore, settings_mgr
     app = create_app(mock_store, call_mgr, settings_mgr)
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:
+        res = await client.post("/api/login", json={"username": "admin", "password": "admin"})
+        assert res.status_code == 200
+
         # GET
         res = await client.get("/api/settings")
         assert res.status_code == 200
@@ -124,3 +141,54 @@ async def test_settings_api_endpoints(mock_store: JsonBookingStore, settings_mgr
         # Verify GET reflects update
         res_get = await client.get("/api/settings")
         assert res_get.json()["salon_name"] == "Royal Nails"
+
+
+# ---------- AI voice / temperature / pause ----------
+
+def test_ai_settings_validation():
+    from data.settings_store import validate_ai_settings
+
+    assert validate_ai_settings({"ai_voice": "Kore", "ai_temperature": "0.70", "ai_vad_silence_ms": "800"}) == {
+        "ai_voice": "Kore", "ai_temperature": "0.7", "ai_vad_silence_ms": 800}
+    assert validate_ai_settings({"ai_temperature": " "})["ai_temperature"] == ""  # blank = model default
+    for bad in ({"ai_voice": "Nope"}, {"ai_temperature": "3"}, {"ai_temperature": "hot"}, {"ai_vad_silence_ms": 50}):
+        with pytest.raises(ValueError):
+            validate_ai_settings(bad)
+
+
+def test_live_config_uses_dashboard_voice_temperature_and_pause():
+    from data.settings_store import SalonSettings
+    from gemini_session.live_session import live_config
+
+    cfg = live_config(None, "en", None, SalonSettings(ai_voice="Kore", ai_temperature="0.6", ai_vad_silence_ms=1500))
+    assert cfg.speech_config.voice_config.prebuilt_voice_config.voice_name == "Kore"
+    assert cfg.temperature == 0.6
+    assert cfg.realtime_input_config.automatic_activity_detection.silence_duration_ms == 1500
+    blank = live_config(None, "en", None, SalonSettings(ai_temperature=""))
+    assert blank.temperature is None  # model default unless GEMINI_TEMPERATURE is set in .env
+
+
+@pytest.mark.asyncio
+async def test_settings_endpoint_saves_ai_fields_and_rejects_bad_ones(tmp_path):
+    from httpx import ASGITransport, AsyncClient
+
+    from dashboard.server import create_app
+    from data.call_manager import CallManager
+    from data.json_store import JsonBookingStore
+    from data.settings_store import SettingsStore
+
+    for name in ("services", "bookings", "messages"):
+        (tmp_path / f"{name}.json").write_text("[]")
+    sstore = SettingsStore(settings_path=tmp_path / "s.json")
+    store = JsonBookingStore(services_path=tmp_path / "services.json", bookings_path=tmp_path / "bookings.json",
+                             messages_path=tmp_path / "messages.json", business_hours_start="09:00",
+                             business_hours_end="19:00", slot_increment_minutes=30)
+    app = create_app(store, CallManager(calls_path=tmp_path / "calls.json"), sstore)
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://t") as c:
+        assert (await c.post("/api/login", json={"username": "admin", "password": "admin"})).status_code == 200
+        r = await c.post("/api/settings", json={"ai_voice": "Puck", "ai_temperature": "0.8"})
+        assert r.status_code == 200, r.text
+        saved = await sstore.get_settings()
+        assert saved.ai_voice == "Puck" and saved.ai_temperature == "0.8"
+        assert (await c.post("/api/settings", json={"ai_temperature": "9"})).status_code == 422
+        assert "Puck" in (await c.get("/api/settings")).json()["ai_voices"]

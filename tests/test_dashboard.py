@@ -99,6 +99,18 @@ async def test_dashboard_api_endpoints(test_store: JsonBookingStore, call_mgr: C
     app = create_app(test_store, call_mgr)
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:
+        # Unauthenticated API calls are rejected
+        res = await client.get("/api/stats")
+        assert res.status_code == 401
+
+        # Wrong credentials are rejected
+        res = await client.post("/api/login", json={"username": "admin", "password": "wrong"})
+        assert res.status_code == 401
+
+        # Correct credentials establish a session cookie
+        res = await client.post("/api/login", json={"username": "admin", "password": "admin"})
+        assert res.status_code == 200
+
         # Test stats
         res = await client.get("/api/stats")
         assert res.status_code == 200
@@ -161,3 +173,86 @@ async def test_dashboard_api_endpoints(test_store: JsonBookingStore, call_mgr: C
         res = await client.get("/")
         assert res.status_code == 200
         assert "Classy Nail Spa" in res.text
+
+
+@pytest.mark.asyncio
+async def test_call_history_keeps_newest_calls_and_prunes_old_recordings(tmp_path: Path, monkeypatch):
+    import data.call_manager as cm
+
+    monkeypatch.setattr(cm, "_MAX_COMPLETED_CALLS", 3)
+    recordings = tmp_path / "rec"
+    recordings.mkdir()
+    calls_path = tmp_path / "calls.json"
+    manager = CallManager(calls_path=calls_path, recordings_dir=recordings)
+
+    for i in range(5):
+        (recordings / f"c{i}.wav").write_bytes(b"x")
+        await manager.call_started(f"c{i}", "+1")
+        await manager.call_ended(f"c{i}", recording_file=f"c{i}.wav")
+
+    history = await manager.get_call_history()
+    assert [c["call_id"] for c in history] == ["c4", "c3", "c2"]
+    assert sorted(p.name for p in recordings.glob("*.wav")) == ["c2.wav", "c3.wav", "c4.wav"]
+    # The newest call is what was persisted, so it survives a restart.
+    reloaded = CallManager(calls_path=calls_path)
+    assert [c["call_id"] for c in await reloaded.get_call_history()] == ["c4", "c3", "c2"]
+
+
+@pytest.mark.asyncio
+async def test_call_recording_endpoint(test_store: JsonBookingStore, tmp_path: Path):
+    manager = CallManager(calls_path=tmp_path / "calls.json", recordings_dir=tmp_path)
+    (tmp_path / "abc.wav").write_bytes(b"RIFFfakewav")
+    await manager.call_started("abc", "+94771234567")
+    await manager.call_ended("abc", recording_file="abc.wav")
+    await manager.call_started("silent", "+94770000000")
+    await manager.call_ended("silent")
+
+    app = create_app(test_store, manager)
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
+        assert (await client.get("/api/calls/abc/recording")).status_code == 401
+
+        await client.post("/api/login", json={"username": "admin", "password": "admin"})
+        res = await client.get("/api/calls/abc/recording")
+        assert res.status_code == 200
+        assert res.headers["content-type"] == "audio/wav"
+        assert res.content == b"RIFFfakewav"
+
+        assert (await client.get("/api/calls/silent/recording")).status_code == 404
+        assert (await client.get("/api/calls/nope/recording")).status_code == 404
+
+        detail = await client.get("/api/calls/abc")
+        assert detail.status_code == 200 and detail.json()["recording_file"] == "abc.wav"
+        assert (await client.get("/api/calls/nope")).status_code == 404
+
+
+@pytest.mark.asyncio
+async def test_ivr_endpoints(test_store: JsonBookingStore, tmp_path: Path):
+    from data.ivr_store import IvrStore
+    from tests.test_ivr_store import make_wav
+
+    ivr = IvrStore(tmp_path / "ivr.json", tmp_path / "prompts")
+    app = create_app(test_store, CallManager(calls_path=tmp_path / "calls.json"), ivr_store=ivr)
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
+        assert (await client.get("/api/ivr")).status_code == 401
+        await client.post("/api/login", json={"username": "admin", "password": "admin"})
+
+        state = (await client.get("/api/ivr")).json()
+        assert state["enabled"] is False and state["active"] is False and state["languages"]["ta"] == "Tamil"
+
+        bad = await client.post("/api/ivr", json={"options": [{"digit": "1", "language": "si"}, {"digit": "1", "language": "en"}]})
+        assert bad.status_code == 422
+
+        assert (await client.put("/api/ivr/prompts/nope", content=make_wav())).status_code == 404
+        assert (await client.put("/api/ivr/prompts/menu", content=b"not audio")).status_code == 400
+        up = await client.put("/api/ivr/prompts/menu", params={"filename": "m.wav"}, content=make_wav())
+        assert up.status_code == 200 and up.json()["ivr"]["prompts"]["menu"]["original_name"] == "m.wav"
+
+        ok = await client.post("/api/ivr", json={"enabled": True})
+        assert ok.status_code == 200 and ok.json()["ivr"]["active"] is True
+
+        audio = await client.get("/api/ivr/prompts/menu")
+        assert audio.status_code == 200 and audio.headers["content-type"] == "audio/wav"
+        assert (await client.get("/api/ivr/prompts/invalid")).status_code == 404
+
+        assert (await client.delete("/api/ivr/prompts/menu")).json()["ivr"]["active"] is False
+        assert (await client.get("/api/ivr/prompts/menu")).status_code == 404

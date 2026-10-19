@@ -5,12 +5,13 @@ behind the same interface if concurrency/write volume grows.
 from __future__ import annotations
 
 import asyncio
+import difflib
 import json
 import uuid
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from data.store import Booking, Service
+from data.store import ACTIVE_STATUSES, Booking, Service
 
 
 class BookingNotFoundError(Exception):
@@ -48,9 +49,15 @@ class JsonBookingStore:
     def _load_services(self) -> list[Service]:
         raw = json.loads(self._services_path.read_text())
         return [
-            Service(name=s["name"], price_usd=s["price_usd"], duration_minutes=s["duration_minutes"])
+            Service(name=s["name"], price_usd=s["price_usd"], duration_minutes=s["duration_minutes"],
+                    price_varies=bool(s.get("price_varies", False)))
             for s in raw
         ]
+
+    @staticmethod
+    def _service_dict(s: Service) -> dict:
+        return {"name": s.name, "price_usd": s.price_usd, "duration_minutes": s.duration_minutes,
+                "price_varies": s.price_varies}
 
     @staticmethod
     def _read_json(path: Path) -> list[dict]:
@@ -98,7 +105,7 @@ class JsonBookingStore:
             self._write_json(
                 self._services_path,
                 [
-                    {"name": s.name, "price_usd": s.price_usd, "duration_minutes": s.duration_minutes}
+                    self._service_dict(s)
                     for s in self._services
                 ],
             )
@@ -113,21 +120,34 @@ class JsonBookingStore:
                 self._write_json(
                     self._services_path,
                     [
-                        {"name": s.name, "price_usd": s.price_usd, "duration_minutes": s.duration_minutes}
+                        self._service_dict(s)
                         for s in self._services
                     ],
                 )
                 return True
             return False
 
-    async def check_availability(self, service_name: str, date: str) -> list[str]:
+    @staticmethod
+    def _same_branch(booking_branch: str, branch: str) -> bool:
+        """Old bookings without a branch block every branch; a lookup without a branch matches all."""
+        return not branch or not booking_branch or booking_branch.strip().lower() == branch.strip().lower()
+
+    @classmethod
+    def _taken_slots(cls, bookings: list[dict], date: str, branch: str) -> set[str]:
+        """Slots held by requested/confirmed bookings (and by pending reschedules) at this branch on this date."""
+        taken: set[str] = set()
+        for b in bookings:
+            if b.get("status") not in ACTIVE_STATUSES or not cls._same_branch(b.get("branch", ""), branch):
+                continue
+            if b["date"] == date:
+                taken.add(b["time"])
+            if b.get("requested_date") == date and b.get("requested_time"):
+                taken.add(b["requested_time"])
+        return taken
+
+    async def check_availability(self, service_name: str, date: str, branch: str = "") -> list[str]:
         async with self._lock:
-            bookings = self._read_json(self._bookings_path)
-            taken = {
-                b["time"]
-                for b in bookings
-                if b["date"] == date and b["status"] == "confirmed"
-            }
+            taken = self._taken_slots(self._read_json(self._bookings_path), date, branch)
             return [slot for slot in self._all_slots() if slot not in taken]
 
     async def create_booking(
@@ -137,6 +157,8 @@ class JsonBookingStore:
         time: str,
         customer_name: str,
         customer_phone: str,
+        branch: str = "",
+        notes: str = "",
     ) -> Booking:
         service = await self.get_service(service_name)
         if service is None:
@@ -144,9 +166,8 @@ class JsonBookingStore:
 
         async with self._lock:
             bookings = self._read_json(self._bookings_path)
-            for b in bookings:
-                if b["date"] == date and b["time"] == time and b["status"] == "confirmed":
-                    raise SlotUnavailableError(f"{date} {time} is already booked")
+            if time in self._taken_slots(bookings, date, branch):
+                raise SlotUnavailableError(f"{date} {time} is already booked")
 
             booking = Booking(
                 booking_id=str(uuid.uuid4())[:8],
@@ -155,7 +176,9 @@ class JsonBookingStore:
                 time=time,
                 customer_name=customer_name,
                 customer_phone=customer_phone,
-                status="confirmed",
+                status="requested",
+                branch=branch,
+                notes=notes,
             )
             bookings.append(booking.__dict__)
             self._write_json(self._bookings_path, bookings)
@@ -163,38 +186,111 @@ class JsonBookingStore:
 
     async def get_booking(self, booking_id: str) -> Booking | None:
         async with self._lock:
-            bookings = self._read_json(self._bookings_path)
-            for b in bookings:
+            for b in self._read_json(self._bookings_path):
                 if b["booking_id"] == booking_id:
                     return Booking(**b)
             return None
 
-    async def modify_booking(
-        self, booking_id: str, date: str | None = None, time: str | None = None
-    ) -> Booking:
+    async def find_bookings(
+        self, name: str | None = None, phone: str | None = None, date: str | None = None
+    ) -> list[Booking]:
+        """Active bookings matching the name (forgiving), phone (last 9 digits) and/or date."""
+        wanted_name = " ".join((name or "").lower().split())
+        wanted_phone = "".join(c for c in (phone or "") if c.isdigit())[-9:]
+        found = []
+        async with self._lock:
+            for b in self._read_json(self._bookings_path):
+                if b.get("status") not in ACTIVE_STATUSES:
+                    continue
+                if date and date not in (b["date"], b.get("requested_date")):
+                    continue
+                if wanted_phone and "".join(c for c in b["customer_phone"] if c.isdigit())[-9:] != wanted_phone:
+                    continue
+                if wanted_name:
+                    have = " ".join(b["customer_name"].lower().split())
+                    if wanted_name not in have and have not in wanted_name and \
+                            difflib.SequenceMatcher(None, wanted_name, have).ratio() < 0.7:
+                        continue
+                found.append(Booking(**b))
+        return found
+
+    def _find(self, bookings: list[dict], booking_id: str) -> dict:
+        for b in bookings:
+            if b["booking_id"] == booking_id:
+                return b
+        raise BookingNotFoundError(f"No booking with id {booking_id}")
+
+    async def request_change(self, booking_id: str, date: str | None = None, time: str | None = None) -> Booking:
         async with self._lock:
             bookings = self._read_json(self._bookings_path)
-            for b in bookings:
-                if b["booking_id"] == booking_id:
-                    if b["status"] != "confirmed":
-                        raise BookingNotFoundError(f"Booking {booking_id} is not active")
-                    if date:
-                        b["date"] = date
-                    if time:
-                        b["time"] = time
-                    self._write_json(self._bookings_path, bookings)
-                    return Booking(**b)
-            raise BookingNotFoundError(f"No booking with id {booking_id}")
+            b = self._find(bookings, booking_id)
+            if b["status"] not in ACTIVE_STATUSES:
+                raise BookingNotFoundError(f"Booking {booking_id} is not active")
+            new_date, new_time = date or b["date"], time or b["time"]
+            others = [x for x in bookings if x["booking_id"] != booking_id]
+            if new_time in self._taken_slots(others, new_date, b.get("branch", "")):
+                raise SlotUnavailableError(f"{new_date} {new_time} is already booked")
+            b["requested_date"], b["requested_time"] = new_date, new_time
+            self._write_json(self._bookings_path, bookings)
+            return Booking(**b)
+
+    async def update_booking(self, booking_id: str, **fields: str) -> Booking:
+        """Correct the details of a still-requested booking (service, branch, date, time, name, phone, notes)."""
+        allowed = {"service_name", "branch", "date", "time", "customer_name", "customer_phone", "notes"}
+        unknown = set(fields) - allowed
+        if unknown:
+            raise ValueError(f"Cannot update: {', '.join(sorted(unknown))}")
+        async with self._lock:
+            bookings = self._read_json(self._bookings_path)
+            b = self._find(bookings, booking_id)
+            if b["status"] != "requested":
+                raise BookingNotFoundError(f"Booking {booking_id} is not a pending request")
+            merged = {**b, **{k: v for k, v in fields.items() if v is not None}}
+            others = [x for x in bookings if x["booking_id"] != booking_id]
+            if merged["time"] in self._taken_slots(others, merged["date"], merged.get("branch", "")):
+                raise SlotUnavailableError(f"{merged['date']} {merged['time']} is already booked")
+            b.update(merged)
+            self._write_json(self._bookings_path, bookings)
+            return Booking(**b)
+
+    async def set_status(self, booking_id: str, status: str) -> Booking:
+        if status not in ("requested", "confirmed", "declined", "cancelled"):
+            raise ValueError(f"Unknown status: {status}")
+        async with self._lock:
+            bookings = self._read_json(self._bookings_path)
+            b = self._find(bookings, booking_id)
+            b["status"] = status
+            if status in ("declined", "cancelled"):
+                b["requested_date"] = b["requested_time"] = ""
+            self._write_json(self._bookings_path, bookings)
+            return Booking(**b)
+
+    async def approve_change(self, booking_id: str) -> Booking:
+        async with self._lock:
+            bookings = self._read_json(self._bookings_path)
+            b = self._find(bookings, booking_id)
+            if not b.get("requested_date"):
+                raise BookingNotFoundError(f"Booking {booking_id} has no change request")
+            b["date"], b["time"] = b["requested_date"], b["requested_time"] or b["time"]
+            b["requested_date"] = b["requested_time"] = ""
+            self._write_json(self._bookings_path, bookings)
+            return Booking(**b)
+
+    async def reject_change(self, booking_id: str) -> Booking:
+        async with self._lock:
+            bookings = self._read_json(self._bookings_path)
+            b = self._find(bookings, booking_id)
+            b["requested_date"] = b["requested_time"] = ""
+            self._write_json(self._bookings_path, bookings)
+            return Booking(**b)
 
     async def cancel_booking(self, booking_id: str) -> None:
         async with self._lock:
             bookings = self._read_json(self._bookings_path)
-            for b in bookings:
-                if b["booking_id"] == booking_id:
-                    b["status"] = "cancelled"
-                    self._write_json(self._bookings_path, bookings)
-                    return
-            raise BookingNotFoundError(f"No booking with id {booking_id}")
+            b = self._find(bookings, booking_id)
+            b["status"] = "cancelled"
+            b["requested_date"] = b["requested_time"] = ""
+            self._write_json(self._bookings_path, bookings)
 
     async def take_message(
         self,
@@ -202,19 +298,35 @@ class JsonBookingStore:
         caller_phone: str | None,
         message: str,
         urgent: bool = False,
-    ) -> None:
+        category: str = "general",
+        branch: str = "",
+    ) -> dict:
         async with self._lock:
             messages = self._read_json(self._messages_path)
-            messages.append(
-                {
-                    "caller_name": caller_name,
-                    "caller_phone": caller_phone,
-                    "message": message,
-                    "urgent": urgent,
-                    "taken_at": datetime.now().isoformat(timespec="seconds"),
-                }
-            )
+            entry = {
+                "message_id": str(uuid.uuid4())[:8],
+                "caller_name": caller_name,
+                "caller_phone": caller_phone,
+                "message": message,
+                "urgent": urgent,
+                "category": category,
+                "branch": branch,
+                "status": "open",
+                "taken_at": datetime.now().isoformat(timespec="seconds"),
+            }
+            messages.append(entry)
             self._write_json(self._messages_path, messages)
+            return entry
+
+    async def mark_message_done(self, message_id: str) -> bool:
+        async with self._lock:
+            messages = self._read_json(self._messages_path)
+            for m in messages:
+                if m.get("message_id") == message_id:
+                    m["status"] = "done"
+                    self._write_json(self._messages_path, messages)
+                    return True
+            return False
 
     async def list_bookings(self) -> list[Booking]:
         async with self._lock:
@@ -222,7 +334,8 @@ class JsonBookingStore:
             result = []
             for b in bookings:
                 try:
-                    result.append(Booking(**b))
+                    known = Booking.__dataclass_fields__
+                    result.append(Booking(**{k: v for k, v in b.items() if k in known}))
                 except Exception:
                     pass
             return result

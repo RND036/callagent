@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in — Classy Nail Spa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+  <style>
+    .login-shell {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-app);
+      padding: 16px;
+    }
+    .login-card {
+      width: 100%;
+      max-width: 360px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-modal);
+      padding: 32px 28px;
+    }
+    .login-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .login-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-icon-box svg { width: 22px; height: 22px; }
+    .login-header h1 { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+    .login-header p { font-size: 12.5px; color: var(--text-muted); }
+    .login-form { display: flex; flex-direction: column; gap: 16px; }
+    .login-error {
+      display: none;
+      background: var(--status-rose-bg);
+      color: var(--status-rose-text);
+      border: 1px solid var(--status-rose-border);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 12.5px;
+    }
+    .login-error.visible { display: block; }
+    .login-submit { width: 100%; padding: 9px; font-size: 13.5px; }
+  </style>
+</head>
+<body>
+  <div class="login-shell">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <h1>Classy Nail Spa</h1>
+        <p>Sign in to the Front Desk dashboard</p>
+      </div>
+
+      <form id="loginForm" class="login-form" autocomplete="on">
+        <div id="loginError" class="login-error"></div>
+        <div class="form-field-item">
+          <label for="loginUsername">Username</label>
+          <input class="form-input" type="text" id="loginUsername" name="username" autocomplete="username" required autofocus>
+        </div>
+        <div class="form-field-item">
+          <label for="loginPassword">Password</label>
+          <input class="form-input" type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary login-submit" id="loginSubmit">Sign in</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.getElementById('loginForm');
+      const errorBox = document.getElementById('loginError');
+      const submitBtn = document.getElementById('loginSubmit');
+
+      const params = new URLSearchParams(location.search);
+      const redirectTo = params.get('next') && params.get('next').startsWith('/') ? params.get('next') : '/';
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errorBox.classList.remove('visible');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Signing in…';
+        try {
+          const res = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              username: document.getElementById('loginUsername').value,
+              password: document.getElementById('loginPassword').value,
+            }),
+          });
+          if (!res.ok) {
+            const data = await res.json().catch(() => ({}));
+            throw new Error(data.detail || 'Invalid username or password');
+          }
+          window.location.href = redirectTo;
+        } catch (err) {
+          errorBox.textContent = err.message || 'Sign in failed';
+          errorBox.classList.add('visible');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Sign in';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+# English: everything the agent says, and how it says numbers, times and dates, in English. A call speaks only this
+# language: the caller picked it in the language menu.
+#
+# Every language file has exactly the same keys. The app checks them at startup and refuses to start, naming the
+# file and the key, if one is missing or misspelt. Placeholders in {braces} are filled in by the app.
+# `phrases` are regular expressions (case-insensitive), matched against what was said, in every language.
+# `time` and `dates` are optional ("null" = the English form, "2:00 PM" and "Monday, 19 October").
+# Rules written in English are instructions to the model; lines in English are what it says.
+#
+# Have a native speaker review this file: the agent speaks the way it is told to here.
+# After editing, restart the service: the files are read at startup.
+
+code: en
+name: English
+native_name: English
+menu_digit: '3'
+transcription_codes: [en-US]
+greeting: Hello! Welcome to {salon_name}. I'm your AI receptionist. How can I help you today?
+spoken_address: ''
+branches: {}
+currency_word: rupees
+mixing_rules: |2-
+     - If the caller mixes in Sinhala or Tamil words, or even speaks a whole
+       sentence in Sinhala or Tamil, understand what they mean but still reply
+       entirely in English.
+style_rules: ''
+place_name_rules: ''
+lines:
+  delight:
+  - I'd love to help you with that!
+  - That sounds wonderful!
+  - We would be so happy to pamper you!
+  - Certainly!
+  - Have a gorgeous day!
+  change_language: To change the language, please press the hash key, {key}, on your phone.
+  please_repeat: I'm sorry, could you please say that again?
+  out_of_scope: I'm just here to help with {salon_name}'s services and bookings, so I can't really help with that -- but is there anything I can do for you with your nails today?
+  anything_else: Is there anything else you'd like to know?
+  price_rule: Always say "[Amount] rupees" or "LKR [Amount]" (e.g. "It is 2,500 rupees", "LKR 3,500").
+  phone_style: Say it as digit words in groups of 3-3-4.
+phrases:
+  goodbye:
+  - good\s?bye
+  - bye[ -]bye
+  - have a (?:gorgeous|great|nice|lovely) day
+  - take care
+  anything_else:
+  - anything else
+  'yes':
+  - \b(?:yes|yeah|yep|correct|right|ok|okay|sure)\b
+  'no':
+  - \b(?:no|nope|wrong|not|incorrect|change)\b
+  no_problem:
+  - no\s+problem
+numbers:
+  digits: [zero, one, two, three, four, five, six, seven, eight, nine]
+  words: []
+  hundreds: []
+  hundreds_alone: []
+  phone_groups: [3, 3, 4]
+time: null
+dates: null
